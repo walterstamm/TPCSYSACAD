@@ -19,7 +19,7 @@ namespace Dominio
         public string Descripcion { get; set; }
         public string Clave { get; set; }
         public Permisos Permiso { get; set; }
-        public Usuarios (string descripcion, string clave, int permiso)
+        public Usuarios (string descripcion, string clave, Permisos permiso)
         {
             Descripcion = descripcion;
             Clave = clave;

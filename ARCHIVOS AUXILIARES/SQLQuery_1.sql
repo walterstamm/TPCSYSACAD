@@ -39,6 +39,8 @@ select name from sysobjects where type ='U' => muestra la tablas de una base de 
 -go
 -drop database NOMBRE_BASE_DATOS
 -go                                         => elimina la base de datos vacia
+-drop table NOMBRE_TABLA
+-go                                         => elimina la tabla
 
 
 MODIFICAR TABLA O COLUMA LUEGO DE SER CREADA
@@ -60,21 +62,14 @@ ALTER TABLE NOMBRE_TABLA CHANGE “NOMBRE_COLUMNA” “NOMBRE_COLUMNA_NUEVO” 
 Cambiar el tipo de datos para una columna
 ALTER TABLE NOMBRE_TABLA MODIFY “NOMBRE_COLUMNA” “PROPIEDADES nuevo tipo de datos”
 
-
-
-
-
-
 INSERTAR DATOS EN UNA TABLA
 INSERT INTO NOMBRETABLA(CAMPO1_TEXTO, CAMPO2_INT, CAMPO3_FECHA,....) VALUES('TEXTO', 12345, GETDATE() Ó '01/01/2021',....)
 Se debe respetar el orden de las columnas y el tipo de dato a ingresar (int, date, varchar, etc)
 
-
-
-
-
-
 */
+
+use master
+drop database TPCSYSACAD
 
 create DATABASE TPCSYSACAD --crea la base de datos
 GO
@@ -84,11 +79,11 @@ GO
 
 CREATE TABLE PERSONAS( --crea la tabla de la base de datos
     IDPERSONA INT PRIMARY KEY IDENTITY(1,1), 
+    DNI VARCHAR(12) NOT NULL UNIQUE,
     APELLIDO_NOMBRE VARCHAR(50),
     USUARIO VARCHAR(20),
     FECHA_NAC DATE NOT NULL,
-    MAIL VARCHAR(30),
-    
+    MAIL VARCHAR(30)
 )
 GO
 
@@ -104,3 +99,7 @@ CREATE TABLE PERMISOS(
     ID INT PRIMARY KEY IDENTITY(1,1),
     DESCRIPCION VARCHAR(15) NOT NULL
 )
+GO
+
+
+--VEO
