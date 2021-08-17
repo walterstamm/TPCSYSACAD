@@ -1,4 +1,4 @@
-
+--QUERY DE TPCSYSACAD================================================================================================
 
 /*
 PROPIEDADES DE LAS COLUMNAS DE LA TABLA
