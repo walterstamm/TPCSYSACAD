@@ -23,7 +23,7 @@ namespace TPCSYSACAD_Stamm_Gomez
 
             try
             {
-                nuevoAlumno.Idalumno = int.Parse(text_Cuil.Text);
+                nuevoAlumno.Cuil = (string)(text_Cuil.Text);
                 nuevoAlumno.ApellidoNombre = (string)(text_ApellidoNombre.Text);
                 nuevoAlumno.Nacionalidad = (string)(text_Nacionalidad.Text);
                 nuevoAlumno.Fecha_Nac = DateTime.Parse(text_FechaNac.Text);
