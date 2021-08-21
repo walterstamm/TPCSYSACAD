@@ -64,6 +64,9 @@
                         <a class="nav-link" href="#">Clientes</a>
                     </li>--%>
                     <li class="nav-item active">
+                        <a class="nav-link" href="ListadoAlumnos.aspx">Alumnos</a>
+                    </li>
+                    <li class="nav-item active">
                         <a class="nav-link" href="CargaAlumnos.aspx">Carga de Alumnos</a>
                     </li>
                 </ul>

@@ -23,13 +23,13 @@ namespace TPCSYSACAD_Stamm_Gomez
 
             try
             {
-                nuevoAlumno.Cuil = (string)(text_Cuil.Text);
-                nuevoAlumno.ApellidoNombre = (string)(text_ApellidoNombre.Text);
-                nuevoAlumno.Nacionalidad = (string)(text_Nacionalidad.Text);
+                nuevoAlumno.Cuil = (text_Cuil.Text);
+                nuevoAlumno.ApellidoNombre = (text_ApellidoNombre.Text);
+                nuevoAlumno.Nacionalidad = (text_Nacionalidad.Text);
                 nuevoAlumno.Fecha_Nac = DateTime.Parse(text_FechaNac.Text);
-                nuevoAlumno.Mail = (string)(text_Mail.Text);
-                nuevoAlumno.Domicilio = (string)(text_Domicilio.Text);
-                nuevoAlumno.Localidad_Prov = (string)(text_Localidad.Text);
+                nuevoAlumno.Mail = (text_Mail.Text);
+                nuevoAlumno.Domicilio = (text_Domicilio.Text);
+                nuevoAlumno.Localidad_Prov = (text_Localidad.Text);
                 //nuevoAlumno.Usuario = (string)("null");
                 //nuevoAlumno.Estado = int.Parse("0");
 
