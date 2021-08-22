@@ -34,7 +34,7 @@ namespace TPCSYSACAD_Stamm_Gomez
         {
             AlumnoNegocio eliminoID = new AlumnoNegocio();
 
-            //int idalumno = int.Parse();
+            //int idalumno = int.Parse(); lo hice con la idea de eliminar sin hacer una pagina, pero me quede en el camino
 
             //eliminoID.eliminar(idalumno); No se como
 

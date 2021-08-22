@@ -128,34 +128,38 @@ namespace Negocio
             }
         }
 
-        //public void modificar(Alumno modificarAlumno)
-        //{
-        //    AccesoDatos accesoModificar = new AccesoDatos();
-        //    try
-        //    {
-        //        accesoModificar.setearConsulta("UPDATE ALUMNOS SET CUIL=@cuil, APELLIDO_NOMBRE=@apellido_nombre, NACIONALIDAD=@nacionalidad, FECHA_NAC=@fecha_nac, MAIL=@mail, DOMICILIO=@domicilio, LOCALIDA_PCIA=@localidad_pcia, USUARIO=@usuario, ESTADO=@estado  WHERE ID_ALUMNO=@id_alumno");
-        //        accesoModificar.setearParametro("@cuil", modificarAlumno.Cuil);
-        //        accesoModificar.setearParametro("@apellido_nombre", modificarAlumno.ApellidoNombre);
-        //        accesoModificar.setearParametro("@nacionalidad", modificarAlumno.Nacionalidad);
-        //        accesoModificar.setearParametro("@fecha_nac", modificarAlumno.Fecha_Nac);
-        //        accesoModificar.setearParametro("@mail", modificarAlumno.Mail);
-        //        accesoModificar.setearParametro("@domicilio", modificarAlumno.Domicilio);
-        //        accesoModificar.setearParametro("@localidad_prov", modificarAlumno.Localidad_Prov);
-        //        accesoModificar.setearParametro("@usuario", modificarAlumno.Usuario);
-        //        accesoModificar.setearParametro("@estado", modificarAlumno.Estado);
+        public void modificar(Alumno modificarAlumno)
+        {
+            AccesoDatos accesoModificar = new AccesoDatos();
+            try
+            {
+                accesoModificar.setearConsulta("UPDATE ALUMNOS SET CUIL= @cuil, APELLIDO_NOMBRE=@apellido_nombre, NACIONALIDAD=@nacionalidad, FECHA_NAC=@fecha_nac, MAIL=@mail, DOMICILIO=@domicilio, LOCALIDA_PCIA=@localidad_pcia WHERE ID_ALUMNO=@id_alumno");
+                
+                accesoModificar.setearParametro("@id_alumno", modificarAlumno.Idalumno);
+                accesoModificar.setearParametro("@cuil", modificarAlumno.Cuil);
+                accesoModificar.setearParametro("@apellido_nombre", modificarAlumno.ApellidoNombre);
+                accesoModificar.setearParametro("@nacionalidad", modificarAlumno.Nacionalidad);
+                accesoModificar.setearParametro("@fecha_nac", modificarAlumno.Fecha_Nac);
+                accesoModificar.setearParametro("@mail", modificarAlumno.Mail);
+                accesoModificar.setearParametro("@domicilio", modificarAlumno.Domicilio);
+                accesoModificar.setearParametro("@localidad_pcia", modificarAlumno.Localidad_Prov);
+                //accesoModificar.setearParametro("@usuario", modificarAlumno.Usuario);
+                //accesoModificar.setearParametro("@estado", modificarAlumno.Estado);
 
-        //        accesoModificar.ejectutarAccion();
-        //    }
-        //    catch (Exception ex)
-        //    {
+                accesoModificar.ejectutarAccion();
+            }
+            catch (Exception ex)
+            {
 
-        //        throw ex;
-        //    }
-        //    finally
-        //    {
-        //        accesoModificar.cerrarConexion();
-        //    }
-        //}
+                throw ex;
+            }
+            finally
+            {
+                accesoModificar.cerrarConexion();
+                
+                
+            }
+        }
 
 
 

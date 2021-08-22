@@ -123,6 +123,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="ListadoAlumnos.aspx" />
+    <Content Include="ModificarAlumno.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -304,6 +305,13 @@
     </Compile>
     <Compile Include="ListadoAlumnos.aspx.designer.cs">
       <DependentUpon>ListadoAlumnos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarAlumno.aspx.cs">
+      <DependentUpon>ModificarAlumno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModificarAlumno.aspx.designer.cs">
+      <DependentUpon>ModificarAlumno.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">

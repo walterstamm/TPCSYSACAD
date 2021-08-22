@@ -37,7 +37,7 @@
                             <th scope="col">CUIL_ALUMNO</th>
                             <th scope="col">APELLIDO Y NOMBRE</th>
                             <%--<th scope="col">NACIONALIDAD</th>--%>
-                            <th scope="col">NACIMIENTO</th>
+                            <th scope="col">FECHA NAC</th>
                             <th scope="col">CORREO ELECTRONICO</th>
                             <th scope="col">DOMICILIO........</th>
                             <th scope="col">LOCALIDAD - PCIA</th>
