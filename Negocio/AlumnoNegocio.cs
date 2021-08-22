@@ -15,11 +15,11 @@ namespace Negocio
         public List<Alumno> listaAlumno()
         {
             List<Alumno> lis_Alumno = new List<Alumno>();
-            alumno = new AccesoDatos();
+            AccesoDatos alumno = new AccesoDatos();
  
             try
             {
-                alumno.setearConsulta("SELECT ID_ALUMNO, CUIL, APELLIDO_NOMBRE, NACIONALIDAD, FECHA_NAC, MAIL, DOMICILIO, LOCALIDA_PCIA, USUARIO, ESTADO FROM ALUMNOS");
+                alumno.setearConsulta("SELECT ID_ALUMNO, CUIL, APELLIDO_NOMBRE, NACIONALIDAD, FECHA_NAC, MAIL, DOMICILIO, LOCALIDA_PCIA, USUARIO, ESTADO FROM ALUMNOS WHERE ESTADO !=2");
                 alumno.ejecutarLectura();
 
                 while (alumno.Lector.Read())
@@ -34,7 +34,7 @@ namespace Negocio
                     aux1.Domicilio = (string)alumno.Lector["DOMICILIO"];
                     aux1.Localidad_Prov = (string)alumno.Lector["LOCALIDA_PCIA"];
                     //aux1.Usuario = (string)alumno.Lector["USUARIO"];
-                    //aux1.Estado = (int)alumno.Lector["ESTADO"];
+                    aux1.Estado = (int)alumno.Lector["ESTADO"];
 
                     lis_Alumno.Add(aux1);
                 }
@@ -73,27 +73,60 @@ namespace Negocio
             }
         }
 
-        //public void eliminar(Alumno id)
-        //{
-        //    alumno = new AccesoDatos();
-        //    try
-        //    {
-        //        alumno.setearConsulta("UPDATE ALUMNOS SET ESTADO = 0 WHERE ID_ALUMNO = " + id);
-        //        alumno.ejectutarAccion();
-        //    }
-        //    catch (Exception ex)
-        //    {
+        public void eliminar(int id)
+        {
+            alumno = new AccesoDatos();
+            try
+            {
+                alumno.setearConsulta("UPDATE ALUMNOS SET ESTADO = 2 WHERE ID_ALUMNO = " + id);
+                alumno.ejectutarAccion();
+            }
+            catch (Exception ex)
+            {
 
-        //        throw ex;
-        //    }
-        //    finally
-        //    {
-        //        alumno.cerrarConexion();
-        //        alumno = null;
-        //    }
-        //}
+                throw ex;
+            }
+            finally
+            {
+                alumno.cerrarConexion();
+                alumno = null;
+            }
+        }
 
+        public Alumno Un_alumno(int id_alumno)
+        {
+            AccesoDatos UnAlumno = new AccesoDatos();
+            try
+            {
+                UnAlumno.setearParametro("@idAlumno", id_alumno);
+                UnAlumno.setearConsulta("SELECT  ID_ALUMNO, CUIL, APELLIDO_NOMBRE, NACIONALIDAD, FECHA_NAC, MAIL, DOMICILIO, LOCALIDA_PCIA FROM ALUMNOS WHERE ID_ALUMNO = " + id_alumno);
+                UnAlumno.ejecutarLectura();
+                UnAlumno.Lector.Read();
 
+                Alumno aux = new Alumno();
+                aux.Idalumno = (int)UnAlumno.Lector["ID_ALUMNO"];
+                aux.Cuil = (string)UnAlumno.Lector["CUIL"];
+                aux.ApellidoNombre = (string)UnAlumno.Lector["APELLIDO_NOMBRE"];
+                aux.Nacionalidad = (string)UnAlumno.Lector["NACIONALIDAD"];
+                aux.Fecha_Nac = (DateTime)UnAlumno.Lector["FECHA_NAC"];
+                aux.Mail = (string)UnAlumno.Lector["MAIL"];
+                aux.Domicilio = (string)UnAlumno.Lector["DOMICILIO"];
+                aux.Localidad_Prov = (string)UnAlumno.Lector["LOCALIDA_PCIA"];
+                //aux.Usuario = (string)UnAlumno.Lector["USUARIO"];
+                //aux.Estado = (int)UnAlumno.Lector["ESTADO"];
+
+                return aux;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                UnAlumno.cerrarConexion();
+            }
+        }
 
         //public void modificar(Alumno modificarAlumno)
         //{
@@ -124,39 +157,7 @@ namespace Negocio
         //    }
         //}
 
-        //public Alumno Un_alumno(int id_alumno)
-        //{
-        //    AccesoDatos UnAlumno = new AccesoDatos();
-        //    try
-        //    {
-        //        UnAlumno.setearParametro("@idAlumno", id_alumno);
-        //        UnAlumno.setearConsulta("SELECT  ID_ALUMNO, CUIL, APELLIDO_NOMBRE, NACIONALIDAD, FECHA_NAC, MAIL, DOMICILIO, LOCALIDA_PCIA, USUARIO, ESTADO FROM ALUMNOS WHERE ID_ALUMNO = " + id_alumno);
-        //        UnAlumno.ejecutarLectura();
-        //        UnAlumno.Lector.Read();
 
-        //        Alumno aux = new Alumno();
-        //        aux.Idalumno = (int)UnAlumno.Lector["ID_ALUMNO"];
-        //        aux.Cuil = (string)UnAlumno.Lector["CUIL"];
-        //        aux.ApellidoNombre = (string)UnAlumno.Lector["APELLIDO_NOMBRE"];
-        //        aux.Nacionalidad = (string)UnAlumno.Lector["FECHA_NAC"];
-        //        aux.Mail = (string)UnAlumno.Lector["MAIL"];
-        //        aux.Domicilio = (string)UnAlumno.Lector["DOMICILIO"];
-        //        aux.Localidad_Prov = (string)UnAlumno.Lector["LOCALIDAD_PCIA"];
-        //        aux.Usuario = (string)UnAlumno.Lector["USUARIO"];
-        //        aux.Estado = (int)UnAlumno.Lector["ESTADO"];
-
-        //        return aux;
-        //    }
-        //    catch (Exception ex)
-        //    {
-
-        //        throw ex;
-        //    }
-        //    finally
-        //    {
-        //        UnAlumno.cerrarConexion();
-        //    }
-        //}
 
         //public List<Alumno> modificarAlumno(int idalumno)
         //{

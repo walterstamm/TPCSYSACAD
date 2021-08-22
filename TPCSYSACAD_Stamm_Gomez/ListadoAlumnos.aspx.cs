@@ -12,6 +12,7 @@ namespace TPCSYSACAD_Stamm_Gomez
     public partial class ListadoAlumnos : System.Web.UI.Page
     {
         public List<Alumno> lista;
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             AlumnoNegocio listarAlumno = new AlumnoNegocio();
@@ -23,10 +24,20 @@ namespace TPCSYSACAD_Stamm_Gomez
             }
             catch (Exception ex)
             {
-                //Session.Add("Error", ex.ToString());
+                Session.Add("Error", ex.ToString());
 
-                //Response.Redirect("Error.aspx");
+                Response.Redirect("Error.aspx");
             }
+        }
+
+        protected void Eliminar_Click(object sender, EventArgs e)
+        {
+            AlumnoNegocio eliminoID = new AlumnoNegocio();
+
+            //int idalumno = int.Parse();
+
+            //eliminoID.eliminar(idalumno); No se como
+
         }
     }
 }
