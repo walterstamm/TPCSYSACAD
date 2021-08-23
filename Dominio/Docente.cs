@@ -9,10 +9,14 @@ namespace Dominio
     public class Docente
     {
         public int Iddocente { get; set; }
-        public string Dni{ get; set; }
+        public string Cuil { get; set; }
         public string ApellidoNombre { get; set; }
-        public string Usuario { get; set; }
+        public string Nacionalidad { get; set; }
         public DateTime Fecha_Nac { get; set; }
         public string Mail { get; set; }
+        public string Domicilio { get; set; } //Calle y nro depto
+        public string Localidad_Prov { get; set; } //Localidad y Provincia
+        public string Usuario { get; set; }
+        public int Estado { get; set; } //0, 1, 2        
     }
 }

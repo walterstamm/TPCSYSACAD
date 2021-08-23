@@ -109,6 +109,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="CargaAlumnos.aspx" />
+    <Content Include="CargaDocente.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -123,6 +124,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="ListadoAlumnos.aspx" />
+    <Content Include="ListadoDocente.aspx" />
     <Content Include="ModificarAlumno.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -268,6 +270,13 @@
     <Compile Include="CargaAlumnos.aspx.designer.cs">
       <DependentUpon>CargaAlumnos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CargaDocente.aspx.cs">
+      <DependentUpon>CargaDocente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CargaDocente.aspx.designer.cs">
+      <DependentUpon>CargaDocente.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -305,6 +314,13 @@
     </Compile>
     <Compile Include="ListadoAlumnos.aspx.designer.cs">
       <DependentUpon>ListadoAlumnos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListadoDocente.aspx.cs">
+      <DependentUpon>ListadoDocente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListadoDocente.aspx.designer.cs">
+      <DependentUpon>ListadoDocente.aspx</DependentUpon>
     </Compile>
     <Compile Include="ModificarAlumno.aspx.cs">
       <DependentUpon>ModificarAlumno.aspx</DependentUpon>

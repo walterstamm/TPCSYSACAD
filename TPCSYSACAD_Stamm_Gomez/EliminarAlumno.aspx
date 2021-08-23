@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EliminarAlumno.aspx.cs" Inherits="TPCSYSACAD_Stamm_Gomez.EliminarAlumno" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
+    <h1> ELIMINAR </h1>
     <div class="form-group">
         <asp:Label Text="ID_ALUMNO" runat="server" Width="200px" />
         <asp:TextBox runat="server" ID="text_idalumno" Enabled="false"/>

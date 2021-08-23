@@ -19,7 +19,7 @@ namespace Negocio
  
             try
             {
-                alumno.setearConsulta("SELECT ID_ALUMNO, CUIL, APELLIDO_NOMBRE, NACIONALIDAD, FECHA_NAC, MAIL, DOMICILIO, LOCALIDA_PCIA, USUARIO, ESTADO FROM ALUMNOS WHERE ESTADO !=2");
+                alumno.setearConsulta("SELECT ID_ALUMNO, CUIL, APELLIDO_NOMBRE, NACIONALIDAD, FECHA_NAC, MAIL, DOMICILIO, LOCALIDAD_PCIA, USUARIO, ESTADO FROM ALUMNOS WHERE ESTADO !=2");
                 alumno.ejecutarLectura();
 
                 while (alumno.Lector.Read())
@@ -32,7 +32,7 @@ namespace Negocio
                     aux1.Fecha_Nac = (DateTime)alumno.Lector["FECHA_NAC"];
                     aux1.Mail = (string)alumno.Lector["MAIL"];
                     aux1.Domicilio = (string)alumno.Lector["DOMICILIO"];
-                    aux1.Localidad_Prov = (string)alumno.Lector["LOCALIDA_PCIA"];
+                    aux1.Localidad_Prov = (string)alumno.Lector["LOCALIDAD_PCIA"];
                     //aux1.Usuario = (string)alumno.Lector["USUARIO"];
                     aux1.Estado = (int)alumno.Lector["ESTADO"];
 
@@ -57,7 +57,7 @@ namespace Negocio
             try
             {
                 string valores = "values( '" + agregoAlumno.Cuil + "', '" + agregoAlumno.ApellidoNombre + "', '" + agregoAlumno.Nacionalidad + "', '" + agregoAlumno.Fecha_Nac + "', '" + agregoAlumno.Mail + "', '" + agregoAlumno.Domicilio + "', '" + agregoAlumno.Localidad_Prov + "')";
-                accesoAlumno.setearConsulta("INSERT INTO ALUMNOS(CUIL, APELLIDO_NOMBRE, NACIONALIDAD, FECHA_NAC, MAIL, DOMICILIO, LOCALIDA_PCIA)" + valores);
+                accesoAlumno.setearConsulta("INSERT INTO ALUMNOS(CUIL, APELLIDO_NOMBRE, NACIONALIDAD, FECHA_NAC, MAIL, DOMICILIO, LOCALIDAD_PCIA)" + valores);
 
                 accesoAlumno.ejectutarAccion();
             }
@@ -99,7 +99,7 @@ namespace Negocio
             try
             {
                 UnAlumno.setearParametro("@idAlumno", id_alumno);
-                UnAlumno.setearConsulta("SELECT  ID_ALUMNO, CUIL, APELLIDO_NOMBRE, NACIONALIDAD, FECHA_NAC, MAIL, DOMICILIO, LOCALIDA_PCIA FROM ALUMNOS WHERE ID_ALUMNO = " + id_alumno);
+                UnAlumno.setearConsulta("SELECT  ID_ALUMNO, CUIL, APELLIDO_NOMBRE, NACIONALIDAD, FECHA_NAC, MAIL, DOMICILIO, LOCALIDAD_PCIA FROM ALUMNOS WHERE ID_ALUMNO = " + id_alumno);
                 UnAlumno.ejecutarLectura();
                 UnAlumno.Lector.Read();
 
@@ -111,7 +111,7 @@ namespace Negocio
                 aux.Fecha_Nac = (DateTime)UnAlumno.Lector["FECHA_NAC"];
                 aux.Mail = (string)UnAlumno.Lector["MAIL"];
                 aux.Domicilio = (string)UnAlumno.Lector["DOMICILIO"];
-                aux.Localidad_Prov = (string)UnAlumno.Lector["LOCALIDA_PCIA"];
+                aux.Localidad_Prov = (string)UnAlumno.Lector["LOCALIDAD_PCIA"];
                 //aux.Usuario = (string)UnAlumno.Lector["USUARIO"];
                 //aux.Estado = (int)UnAlumno.Lector["ESTADO"];
 
@@ -133,7 +133,7 @@ namespace Negocio
             AccesoDatos accesoModificar = new AccesoDatos();
             try
             {
-                accesoModificar.setearConsulta("UPDATE ALUMNOS SET CUIL= @cuil, APELLIDO_NOMBRE=@apellido_nombre, NACIONALIDAD=@nacionalidad, FECHA_NAC=@fecha_nac, MAIL=@mail, DOMICILIO=@domicilio, LOCALIDA_PCIA=@localidad_pcia WHERE ID_ALUMNO=@id_alumno");
+                accesoModificar.setearConsulta("UPDATE ALUMNOS SET CUIL= @cuil, APELLIDO_NOMBRE=@apellido_nombre, NACIONALIDAD=@nacionalidad, FECHA_NAC=@fecha_nac, MAIL=@mail, DOMICILIO=@domicilio, LOCALIDAD_PCIA=@localidad_pcia WHERE ID_ALUMNO=@id_alumno");
                 
                 accesoModificar.setearParametro("@id_alumno", modificarAlumno.Idalumno);
                 accesoModificar.setearParametro("@cuil", modificarAlumno.Cuil);

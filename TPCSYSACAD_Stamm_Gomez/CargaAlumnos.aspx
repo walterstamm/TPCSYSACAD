@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CargaAlumnos.aspx.cs" Inherits="TPCSYSACAD_Stamm_Gomez.CargaAlumnos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+
     <h1>ALTA DE ALUMNOS</h1>
     <br />
     
