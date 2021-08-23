@@ -108,8 +108,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
-    <Content Include="CargaAlumnos.aspx" />
-    <Content Include="CargaDocente.aspx" />
+    <Content Include="Alumnos\CargaAlumnos.aspx" />
+    <Content Include="Docentes\CargaDocente.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -119,13 +119,15 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
-    <Content Include="EliminarAlumno.aspx" />
+    <Content Include="Alumnos\EliminarAlumno.aspx" />
+    <Content Include="Docentes\EliminarDocente.aspx" />
     <Content Include="Error.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="ListadoAlumnos.aspx" />
-    <Content Include="ListadoDocente.aspx" />
-    <Content Include="ModificarAlumno.aspx" />
+    <Content Include="Alumnos\ListadoAlumnos.aspx" />
+    <Content Include="Docentes\ListadoDocente.aspx" />
+    <Content Include="Alumnos\ModificarAlumno.aspx" />
+    <Content Include="Docentes\ModificarDocente.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -263,18 +265,18 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="CargaAlumnos.aspx.cs">
+    <Compile Include="Alumnos\CargaAlumnos.aspx.cs">
       <DependentUpon>CargaAlumnos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CargaAlumnos.aspx.designer.cs">
+    <Compile Include="Alumnos\CargaAlumnos.aspx.designer.cs">
       <DependentUpon>CargaAlumnos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CargaDocente.aspx.cs">
+    <Compile Include="Docentes\CargaDocente.aspx.cs">
       <DependentUpon>CargaDocente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CargaDocente.aspx.designer.cs">
+    <Compile Include="Docentes\CargaDocente.aspx.designer.cs">
       <DependentUpon>CargaDocente.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
@@ -291,12 +293,19 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="EliminarAlumno.aspx.cs">
+    <Compile Include="Alumnos\EliminarAlumno.aspx.cs">
       <DependentUpon>EliminarAlumno.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="EliminarAlumno.aspx.designer.cs">
+    <Compile Include="Alumnos\EliminarAlumno.aspx.designer.cs">
       <DependentUpon>EliminarAlumno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Docentes\EliminarDocente.aspx.cs">
+      <DependentUpon>EliminarDocente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Docentes\EliminarDocente.aspx.designer.cs">
+      <DependentUpon>EliminarDocente.aspx</DependentUpon>
     </Compile>
     <Compile Include="Error.aspx.cs">
       <DependentUpon>Error.aspx</DependentUpon>
@@ -308,26 +317,33 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="ListadoAlumnos.aspx.cs">
+    <Compile Include="Alumnos\ListadoAlumnos.aspx.cs">
       <DependentUpon>ListadoAlumnos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ListadoAlumnos.aspx.designer.cs">
+    <Compile Include="Alumnos\ListadoAlumnos.aspx.designer.cs">
       <DependentUpon>ListadoAlumnos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ListadoDocente.aspx.cs">
+    <Compile Include="Docentes\ListadoDocente.aspx.cs">
       <DependentUpon>ListadoDocente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ListadoDocente.aspx.designer.cs">
+    <Compile Include="Docentes\ListadoDocente.aspx.designer.cs">
       <DependentUpon>ListadoDocente.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ModificarAlumno.aspx.cs">
+    <Compile Include="Alumnos\ModificarAlumno.aspx.cs">
       <DependentUpon>ModificarAlumno.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ModificarAlumno.aspx.designer.cs">
+    <Compile Include="Alumnos\ModificarAlumno.aspx.designer.cs">
       <DependentUpon>ModificarAlumno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Docentes\ModificarDocente.aspx.cs">
+      <DependentUpon>ModificarDocente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Docentes\ModificarDocente.aspx.designer.cs">
+      <DependentUpon>ModificarDocente.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">

@@ -82,7 +82,6 @@ namespace Negocio
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             finally
@@ -110,7 +109,7 @@ namespace Negocio
                 aux2.Fecha_Nac = (DateTime)UnDocnete.Lector["FECHA_NAC"];
                 aux2.Mail = (string)UnDocnete.Lector["MAIL"];
                 aux2.Domicilio = (string)UnDocnete.Lector["DOMICILIO"];
-                aux2.Localidad_Prov = (string)UnDocnete.Lector["LOCALIDA_PCIA"];
+                aux2.Localidad_Prov = (string)UnDocnete.Lector["LOCALIDAD_PCIA"];
                 //aux2.Usuario = (string)UnDocnete.Lector["USUARIO"];
                 //aux2.Estado = (int)UnDocnete.Lector["ESTADO"];
 
@@ -118,7 +117,6 @@ namespace Negocio
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             finally
@@ -153,6 +151,7 @@ namespace Negocio
             finally
             {
                 accesoModificar.cerrarConexion();
+
             }
         }
     }

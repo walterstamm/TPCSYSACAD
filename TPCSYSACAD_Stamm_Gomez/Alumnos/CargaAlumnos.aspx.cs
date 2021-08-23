@@ -42,7 +42,7 @@ namespace TPCSYSACAD_Stamm_Gomez
             }
             finally
             {
-                Response.Redirect("CargaAlumnos.aspx");
+                Response.Redirect("ListadoAlumnos.aspx");
             }
 
         }

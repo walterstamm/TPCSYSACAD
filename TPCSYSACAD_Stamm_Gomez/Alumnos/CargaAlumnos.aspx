@@ -39,6 +39,6 @@
         <asp:TextBox ID="text_Localidad" runat="server" />
     </div>
     <br />
-    <asp:Button Text="AGREGAR" ID="btn_Agregar" OnClick="btn_Agregar_Click" runat="server" />
+    <asp:Button class="btn btn-success" Text="AGREGAR" ID="btn_Agregar" OnClick="btn_Agregar_Click" runat="server" />
 </asp:Content>
 

@@ -54,8 +54,8 @@
                                     <%--<td><%#Eval("Usuario") %> </td>--%>
                                     <%--<td><%#Eval("Estado") %> </td>--%>
                                     <td>
-                                        <a class="btn btn-sm btn-outline-info" href='EliminarAlumno.aspx?idAlumno=<%#Eval("Iddocente") %>'><i title="Eliminar Docente" class="fas fa-trash-alt"></i></a>
-                                        <a class="btn btn-sm btn-outline-secondary" href='ModificarAlumno.aspx?idAlumno=<%#Eval("Iddocente") %>'><i title="Modificar Docente" class="far fa-edit"></i></a>
+                                        <a class="btn btn-sm btn-outline-info" href='EliminarDocente.aspx?idDocente=<%#Eval("Iddocente") %>'><i title="Eliminar Docente" class="fas fa-trash-alt"></i></a>
+                                        <a class="btn btn-sm btn-outline-secondary" href='ModificarDocente.aspx?idDocente=<%#Eval("Iddocente") %>'><i title="Modificar Docente" class="far fa-edit"></i></a>
                                     </td>
                                 </tr>
                             </ItemTemplate>

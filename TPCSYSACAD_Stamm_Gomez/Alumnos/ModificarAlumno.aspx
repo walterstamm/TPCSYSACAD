@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
 
-    <h1> MODIFICAR </h1>
+    <h1> MODIFICAR ALUMNO </h1>
     
     <div class="container">
         <div class="row py-3">
