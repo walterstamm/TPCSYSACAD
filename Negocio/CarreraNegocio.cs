@@ -144,5 +144,52 @@ namespace Negocio
             }
         }
 
+        public List<Carreras> listarConSP()
+        {
+            List<Carreras> lista_carrera = new List<Carreras>();
+            Carreras aux;
+            AccesoDatos conex_datos = new AccesoDatos();
+            try
+            {
+                conex_datos.setearSP("spListar");
+                conex_datos.ejecutarLectura();
+                while (conex_datos.Lector.Read())
+                {
+                    aux = new Carreras();
+                    aux.id_carrera = conex_datos.Lector.GetString(0);
+                    aux.nombre_carrera = conex_datos.Lector.GetString(1);
+                    aux.plan_año = conex_datos.Lector.GetString(2);
+                    aux.doc_habilitante = conex_datos.Lector.GetString(3);
+                    aux.estado = conex_datos.Lector.GetBoolean(4);
+
+                    //aux.Tipo = new Tipo();
+                    //aux.Tipo.Id = (int)conex_datos.Lector["idTipo"];
+                    //aux.Tipo.Descripcion = (string)conex_datos.Lector["Descripcion"];
+                    //aux.UrlImagen = (string)conex_datos.Lector["UrlImagen"];
+                    //if (!Convert.IsDBNull(conex_datos.Lector["idEvol"]))
+                    //{
+                    //    aux.Evolucion = new Pokemon();
+                    //    aux.Evolucion.Id = (int)datos.Lector["idEvol"];
+                    //    aux.Evolucion.Nombre = datos.Lector["nomEvol"].ToString();
+                    //}
+
+                    lista_carrera.Add(aux);
+                }
+
+                return lista_carrera;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conex_datos.cerrarConexion();
+                conex_datos = null;
+            }
+
+        }
+
+
     }
 }
