@@ -98,7 +98,7 @@ namespace Negocio
             AccesoDatos UnAlumno = new AccesoDatos();
             try
             {
-                UnAlumno.setearParametro("@idAlumno", id_alumno);
+                //UnAlumno.setearParametro("@idAlumno", id_alumno);
                 UnAlumno.setearConsulta("SELECT  ID_ALUMNO, CUIL, APELLIDO_NOMBRE, NACIONALIDAD, FECHA_NAC, MAIL, DOMICILIO, LOCALIDAD_PCIA FROM ALUMNOS WHERE ID_ALUMNO = " + id_alumno);
                 UnAlumno.ejecutarLectura();
                 UnAlumno.Lector.Read();
