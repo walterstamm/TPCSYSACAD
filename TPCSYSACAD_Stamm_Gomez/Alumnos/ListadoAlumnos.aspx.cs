@@ -15,18 +15,26 @@ namespace TPCSYSACAD_Stamm_Gomez
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            AlumnoNegocio listarAlumno = new AlumnoNegocio();
-
-            try
+            if (Session["Usuarios"] == null)
             {
-                Rep.DataSource = listarAlumno.listaAlumno();
-                Rep.DataBind();
+                Session.Add("ERROR", "DEBERAS INGRESAR CON USUARIOS Y PASSWARD.........");
+                Response.Redirect("../Error.aspx", false);
             }
-            catch (Exception ex)
+            else
             {
-                Session.Add("Error", ex.ToString());
+                AlumnoNegocio listarAlumno = new AlumnoNegocio();
 
-                Response.Redirect("Error.aspx");
+                try
+                {
+                    Rep.DataSource = listarAlumno.listaAlumno();
+                    Rep.DataBind();
+                }
+                catch (Exception ex)
+                {
+                    Session.Add("Error", ex.ToString());
+
+                    Response.Redirect("Error.aspx");
+                }
             }
         }
 

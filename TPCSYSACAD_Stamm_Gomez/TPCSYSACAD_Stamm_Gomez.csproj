@@ -129,6 +129,8 @@
     <Content Include="Alumnos\ModificarAlumno.aspx" />
     <Content Include="Docentes\ModificarDocente.aspx" />
     <Content Include="Carreras\ListadoCarreras.aspx" />
+    <Content Include="Login\Login.aspx" />
+    <Content Include="Login\MenuLogin.aspx" />
     <Content Include="Materias\ListadoMaterias.aspx" />
     <Content Include="Alumnos\Prueba.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -354,6 +356,20 @@
     </Compile>
     <Compile Include="Carreras\ListadoCarreras.aspx.designer.cs">
       <DependentUpon>ListadoCarreras.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login\MenuLogin.aspx.cs">
+      <DependentUpon>MenuLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login\MenuLogin.aspx.designer.cs">
+      <DependentUpon>MenuLogin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Materias\ListadoMaterias.aspx.cs">
       <DependentUpon>ListadoMaterias.aspx</DependentUpon>

@@ -12,7 +12,7 @@
     <h5>DROPDOWNLIST DINAMICO</h5>
     <br />
     <asp:Label Text="DINAMICO" runat="server" />
-    <asp:DropDownList runat="server" CssClass="btn btn-outline-dark dropdown-toggle" ID="ddl_carreras" >
+    <asp:DropDownList runat="server" CssClass="btn btn-outline-dark dropdown-toggle" OnSelectedIndexChanged="ddl_carreras_SelectedIndexChanged" ID="ddl_carreras" >
         
     </asp:DropDownList>
 </asp:Content>

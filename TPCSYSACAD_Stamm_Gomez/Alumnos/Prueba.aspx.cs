@@ -29,5 +29,19 @@ namespace TPCSYSACAD_Stamm_Gomez
             }
 
         }
+
+        protected void ddl_carreras_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string ID_CARRERA;
+            ID_CARRERA = (ddl_carreras.SelectedItem.Value.ToString());
+
+            //if(ID_CARRERA != null)
+            //{
+            //    Session[""];
+            //}
+            //string valor;
+            //valor = 
+
+        }
     }
 }
