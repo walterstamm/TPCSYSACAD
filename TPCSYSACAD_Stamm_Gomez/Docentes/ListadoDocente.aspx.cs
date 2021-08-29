@@ -14,18 +14,26 @@ namespace TPCSYSACAD_Stamm_Gomez
         public List<Docente> listados;
         protected void Page_Load(object sender, EventArgs e)
         {
-            DocenteNegocio listadocente = new DocenteNegocio();
-
-            try
+            if (Session["Usuarios"] == null)
             {
-                RepDocente.DataSource = listadocente.listadocente();
-                RepDocente.DataBind();
+                Session.Add("ERROR", "DEBERAS INGRESAR CON USUARIOS Y PASSWARD.........");
+                Response.Redirect("../Error.aspx", false);
             }
-            catch (Exception ex)
+            else
             {
-                Session.Add("Error", ex.ToString());
-                Response.Redirect("Error.aspx");
-                
+                DocenteNegocio listadocente = new DocenteNegocio();
+
+                try
+                {
+                    RepDocente.DataSource = listadocente.listadocente();
+                    RepDocente.DataBind();
+                }
+                catch (Exception ex)
+                {
+                    Session.Add("Error", ex.ToString());
+                    Response.Redirect("Error.aspx");
+                    
+                }
             }
 
         }
