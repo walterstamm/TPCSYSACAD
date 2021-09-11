@@ -14,7 +14,7 @@
                         <div class='col-xs-3'>
                             <table>
                                 <tr>
-                                    <th> <a href="CargaAlumnos.aspx" class="btn btn-primary btn-block">Cargar.Docente</a> </th>
+                                    <th> <a href="CargaDocente.aspx" class="btn btn-primary btn-block">Cargar.Docente</a> </th>
                                     <th> <a href="Default.aspx" class="btn btn-primary btn-block">Otro.....</a> </th>
                                 </tr>
                             </table>
