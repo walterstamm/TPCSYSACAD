@@ -13,14 +13,18 @@ namespace TPCSYSACAD_Stamm_Gomez
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            CarreraNegocio conex_dllDinamico = new CarreraNegocio();
 
             try
             {
+                CarreraNegocio conex_dllDinamico = new CarreraNegocio();
                 if (!IsPostBack)
                 {
-                    ddl_carreras.DataSource = conex_dllDinamico.listaCarrera();
-                    ddl_carreras.DataBind();
+                    ddlCarreras.DataSource = conex_dllDinamico.listaCarrera();
+                    ddlCarreras.DataValueField = "id_carrera";
+                    ddlCarreras.DataTextField = "nombre_carrera";
+                    ddlCarreras.DataBind();
+                    ddlCarreras.Items.Insert(0, new ListItem("Seleccione una Carrera"));
+                 
                 }
             }
             catch (Exception ex)
@@ -32,16 +36,8 @@ namespace TPCSYSACAD_Stamm_Gomez
 
         protected void ddl_carreras_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string ID_CARRERA;
-            ID_CARRERA = (ddl_carreras.SelectedItem.Value.ToString());
-
-            //if(ID_CARRERA != null)
-            //{
-            //    Session[""];
-            //}
-            //string valor;
-            //valor = 
-
+            //int ID_CARRERA;
+            //ID_CARRERA=int.Parse(ddlCarreras.SelectedItem.Value);
         }
     }
 }
