@@ -19,7 +19,7 @@ namespace TPCSYSACAD_Stamm_Gomez
                 Session.Add("ERROR", "DEBERAS INGRESAR CON USUARIOS Y PASSWARD.........");
                 Response.Redirect("../Error.aspx", false);
             }
-            else
+            else if (Session["Usuarios"] != null && ((Dominio.Usuarios)Session["Usuarios"]).TipoUsuario == Dominio.TipoUsuario.Admin)
             {
                 DocenteNegocio listadocente = new DocenteNegocio();
 
@@ -32,9 +32,15 @@ namespace TPCSYSACAD_Stamm_Gomez
                 {
                     Session.Add("Error", ex.ToString());
                     Response.Redirect("Error.aspx");
-                    
+
                 }
             }
+            //else
+            //{
+            //    Session.Add("ERROR", "PARA LA OPCION SELECCIONADA DEBE SER USUARIO NIVEL ****ADMIN*****.........");
+            //    Response.Redirect("../Error.aspx", false);
+            //}
+
 
         }
     }

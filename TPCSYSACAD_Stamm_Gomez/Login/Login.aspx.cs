@@ -13,11 +13,7 @@ namespace TPCSYSACAD_Stamm_Gomez.Login
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if(Session["Usuarios"] == null)  // NOVA PARQUE ES NECESARIO QUE INGRESE SIN LOGUEARSE
-            //{
-            //    Session.Add("ERROR", "DEBERAS INGRESAR CON USUARIOS Y PASSWARD.........");
-            //    Response.Redirect("../Error.aspx", false);
-            //}
+            
         }
 
         protected void btnIngresar_Click(object sender, EventArgs e)
@@ -43,7 +39,7 @@ namespace TPCSYSACAD_Stamm_Gomez.Login
             catch (Exception ex)
             {
 
-                Session.Add("ERRORRRRR", ex.ToString());
+                Session.Add("ERROR EN PAGINA LOGIN", ex.ToString());
                 Response.Redirect("../Error.aspx");
             }
         }

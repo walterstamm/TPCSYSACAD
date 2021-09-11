@@ -21,6 +21,7 @@ namespace TPCSYSACAD_Stamm_Gomez
                 Response.Redirect("../Error.aspx", false);
             }
             else
+            if (Session["Usuarios"] != null && ((Dominio.Usuarios)Session["Usuarios"]).TipoUsuario == Dominio.TipoUsuario.Admin)
             {
                 AlumnoNegocio listarAlumno = new AlumnoNegocio();
 
@@ -31,12 +32,20 @@ namespace TPCSYSACAD_Stamm_Gomez
                 }
                 catch (Exception ex)
                 {
-                    Session.Add("Error", ex.ToString());
+                    Session.Add("Error.Alumno", ex.ToString());
 
                     Response.Redirect("Error.aspx");
                 }
             }
+            else
+            if (Session["Usuarios"] != null && ((Dominio.Usuarios)Session["Usuarios"]).TipoUsuario != Dominio.TipoUsuario.Admin)
+            {
+                Session.Add("ERROR", "PARA LA OPCION SELECCIONADA DEBE SER USUARIO NIVEL ****ADMIN*****.........");
+                Response.Redirect("../Error.aspx", false);
+            }
+
         }
+    
 
         protected void Eliminar_Click(object sender, EventArgs e)
         {

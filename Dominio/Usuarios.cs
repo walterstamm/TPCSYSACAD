@@ -9,7 +9,8 @@ namespace Dominio
     public enum TipoUsuario
     {
         Admin = 1,
-        Profesor = 2
+        Profesor = 2,
+        Alumno = 3
     }
     public class Usuarios
     {

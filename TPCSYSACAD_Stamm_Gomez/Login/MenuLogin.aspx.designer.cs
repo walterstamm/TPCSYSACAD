@@ -15,6 +15,24 @@ namespace TPCSYSACAD_Stamm_Gomez.Login
     {
 
         /// <summary>
+        /// Control text_usuario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox text_usuario;
+
+        /// <summary>
+        /// Control text_Nivel.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox text_Nivel;
+
+        /// <summary>
         /// Control btnPagina1.
         /// </summary>
         /// <remarks>
@@ -24,12 +42,30 @@ namespace TPCSYSACAD_Stamm_Gomez.Login
         protected global::System.Web.UI.WebControls.Button btnPagina1;
 
         /// <summary>
-        /// Control btnPagina2.
+        /// Control btn_Alumno.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPagina2;
+        protected global::System.Web.UI.WebControls.Button btn_Alumno;
+
+        /// <summary>
+        /// Control btn_Docente.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_Docente;
+
+        /// <summary>
+        /// Control btn_Acc_Docente.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_Acc_Docente;
     }
 }
