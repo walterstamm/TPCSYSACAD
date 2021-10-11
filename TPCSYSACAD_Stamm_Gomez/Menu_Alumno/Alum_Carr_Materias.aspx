@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Alum_Carr_Materias.aspx.cs" Inherits="TPCSYSACAD_Stamm_Gomez.Alum_Autogestion" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Alum_Carr_Materias.aspx.cs" Inherits="TPCSYSACAD_Stamm_Gomez.Alum_Carr_Materias" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="row">
         <div class="col-12">
@@ -28,15 +28,15 @@
                         <asp:Repeater runat="server" ID="Rep_Carr">
                             <ItemTemplate> 
                                 <tr>
-                                    <td><%#Eval("ID_CARRERA") %></td>
+                                    <%--<td><%#Eval("ID_CARRERA") %></td>
                                     <td><%#Eval("NOMBRE_CARRERA") %> </td>
                                     <td><%#Eval("PLAN_AÑO") %> </td>
-                                    <%--<td><%#Eval("Fecha_Nac","{0: dd/MM/yyyy}") %> </td>--%>
-                                    <td><%#Eval("DOC_HABILITANTE") %> </td>
-
+                                   
+                                    <td><%#Eval("DOC_HABILITANTE") %> </td>--%>
+ <%--<td><%#Eval("Fecha_Nac","{0: dd/MM/yyyy}") %> </td>--%>
                                     <td>
-                                        <a class="btn btn-sm btn-outline-info" href='EliminarAlumno.aspx?idAlumno=<%#Eval("Idalumno") %>'><i title="Eliminar Alumno" class="fas fa-trash-alt"></i></a>
-                                        <a class="btn btn-sm btn-outline-secondary" href='ModificarAlumno.aspx?idAlumno=<%#Eval("Idalumno") %>'><i title="Modificar Alumno" class="far fa-edit"></i></a>
+                                        <%--<a class="btn btn-sm btn-outline-info" href='EliminarAlumno.aspx?idAlumno=<%#Eval("Idalumno") %>'><i title="Eliminar Alumno" class="fas fa-trash-alt"></i></a>
+                                        <a class="btn btn-sm btn-outline-secondary" href='ModificarAlumno.aspx?idAlumno=<%#Eval("Idalumno") %>'><i title="Modificar Alumno" class="far fa-edit"></i></a>--%>
                                     </td>
                                 </tr>
                             </ItemTemplate>

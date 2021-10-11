@@ -322,4 +322,13 @@ VALUES('SEM4', 'Seminario IV: Impuestos', 100, 'TSAD', 2, 1)
 
 SELECT * FROM USUARIOS
 SELECT * FROM ALUMNOS
+select * from CARRERAS
 select * from INSC_ALUM_CARRERA
+
+
+insert INSC_ALUM_CARRERA( ALUMNO, CARRERA, AÑO, CUATRIMESTRE, ESTADO)
+VALUES( 1, 'TUPR', YEAR(GETDATE()), 2, 1)
+
+update usuarios 
+set tipousuario = 3 
+where id_usuario = 2
