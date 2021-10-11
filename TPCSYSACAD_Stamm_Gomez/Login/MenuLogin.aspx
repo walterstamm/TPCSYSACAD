@@ -21,7 +21,7 @@
                 <asp:Button Text="Menu Alumnos" ID="btn_Alumno" OnClick="btn_Alumno_Click" runat="server" CssClass="btn btn-primary" />
                 <asp:Button Text="Menu Docentes" ID="btn_Docente" OnClick="btn_Docente_Click" runat="server" CssClass="btn btn-primary" />
 
-            <% }  else
+            <% } else 
                if (Session["Usuarios"] != null && ((Dominio.Usuarios)Session["Usuarios"]).TipoUsuario == Dominio.TipoUsuario.Alumno) {  %>
                 <p>SOLO USUARIO NIVEL ALUMNO</p>
 

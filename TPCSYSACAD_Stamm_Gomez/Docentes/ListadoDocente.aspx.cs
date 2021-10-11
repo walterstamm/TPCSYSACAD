@@ -19,22 +19,24 @@ namespace TPCSYSACAD_Stamm_Gomez
                 Session.Add("ERROR", "DEBERAS INGRESAR CON USUARIOS Y PASSWARD.........");
                 Response.Redirect("../Error.aspx", false);
             }
-            //else if (Session["Usuarios"] != null && (((Dominio.Usuarios)Session["Usuarios"]).TipoUsuario == Dominio.TipoUsuario.Admin || ((Dominio.Usuarios)Session["Usuarios"]).TipoUsuario == Dominio.TipoUsuario.Profesor) )
-            //{
-            //    DocenteNegocio listadocente = new DocenteNegocio();
+            else if (Session["Usuarios"] != null && ((Dominio.Usuarios)Session["Usuarios"]).TipoUsuario == TipoUsuario.Admin ) 
+                //|| ((Dominio.Usuarios)Session["Usuarios"]).TipoUsuario == TipoUsuario.Profesor
+            {
+                DocenteNegocio listadocente = new DocenteNegocio();
 
-            //    try
-            //    {
-            //        RepDocente.DataSource = listadocente.listadocente();
-            //        RepDocente.DataBind();
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        Session.Add("Error", ex.ToString());
-            //        Response.Redirect("Error.aspx");
+                try
+                {
+                    RepDocente.DataSource = listadocente.listadocente();
+                    RepDocente.DataBind();
+                }
+                catch (Exception ex)
+                {
+                    
+                    Session.Add("Error", ex.ToString());
+                    Response.Redirect("Error.aspx");
 
-            //    }
-            //}
+                }
+            }
 
 
         }
