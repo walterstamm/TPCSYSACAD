@@ -10,5 +10,7 @@ namespace Dominio
     {
         public static string usuarioLogeado { get; set; }
         public static int tipoUsuario { get; set; }
+
+        public static int id { get; set; }
     }
 }
