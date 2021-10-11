@@ -23,7 +23,7 @@ namespace TPCSYSACAD_Stamm_Gomez.Login
 
             try
             {
-                usuario = new Usuarios(txtUser.Text, txtPassword.Text, false);
+                usuario = new Usuarios(txtUser.Text, txtPassword.Text, false );
                 if (conex_usuario.Loguear(usuario))
                 {
                     Session.Add("Usuarios", usuario);

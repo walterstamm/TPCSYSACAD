@@ -24,7 +24,7 @@ namespace Negocio
                 while (conex_usuario.Lector.Read())
                 {
                     usuario.id_usuario = (int)conex_usuario.Lector["ID_USUARIO"];
-                    usuario.TipoUsuario = (int)(conex_usuario.Lector["TIPOUSUARIO"]) == 2 ? TipoUsuario.Profesor : TipoUsuario.Admin;
+                    usuario.TipoUsuario = (int)(conex_usuario.Lector["TIPOUSUARIO"]) == 2 ? TipoUsuario.Alumno : TipoUsuario.Admin;
 
                     return true; //SI TRAE EL USUARIO LE ASIGNA LA PASSWARD Y DEVUELVE TRUE.
                 }

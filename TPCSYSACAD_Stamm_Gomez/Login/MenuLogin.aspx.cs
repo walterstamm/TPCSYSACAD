@@ -45,7 +45,14 @@ namespace TPCSYSACAD_Stamm_Gomez.Login
 
         protected void btn_Acc_Docente_Click(object sender, EventArgs e)
         {
+            Response.Redirect("../Docentes/ListadoDocente.aspx", false);
             //ACA VA EL ENLACE DE LA PANTALLA DE ACCESO DE LOS DOCENTES
+        }
+
+        protected void btn_Acc_Alumno_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../Alumnos/ListadoAlumnos.aspx", false);
+            //ACA VA EL ENLACE A LA PANTALLA DE ACCESO A LOS ALUMNOS
         }
     }
 }
