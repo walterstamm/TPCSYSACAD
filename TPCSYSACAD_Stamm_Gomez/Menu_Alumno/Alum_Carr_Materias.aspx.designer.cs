@@ -11,7 +11,7 @@ namespace TPCSYSACAD_Stamm_Gomez
 {
 
 
-    public partial class Alum_Autogestion
+    public partial class Alum_Carr_Materias
     {
 
         /// <summary>

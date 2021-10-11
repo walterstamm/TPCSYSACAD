@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Alum_Carr_Materias.aspx.cs" Inherits="TPCSYSACAD_Stamm_Gomez.Alum_Carr_Materias" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+
+
     <div class="row">
         <div class="col-12">
             <br />
@@ -12,7 +14,6 @@
         </div>
 
         <div class="col-4">
-            <h1> DD</h1>
             <div class="col" id="main">
                 <table class="table">
                     <thead>
@@ -20,7 +21,7 @@
                             <th scope="col">ID_CARRERA</th>
                             <th scope="col">NOMBRE_CARRERA</th>
                             <th scope="col">PLAN_AÑO</th>
-                            <th scope="col">DOCUMENTO HABILITANTE</th>
+                            <th scope="col">DOCUMENTO_HABILITANTE</th>
 
                         </tr>
                     </thead>

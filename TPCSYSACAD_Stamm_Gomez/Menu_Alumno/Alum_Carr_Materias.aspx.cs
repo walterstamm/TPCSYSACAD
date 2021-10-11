@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace TPCSYSACAD_Stamm_Gomez
 {
-    public partial class Alum_Autogestion : System.Web.UI.Page
+    public partial class Alum_Carr_Materias : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
