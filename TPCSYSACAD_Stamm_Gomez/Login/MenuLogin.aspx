@@ -27,16 +27,13 @@
 
                 <asp:Button Text="Menu Acceso Alumnos"  ID="btn_Acc_Alumno"  OnClick="btn_Acc_Alumno_Click"  runat="server" CssClass="btn btn-primary" />
 
-            <%} %>
-
-
-<%--            else
+            <%} else
                if (Session["Usuarios"] != null && ((Dominio.Usuarios)Session["Usuarios"]).TipoUsuario == Dominio.TipoUsuario.Profesor) {  %>
                 <p>SOLO USUARIO NIVEL PROFESOR</p>
 
-                <asp:Button Text="Menu Acceso Docentes" ID="btn_Acc_Docente" OnClick="btn_Acc_Docente_Click" runat="server" CssClass="btn btn-primary" />
+                <%--<asp:Button Text="Menu Acceso Docentes" ID="btn_Acc_Docente" OnClick="btn_Acc_Docente_Click" runat="server" CssClass="btn btn-primary" />--%>
 
-            <%}--%>
+            <%}   %>
 
         </div>
     </div>

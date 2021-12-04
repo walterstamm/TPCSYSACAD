@@ -117,6 +117,34 @@ namespace Negocio
             }
         }
 
+        public Carreras Carrera_idUsuario()
+        {
+            AccesoDatos CarreraAlumno = new AccesoDatos();
+
+            try
+            {
+                //unacarrera.setearParametro("@id_carrera", id_Carrera);
+                CarreraAlumno.setearConsulta("select i.ID_INSCRIPCION_CARRERA, c.ID_CARRERA, c.NOMBRE_CARRERA from insc_alum_carrera i RIGHT join alumnos a on i.ALUMNO = a.ID_ALUMNO inner join carreras c on i.CARRERA = c.ID_CARRERA inner join USUARIOS u on a.ID_ALUMNO = u.ID_USUARIO where u.ID_USUARIO = " + Util.id);
+                CarreraAlumno.ejecutarLectura();
+                CarreraAlumno.Lector.Read();
+
+                Carreras usuario = new Carreras();
+                usuario.id_carrera = (string)CarreraAlumno.Lector["ID_CARRERA"];
+                usuario.nombre_carrera = (string)CarreraAlumno.Lector["NOMBRE_CARRERA"];
+
+                return usuario;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                CarreraAlumno.cerrarConexion();
+            }
+        }
+
         public void Modificar(Carreras modifCarrera)
         {
             AccesoDatos conex_Carrera = new AccesoDatos();

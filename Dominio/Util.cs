@@ -9,8 +9,8 @@ namespace Dominio
     public static class Util
     {
         public static string usuarioLogeado { get; set; }
-        public static int tipoUsuario { get; set; }
+        public static int tipoUsuario { get; set; } 
 
-        public static int id { get; set; }
+        public static int id { get; set; } //id_usuario
     }
 }

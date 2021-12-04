@@ -57,9 +57,11 @@ namespace Negocio
             try
             {
                 string valores = "values( '" + agregoAlumno.Cuil + "', '" + agregoAlumno.ApellidoNombre + "', '" + agregoAlumno.Nacionalidad + "', '" + agregoAlumno.Fecha_Nac + "', '" + agregoAlumno.Mail + "', '" + agregoAlumno.Domicilio + "', '" + agregoAlumno.Localidad_Prov + "')";
-                accesoAlumno.setearConsulta("INSERT INTO ALUMNOS(CUIL, APELLIDO_NOMBRE, NACIONALIDAD, FECHA_NAC, MAIL, DOMICILIO, LOCALIDAD_PCIA)" + valores);
-
+                accesoAlumno.setearConsulta("set dateformat 'DMY' INSERT INTO ALUMNOS(CUIL, APELLIDO_NOMBRE, NACIONALIDAD, FECHA_NAC, MAIL, DOMICILIO, LOCALIDAD_PCIA)" + valores);
                 accesoAlumno.ejectutarAccion();
+                //accesoAlumno.setearConsulta("UPDATE ALUMNOS SET USUARIOS = 'al.'"+ agregoAlumno.Cuil + " where cuil = " + agregoAlumno.Cuil);
+                //accesoAlumno.ejectutarAccion();
+
             }
             catch (Exception ex)
             {

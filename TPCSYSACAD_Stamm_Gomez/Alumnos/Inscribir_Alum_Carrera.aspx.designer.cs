@@ -11,34 +11,43 @@ namespace TPCSYSACAD_Stamm_Gomez
 {
 
 
-    public partial class Alum_Carr_Materias
+    public partial class Inscribir_Alum_Carrera
     {
 
         /// <summary>
-        /// Control lbl_Nombre_Apellido.
+        /// Control text_Id_alumno.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_Nombre_Apellido;
+        protected global::System.Web.UI.WebControls.TextBox text_Id_alumno;
 
         /// <summary>
-        /// Control lbl_NombreCarrera.
+        /// Control text_Nombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_NombreCarrera;
+        protected global::System.Web.UI.WebControls.TextBox text_Nombre;
 
         /// <summary>
-        /// Control Rep_Carr.
+        /// Control ddlCarreras.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater Rep_Carr;
+        protected global::System.Web.UI.WebControls.DropDownList ddlCarreras;
+
+        /// <summary>
+        /// Control btn_Incribir.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_Incribir;
     }
 }

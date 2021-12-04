@@ -109,6 +109,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="Alumnos\CargaAlumnos.aspx" />
+    <Content Include="Alumnos\Inscribir_Alum_Carrera.aspx" />
     <Content Include="Menu_Alumno\Alum_Carr_Materias.aspx" />
     <Content Include="Docentes\CargaDocente.aspx" />
     <Content Include="Contact.aspx" />
@@ -262,6 +263,13 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alumnos\Inscribir_Alum_Carrera.aspx.cs">
+      <DependentUpon>Inscribir_Alum_Carrera.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Alumnos\Inscribir_Alum_Carrera.aspx.designer.cs">
+      <DependentUpon>Inscribir_Alum_Carrera.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Menu_Alumno\Alum_Carr_Materias.aspx.cs">
       <DependentUpon>Alum_Carr_Materias.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

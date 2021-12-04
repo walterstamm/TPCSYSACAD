@@ -9,7 +9,7 @@ namespace Dominio
     public enum TipoUsuario
     {
         Admin    = 1,
-       // Profesor = 2,
+        Profesor = 3,
         Alumno   = 2
     }
     public class Usuarios
@@ -40,6 +40,8 @@ namespace Dominio
             TipoUsuario = admin ? TipoUsuario.Admin : TipoUsuario.Alumno; // (admin = TipoUsuario.Profesor ? TipoUsuario.Profesor : TipoUsuario.Alumno);
             //TipoUsuario = TipoUsuario == 1 ? TipoUsuario.Admin : (TipoUsuario == 2 ? TipoUsuario.Profesor : (tipousuario == 3 ? TipoUsuario.Alumno : TipoUsuario.Administrador));
 
+            Util.id = id_usuario;
+            
         }
     }
 }

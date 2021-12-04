@@ -63,6 +63,7 @@
                                     <td>
                                         <a class="btn btn-sm btn-outline-info" href='EliminarAlumno.aspx?idAlumno=<%#Eval("Idalumno") %>'><i title="Eliminar Alumno" class="fas fa-trash-alt"></i></a>
                                         <a class="btn btn-sm btn-outline-secondary" href='ModificarAlumno.aspx?idAlumno=<%#Eval("Idalumno") %>'><i title="Modificar Alumno" class="far fa-edit"></i></a>
+                                        <a class="btn btn-sm btn-outline-secondary" href='Inscribir_Alum_Carrera.aspx?idAlumno=<%#Eval("Idalumno") %>'><i title="Inscribir a Carrera" class="far fa-edit"></i></a>
                                     </td>
                                 </tr>
                             </ItemTemplate>

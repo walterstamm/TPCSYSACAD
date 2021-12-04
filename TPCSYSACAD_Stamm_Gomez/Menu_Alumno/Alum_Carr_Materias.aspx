@@ -6,8 +6,8 @@
         <div class="col-12">
             <br />
             <h5>ALUMNO:</h5>
-            <asp:Label Text="NOMBRE Y APELLIDO DEL ALUMNO" runat="server" />
-            <h3>MENÚ AUTOGESTION DE ALUMNOS.</h3>
+            <asp:Label Text="NOMBRE Y APELLIDO DEL ALUMNO" ID="lbl_Nombre_Apellido" runat="server" />
+            <h3>==== CARRERAS Y MATERIAS DE LA CARRERA ====</h3>
             <hr />
 
             
@@ -16,12 +16,15 @@
         <div class="col-4">
             <div class="col" id="main">
                 <table class="table">
+                            <h5 >NOMBRE_CARRERA</h5>
+                            <asp:Label Text="NOMBRE CARRERA" ID="lbl_NombreCarrera" runat="server" />
                     <thead>
+
+
                         <tr>
-                            <th scope="col">ID_CARRERA</th>
-                            <th scope="col">NOMBRE_CARRERA</th>
-                            <th scope="col">PLAN_AÑO</th>
-                            <th scope="col">DOCUMENTO_HABILITANTE</th>
+                            <%--<th scope="col">ID_CARRERA</th>--%>
+                            <%--<th scope="col">PLAN_AÑO</th>
+                            <th scope="col">DOCUMENTO_HABILITANTE</th>--%>
 
                         </tr>
                     </thead>
@@ -29,9 +32,9 @@
                         <asp:Repeater runat="server" ID="Rep_Carr">
                             <ItemTemplate> 
                                 <tr>
-                                    <%--<td><%#Eval("ID_CARRERA") %></td>
+
                                     <td><%#Eval("NOMBRE_CARRERA") %> </td>
-                                    <td><%#Eval("PLAN_AÑO") %> </td>
+                                    <%--<td><%#Eval("PLAN_AÑO") %> </td>
                                    
                                     <td><%#Eval("DOC_HABILITANTE") %> </td>--%>
  <%--<td><%#Eval("Fecha_Nac","{0: dd/MM/yyyy}") %> </td>--%>

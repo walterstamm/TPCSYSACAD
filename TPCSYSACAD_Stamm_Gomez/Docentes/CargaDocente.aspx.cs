@@ -13,7 +13,11 @@ namespace TPCSYSACAD_Stamm_Gomez
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Util.tipoUsuario != 2)
+            {
+                Session.Add("ERROR", "DEBERAS INGRESAR CON USUARIO ADMIN CARGADOCENTE.........");
+                Response.Redirect("../Error.aspx", false);
+            }
         }
 
         protected void btn_doc_Agregar_Click(object sender, EventArgs e)
