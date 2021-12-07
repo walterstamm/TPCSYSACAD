@@ -12,7 +12,7 @@
  Target Server Version : 15002000
  File Encoding         : 65001
 
- Date: 06/12/2021 01:08:47
+ Date: 07/12/2021 19:17:25
 */
 
 
@@ -31,21 +31,12 @@ CREATE TABLE [dbo].[Alumnos] (
   [FechaNacimiento] date  NULL,
   [Email] varchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS  NOT NULL,
   [Domicilio] varchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS  NULL,
-  [Localidad] varchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS  NULL
+  [Localidad] varchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS  NULL,
+  [Estado] int  NOT NULL
 )
 GO
 
 ALTER TABLE [dbo].[Alumnos] SET (LOCK_ESCALATION = AUTO)
-GO
-
-
--- ----------------------------
--- Records of Alumnos
--- ----------------------------
-SET IDENTITY_INSERT [dbo].[Alumnos] ON
-GO
-
-SET IDENTITY_INSERT [dbo].[Alumnos] OFF
 GO
 
 
@@ -71,16 +62,6 @@ GO
 
 
 -- ----------------------------
--- Records of AlumnosxCarrera
--- ----------------------------
-SET IDENTITY_INSERT [dbo].[AlumnosxCarrera] ON
-GO
-
-SET IDENTITY_INSERT [dbo].[AlumnosxCarrera] OFF
-GO
-
-
--- ----------------------------
 -- Table structure for AlumnosxMateria
 -- ----------------------------
 IF EXISTS (SELECT * FROM sys.all_objects WHERE object_id = OBJECT_ID(N'[dbo].[AlumnosxMateria]') AND type IN ('U'))
@@ -97,16 +78,6 @@ CREATE TABLE [dbo].[AlumnosxMateria] (
 GO
 
 ALTER TABLE [dbo].[AlumnosxMateria] SET (LOCK_ESCALATION = AUTO)
-GO
-
-
--- ----------------------------
--- Records of AlumnosxMateria
--- ----------------------------
-SET IDENTITY_INSERT [dbo].[AlumnosxMateria] ON
-GO
-
-SET IDENTITY_INSERT [dbo].[AlumnosxMateria] OFF
 GO
 
 
@@ -131,16 +102,6 @@ GO
 
 
 -- ----------------------------
--- Records of Carreras
--- ----------------------------
-SET IDENTITY_INSERT [dbo].[Carreras] ON
-GO
-
-SET IDENTITY_INSERT [dbo].[Carreras] OFF
-GO
-
-
--- ----------------------------
 -- Table structure for Cuatrimestres
 -- ----------------------------
 IF EXISTS (SELECT * FROM sys.all_objects WHERE object_id = OBJECT_ID(N'[dbo].[Cuatrimestres]') AND type IN ('U'))
@@ -154,22 +115,6 @@ CREATE TABLE [dbo].[Cuatrimestres] (
 GO
 
 ALTER TABLE [dbo].[Cuatrimestres] SET (LOCK_ESCALATION = AUTO)
-GO
-
-
--- ----------------------------
--- Records of Cuatrimestres
--- ----------------------------
-SET IDENTITY_INSERT [dbo].[Cuatrimestres] ON
-GO
-
-INSERT INTO [dbo].[Cuatrimestres] ([IdCuatrimestre], [Nombre]) VALUES (N'1', N'Primer Cuatrimestres')
-GO
-
-INSERT INTO [dbo].[Cuatrimestres] ([IdCuatrimestre], [Nombre]) VALUES (N'2', N'Segundo Cuatrimestre')
-GO
-
-SET IDENTITY_INSERT [dbo].[Cuatrimestres] OFF
 GO
 
 
@@ -199,16 +144,6 @@ GO
 
 
 -- ----------------------------
--- Records of Docentes
--- ----------------------------
-SET IDENTITY_INSERT [dbo].[Docentes] ON
-GO
-
-SET IDENTITY_INSERT [dbo].[Docentes] OFF
-GO
-
-
--- ----------------------------
 -- Table structure for Materias
 -- ----------------------------
 IF EXISTS (SELECT * FROM sys.all_objects WHERE object_id = OBJECT_ID(N'[dbo].[Materias]') AND type IN ('U'))
@@ -230,16 +165,6 @@ GO
 
 
 -- ----------------------------
--- Records of Materias
--- ----------------------------
-SET IDENTITY_INSERT [dbo].[Materias] ON
-GO
-
-SET IDENTITY_INSERT [dbo].[Materias] OFF
-GO
-
-
--- ----------------------------
 -- Table structure for MateriasxDocente
 -- ----------------------------
 IF EXISTS (SELECT * FROM sys.all_objects WHERE object_id = OBJECT_ID(N'[dbo].[MateriasxDocente]') AND type IN ('U'))
@@ -255,16 +180,6 @@ CREATE TABLE [dbo].[MateriasxDocente] (
 GO
 
 ALTER TABLE [dbo].[MateriasxDocente] SET (LOCK_ESCALATION = AUTO)
-GO
-
-
--- ----------------------------
--- Records of MateriasxDocente
--- ----------------------------
-SET IDENTITY_INSERT [dbo].[MateriasxDocente] ON
-GO
-
-SET IDENTITY_INSERT [dbo].[MateriasxDocente] OFF
 GO
 
 
@@ -289,16 +204,6 @@ GO
 
 
 -- ----------------------------
--- Records of UsuarioDocente
--- ----------------------------
-SET IDENTITY_INSERT [dbo].[UsuarioDocente] ON
-GO
-
-SET IDENTITY_INSERT [dbo].[UsuarioDocente] OFF
-GO
-
-
--- ----------------------------
 -- Table structure for Usuarios
 -- ----------------------------
 IF EXISTS (SELECT * FROM sys.all_objects WHERE object_id = OBJECT_ID(N'[dbo].[Usuarios]') AND type IN ('U'))
@@ -316,19 +221,9 @@ GO
 
 
 -- ----------------------------
--- Records of Usuarios
--- ----------------------------
-SET IDENTITY_INSERT [dbo].[Usuarios] ON
-GO
-
-SET IDENTITY_INSERT [dbo].[Usuarios] OFF
-GO
-
-
--- ----------------------------
 -- Auto increment value for Alumnos
 -- ----------------------------
-DBCC CHECKIDENT ('[dbo].[Alumnos]', RESEED, 1)
+DBCC CHECKIDENT ('[dbo].[Alumnos]', RESEED, 4)
 GO
 
 
@@ -453,7 +348,7 @@ GO
 -- ----------------------------
 -- Auto increment value for UsuarioDocente
 -- ----------------------------
-DBCC CHECKIDENT ('[dbo].[UsuarioDocente]', RESEED, 1)
+DBCC CHECKIDENT ('[dbo].[UsuarioDocente]', RESEED, 2)
 GO
 
 
@@ -469,7 +364,7 @@ GO
 -- ----------------------------
 -- Auto increment value for Usuarios
 -- ----------------------------
-DBCC CHECKIDENT ('[dbo].[Usuarios]', RESEED, 1)
+DBCC CHECKIDENT ('[dbo].[Usuarios]', RESEED, 3)
 GO
 
 
