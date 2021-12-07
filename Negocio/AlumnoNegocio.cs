@@ -19,23 +19,21 @@ namespace Negocio
  
             try
             {
-                alumno.setearConsulta("SELECT ID, CUIL, APELLIDO, NOMBRE, FECHA_NACIMIENTO, MAIL, DOMICILIO, LOCALIDAD_PCIA, USUARIO, ESTADO FROM ALUMNOS WHERE ESTADO !=2");
+                alumno.setearConsulta("SELECT Id, Cuil,Apellido,Nombre,FechaNacimiento,Email,Domicilio,Localidad,Estado FROM Alumnos WHERE Estado=1");
                 alumno.ejecutarLectura();
 
                 while (alumno.Lector.Read())
                 {
                     Alumno aux1 = new Alumno();
-                    aux1.Idalumno = (int)alumno.Lector["ID_ALUMNO"];
-                    aux1.Cuil = (string)alumno.Lector["CUIL"];
-                    aux1.Apellido = (string)alumno.Lector["APELLIDO"];
-                    aux1.Nombre = (string)alumno.Lector["NOMBRE"];
-                    //aux1.Nacionalidad = (string)alumno.Lector["NACIONALIDAD"];
-                    aux1.Fecha_Nac = (DateTime)alumno.Lector["FECHA_NAC"];
-                    aux1.Mail = (string)alumno.Lector["MAIL"];
-                    aux1.Domicilio = (string)alumno.Lector["DOMICILIO"];
-                    aux1.Localidad_Prov = (string)alumno.Lector["LOCALIDAD_PCIA"];
-                    //aux1.Usuario = (string)alumno.Lector["USUARIO"];
-                    aux1.Estado = (int)alumno.Lector["ESTADO"];
+                    aux1.Idalumno = (int)alumno.Lector["Id"];
+                    aux1.Cuil = (string)alumno.Lector["Cuil"];
+                    aux1.Apellido = (string)alumno.Lector["Apellido"];
+                    aux1.Nombre = (string)alumno.Lector["Nombre"];
+                    aux1.Fecha_Nac = (DateTime)alumno.Lector["FechaNacimiento"];
+                    aux1.Mail = (string)alumno.Lector["Email"];
+                    aux1.Domicilio = (string)alumno.Lector["Domicilio"];
+                    aux1.Localidad_Prov = (string)alumno.Lector["Localidad"];
+                    aux1.Estado = (int)alumno.Lector["Estado"];
 
                     lis_Alumno.Add(aux1);
                 }
@@ -57,8 +55,8 @@ namespace Negocio
             AccesoDatos accesoAlumno = new AccesoDatos();
             try
             {
-                string valores = "values( '" + agregoAlumno.Cuil + "', '" + agregoAlumno.Apellido + "', '" + agregoAlumno.Nombre + "', '" + agregoAlumno.Nacionalidad + "', '" + agregoAlumno.Fecha_Nac + "', '" + agregoAlumno.Mail + "', '" + agregoAlumno.Domicilio + "', '" + agregoAlumno.Localidad_Prov + "')";
-                accesoAlumno.setearConsulta("set dateformat 'DMY' INSERT INTO ALUMNOS(CUIL, APELLIDO, NOMBRE, NACIONALIDAD, FECHA_NAC, MAIL, DOMICILIO, LOCALIDAD_PCIA)" + valores);
+                string valores = "values( '" + agregoAlumno.Cuil + "', '" + agregoAlumno.Apellido + "', '" + agregoAlumno.Nombre + "', '" + agregoAlumno.Fecha_Nac + "', '" + agregoAlumno.Mail + "', '" + agregoAlumno.Domicilio + "', '" + agregoAlumno.Localidad_Prov + "',"+1+")";
+                accesoAlumno.setearConsulta("set dateformat 'DMY' INSERT INTO ALUMNOS(Cuil, Apellido, Nombre,FechaNacimiento, Email, Domicilio,Localidad,Estado)" + valores);
                 accesoAlumno.ejectutarAccion();
                 //accesoAlumno.setearConsulta("UPDATE ALUMNOS SET USUARIOS = 'al.'"+ agregoAlumno.Cuil + " where cuil = " + agregoAlumno.Cuil);
                 //accesoAlumno.ejectutarAccion();
@@ -81,7 +79,7 @@ namespace Negocio
             alumno = new AccesoDatos();
             try
             {
-                alumno.setearConsulta("UPDATE ALUMNOS SET ESTADO = 2 WHERE ID_ALUMNO = " + id);
+                alumno.setearConsulta("UPDATE ALUMNOS SET Estado = 0 WHERE ID_ALUMNO = " + id);
                 alumno.ejectutarAccion();
             }
             catch (Exception ex)
@@ -111,7 +109,7 @@ namespace Negocio
                 aux.Cuil = (string)UnAlumno.Lector["CUIL"];
                 aux.Apellido = (string)UnAlumno.Lector["APELLIDO"];
                 aux.Nombre = (string)UnAlumno.Lector["NOMBRE"];
-                aux.Nacionalidad = (string)UnAlumno.Lector["NACIONALIDAD"];
+                //aux.Nacionalidad = (string)UnAlumno.Lector["NACIONALIDAD"];
                 aux.Fecha_Nac = (DateTime)UnAlumno.Lector["FECHA_NAC"];
                 aux.Mail = (string)UnAlumno.Lector["MAIL"];
                 aux.Domicilio = (string)UnAlumno.Lector["DOMICILIO"];
@@ -143,7 +141,7 @@ namespace Negocio
                 accesoModificar.setearParametro("@cuil", modificarAlumno.Cuil);
                 accesoModificar.setearParametro("@apellido", modificarAlumno.Apellido);
                 accesoModificar.setearParametro("@nombre", modificarAlumno.Nombre);
-                accesoModificar.setearParametro("@nacionalidad", modificarAlumno.Nacionalidad);
+                //accesoModificar.setearParametro("@nacionalidad", modificarAlumno.Nacionalidad);
                 accesoModificar.setearParametro("@fecha_nac", modificarAlumno.Fecha_Nac);
                 accesoModificar.setearParametro("@mail", modificarAlumno.Mail);
                 accesoModificar.setearParametro("@domicilio", modificarAlumno.Domicilio);

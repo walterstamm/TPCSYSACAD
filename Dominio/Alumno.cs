@@ -13,7 +13,7 @@ namespace Dominio
         public string Apellido{ get; set; }
         public string Nombre { get; set; }
 
-        public string Nacionalidad { get; set; }
+        //public string Nacionalidad { get; set; }
         public DateTime Fecha_Nac { get; set; }
         public string Mail { get; set; }
         public string Domicilio { get; set; } //Calle y nro depto

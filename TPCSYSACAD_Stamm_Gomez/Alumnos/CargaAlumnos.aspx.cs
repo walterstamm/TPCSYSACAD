@@ -31,7 +31,7 @@ namespace TPCSYSACAD_Stamm_Gomez
                 nuevoAlumno.Cuil = (text_Cuil.Text);
                 nuevoAlumno.Apellido= (text_Apellido.Text);
                 nuevoAlumno.Nombre = (text_Nombre.Text);
-                nuevoAlumno.Nacionalidad = (text_Nacionalidad.Text);
+               // nuevoAlumno.Nacionalidad = (text_Nacionalidad.Text);
                 nuevoAlumno.Fecha_Nac = DateTime.Parse(text_FechaNac.Text);
                 nuevoAlumno.Mail = (text_Mail.Text);
                 nuevoAlumno.Domicilio = (text_Domicilio.Text);
