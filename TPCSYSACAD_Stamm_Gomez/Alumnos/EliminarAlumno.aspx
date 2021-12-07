@@ -17,37 +17,37 @@
 
             <div class="form-group">
                 <asp:Label Text="Cuil" runat="server"  Width="200px" />
-                <asp:TextBox runat="server" ID="text_cuil" Enabled="true" />
+                <asp:TextBox runat="server" ID="text_cuil" Enabled="false" />
             </div>
 
             <div class="form-group">
                 <asp:Label Text="Apellido" runat="server" Width="200px"  />
-                <asp:TextBox runat="server"  ID="text_apellido" Enabled="true" />
+                <asp:TextBox runat="server"  ID="text_apellido" Enabled="false" />
             </div>
 
             <div class="form-group">
                 <asp:Label Text="Nombre" runat="server" Width="200px"  />
-                <asp:TextBox runat="server" ID="text_nombre" Enabled="true" />
+                <asp:TextBox runat="server" ID="text_nombre" Enabled="false" />
             </div>
 
             <div class="form-group">
                 <asp:Label Text="Fecha de Nacimiento" runat="server" Width="200px"  />
-                <asp:TextBox runat="server" ID="text_fechanacimiento" Enabled="true"  />
+                <asp:TextBox runat="server" ID="text_fechanacimiento" Enabled="false"  />
             </div>
 
             <div class="form-group">
                 <asp:Label Text="Email" runat="server" Width="200px"  />
-                <asp:TextBox runat="server" ID="text_mail" Enabled="true" />
+                <asp:TextBox runat="server" ID="text_mail" Enabled="false" />
             </div>
 
             <div class="form-group">
                 <asp:Label Text="Domicilio" runat="server" Width="200px" />
-                <asp:TextBox runat="server" ID="text_domicilio" Enabled="true"  />
+                <asp:TextBox runat="server" ID="text_domicilio" Enabled="false"  />
             </div>
 
             <div class="form-group">
                 <asp:Label Text="Localidad" runat="server" Width="200px" />
-                <asp:TextBox runat="server" ID="text_localidadpcia" Enabled="true"/>
+                <asp:TextBox runat="server" ID="text_localidadpcia" Enabled="false"/>
             </div>
 
 

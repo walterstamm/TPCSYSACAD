@@ -79,7 +79,7 @@ namespace Negocio
             alumno = new AccesoDatos();
             try
             {
-                alumno.setearConsulta("UPDATE ALUMNOS SET Estado = 0 WHERE ID_ALUMNO = " + id);
+                alumno.setearConsulta("UPDATE ALUMNOS SET Estado = 0 WHERE Id = " + id);
                 alumno.ejectutarAccion();
             }
             catch (Exception ex)
@@ -100,20 +100,20 @@ namespace Negocio
             try
             {
                 //UnAlumno.setearParametro("@idAlumno", id_alumno);
-                UnAlumno.setearConsulta("SELECT  ID_ALUMNO, CUIL, APELLIDO, NOMBRE, NACIONALIDAD, FECHA_NAC, MAIL, DOMICILIO, LOCALIDAD_PCIA FROM ALUMNOS WHERE ID_ALUMNO = " + id_alumno);
+                UnAlumno.setearConsulta("SELECT Id, Cuil,Apellido,Nombre,FechaNacimiento,Email,Domicilio,Localidad FROM ALUMNOS WHERE Id = " + id_alumno);
                 UnAlumno.ejecutarLectura();
                 UnAlumno.Lector.Read();
 
                 Alumno aux = new Alumno();
-                aux.Idalumno = (int)UnAlumno.Lector["ID_ALUMNO"];
-                aux.Cuil = (string)UnAlumno.Lector["CUIL"];
-                aux.Apellido = (string)UnAlumno.Lector["APELLIDO"];
-                aux.Nombre = (string)UnAlumno.Lector["NOMBRE"];
+                aux.Idalumno = (int)UnAlumno.Lector["Id"];
+                aux.Cuil = (string)UnAlumno.Lector["Cuil"];
+                aux.Apellido = (string)UnAlumno.Lector["Apellido"];
+                aux.Nombre = (string)UnAlumno.Lector["Nombre"];
                 //aux.Nacionalidad = (string)UnAlumno.Lector["NACIONALIDAD"];
-                aux.Fecha_Nac = (DateTime)UnAlumno.Lector["FECHA_NAC"];
-                aux.Mail = (string)UnAlumno.Lector["MAIL"];
-                aux.Domicilio = (string)UnAlumno.Lector["DOMICILIO"];
-                aux.Localidad_Prov = (string)UnAlumno.Lector["LOCALIDAD_PCIA"];
+                aux.Fecha_Nac = (DateTime)UnAlumno.Lector["FechaNacimiento"];
+                aux.Mail = (string)UnAlumno.Lector["Email"];
+                aux.Domicilio = (string)UnAlumno.Lector["Domicilio"];
+                aux.Localidad_Prov = (string)UnAlumno.Lector["Localidad"];
                 //aux.Usuario = (string)UnAlumno.Lector["USUARIO"];
                 //aux.Estado = (int)UnAlumno.Lector["ESTADO"];
 
