@@ -49,7 +49,7 @@
                                     <td><%#Eval("APELLIDO") %> </td>
                                     <td><%#Eval("NOMBRE") %> </td>
                                     <%--<td><%#Eval("Nacionalidad") %> </td>--%>
-                                    <td><%#Eval("Fecha_Nac","{0: dd/MM/yyyy}") %> </td>
+                                    <td><%#Eval("FECHANACIMIENTO","{0: dd/MM/yyyy}") %> </td>
                                     <td><%#Eval("EMAIL") %> </td>
                                     <td><%#Eval("DOMICILIO") %> </td>
                                     <%--<td><%#Eval("Localidad_Prov") %> </td>--%>
