@@ -22,12 +22,13 @@ namespace TPCSYSACAD_Stamm_Gomez
                 eliminarDocente = conex_Docente.un_docente(docente);
                 text_doc_iddocente.Text = eliminarDocente.Iddocente.ToString();
                 text_doc_cuil.Text = eliminarDocente.Cuil;
-                text_doc_apellidonombre.Text = eliminarDocente.ApellidoNombre;
+                text_doc_apellido.Text = eliminarDocente.Apellido;
+                text_doc_nombre.Text = eliminarDocente.Nombre;
                 text_doc_nacionalidad.Text = eliminarDocente.Nacionalidad;
-                text_doc_fechanacimiento.Text = eliminarDocente.Fecha_Nac.ToString();
-                text_doc_mail.Text = eliminarDocente.Mail;
+                text_doc_fechanacimiento.Text = eliminarDocente.FechaNacimiento.ToString();
+                text_doc_mail.Text = eliminarDocente.EMail;
                 text_doc_domicilio.Text = eliminarDocente.Domicilio;
-                text_doc_localidadpcia.Text = eliminarDocente.Localidad_Prov;
+                //text_doc_localidadpcia.Text = eliminarDocente.Localidad_Prov;
                 //text_doc_usuario.Text = eliminarDocente.Usuario;
                 //text_doc_Estado.Text = eliminarDocente.Estado;
 

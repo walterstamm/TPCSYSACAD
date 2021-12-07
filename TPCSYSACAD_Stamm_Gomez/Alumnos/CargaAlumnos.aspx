@@ -10,10 +10,15 @@
     </div>
 
     <div>
-        <asp:Label Text="APELLIDO Y NOMBRE" runat="server" Width="160px" />
-        <asp:TextBox ID="text_ApellidoNombre" runat="server" />
+        <asp:Label Text="APELLIDO" runat="server" Width="160px" />
+        <asp:TextBox ID="text_Apellido" runat="server" />
     </div>
     
+    <div>
+        <asp:Label Text="NOMBRE" runat="server" Width="160px" />
+        <asp:TextBox ID="text_Nombre" runat="server" />
+    </div>
+
     <div>
         <asp:Label Text="NACIONALIDAD" runat="server" Width="160px" />
         <asp:TextBox ID="text_Nacionalidad" runat="server" />

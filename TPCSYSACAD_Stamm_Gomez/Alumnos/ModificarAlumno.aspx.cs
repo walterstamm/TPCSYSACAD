@@ -25,7 +25,8 @@ namespace TPCSYSACAD_Stamm_Gomez
                     modificarAlumno = conex_Modif.Un_alumno(IdAlumno);
                     text_Mod_idalumno.Text = modificarAlumno.Idalumno.ToString();
                     text_Mod_cuil.Text = modificarAlumno.Cuil;
-                    text_Mod_apellidonombre.Text = modificarAlumno.ApellidoNombre;
+                    text_Mod_apellido.Text = modificarAlumno.Apellido;
+                    text_Mod_Nombre.Text = modificarAlumno.Nombre;
                     text_Mod_nacionalidad.Text = modificarAlumno.Nacionalidad;
                     text_Mod_fechanac.Text = modificarAlumno.Fecha_Nac.ToString();
                     text_Mod_mail.Text = modificarAlumno.Mail;
@@ -44,7 +45,8 @@ namespace TPCSYSACAD_Stamm_Gomez
 
             modif.Idalumno = int.Parse(text_Mod_idalumno.Text);
             modif.Cuil = text_Mod_cuil.Text;
-            modif.ApellidoNombre = text_Mod_apellidonombre.Text;
+            modif.Apellido = text_Mod_apellido.Text;
+            modif.Nombre = text_Mod_Nombre.Text;
             modif.Nacionalidad = text_Mod_nacionalidad.Text;
             modif.Fecha_Nac = DateTime.Parse(text_Mod_fechanac.Text);
             modif.Mail = text_Mod_mail.Text;

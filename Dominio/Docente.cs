@@ -10,13 +10,14 @@ namespace Dominio
     {
         public int Iddocente { get; set; }
         public string Cuil { get; set; }
-        public string ApellidoNombre { get; set; }
+        public string Apellido { get; set; }
+        public string Nombre { get; set; }
         public string Nacionalidad { get; set; }
-        public DateTime Fecha_Nac { get; set; }
-        public string Mail { get; set; }
+        public DateTime FechaNacimiento { get; set; }
+        public string EMail { get; set; }
         public string Domicilio { get; set; } //Calle y nro depto
-        public string Localidad_Prov { get; set; } //Localidad y Provincia
-        public string Usuario { get; set; }
+        //public string Localidad_Prov { get; set; } //Localidad y Provincia
+        public int UsuarioEstado { get; set; }
         public int Estado { get; set; } //0, 1, 2        
     }
 }

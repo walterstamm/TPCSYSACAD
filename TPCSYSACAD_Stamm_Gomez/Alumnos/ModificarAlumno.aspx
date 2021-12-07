@@ -33,9 +33,16 @@
                             <asp:TextBox runat="server" ID="text_Mod_cuil" Width="200px" style="text-align: center" />
                         </div>
                         <div class="form-group">
-                            <asp:Label Text="APELLIDO Y NOMBRE" runat="server" Width="200px"/>
-                            <asp:TextBox runat="server" ID="text_Mod_apellidonombre" Width="200px" />
+                            <asp:Label Text="APELLIDOS" runat="server" Width="200px"/>
+                            <asp:TextBox runat="server" ID="text_Mod_apellido" Width="200px" />
                         </div>
+                        <div class="form-group">
+                            <asp:Label Text="NOMBRES" runat="server" width="200px"/>
+                            <asp:TextBox runat="server" ID="text_Mod_Nombre" Width="200px"/>    
+
+                        </div>
+
+
                         <div class="form-group">
                             <asp:Label Text="NACIONALIDAD" runat="server" Width="200px" />
                             <asp:TextBox runat="server" ID="text_Mod_nacionalidad" Width="200px"/>

@@ -24,13 +24,22 @@ namespace TPCSYSACAD_Stamm_Gomez
         protected global::System.Web.UI.WebControls.TextBox text_Cuil;
 
         /// <summary>
-        /// Control text_ApellidoNombre.
+        /// Control text_Apellido.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox text_ApellidoNombre;
+        protected global::System.Web.UI.WebControls.TextBox text_Apellido;
+
+        /// <summary>
+        /// Control text_Nombre.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox text_Nombre;
 
         /// <summary>
         /// Control text_Nacionalidad.

@@ -26,16 +26,17 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">CUIL_DOCENTE</th>
-                            <th scope="col">APELLIDO Y NOMBRE</th>
+                            <th scope="col">ID_DOC</th>
+                            <th scope="col">CUIL_DOCENTE    </th>
+                            <th scope="col">APELLIDO</th>
+                            <th scope="col">NOMBRE</th>
                             <%--<th scope="col">NACIONALIDAD</th>--%>
-                            <th scope="col">FECHA NAC</th>
+                            <th scope="col">FECHA NACIMIENTO</th>
                             <th scope="col">CORREO ELECTRONICO</th>
                             <th scope="col">DOMICILIO........</th>
-                            <th scope="col">LOCALIDAD - PCIA</th>
-                            <%--<th scope="col">USUARIO</th>
-                            <th scope="col">ESTADO ACADEMICO</th>--%>
+                            <%--<th scope="col">LOCALIDAD - PCIA</th>--%>
+                            <th scope="col">USUARIOESTADO</th>
+                            <th scope="col">ESTADO</th>
 
                         </tr>
                     </thead>
@@ -43,19 +44,20 @@
                         <asp:Repeater runat="server" ID="RepDocente">
                             <ItemTemplate> 
                                 <tr>
-                                    <td><%#Eval("Iddocente") %></td>
-                                    <td><%#Eval("Cuil") %> </td>
-                                    <td><%#Eval("ApellidoNombre") %> </td>
+                                    <td><%#Eval("IDDOCENTE") %></td>
+                                    <td><%#Eval("CUIL") %> </td>
+                                    <td><%#Eval("APELLIDO") %> </td>
+                                    <td><%#Eval("NOMBRE") %> </td>
                                     <%--<td><%#Eval("Nacionalidad") %> </td>--%>
                                     <td><%#Eval("Fecha_Nac","{0: dd/MM/yyyy}") %> </td>
-                                    <td><%#Eval("Mail") %> </td>
-                                    <td><%#Eval("Domicilio") %> </td>
-                                    <td><%#Eval("Localidad_Prov") %> </td>
-                                    <%--<td><%#Eval("Usuario") %> </td>--%>
-                                    <%--<td><%#Eval("Estado") %> </td>--%>
+                                    <td><%#Eval("EMAIL") %> </td>
+                                    <td><%#Eval("DOMICILIO") %> </td>
+                                    <%--<td><%#Eval("Localidad_Prov") %> </td>--%>
+                                    <td><%#Eval("USUARIOESTADO") %> </td>
+                                    <td><%#Eval("ESTADO") %> </td>
                                     <td>
-                                        <a class="btn btn-sm btn-outline-info" href='EliminarDocente.aspx?idDocente=<%#Eval("Iddocente") %>'><i title="Eliminar Docente" class="fas fa-trash-alt"></i></a>
-                                        <a class="btn btn-sm btn-outline-secondary" href='ModificarDocente.aspx?idDocente=<%#Eval("Iddocente") %>'><i title="Modificar Docente" class="far fa-edit"></i></a>
+                                        <a class="btn btn-sm btn-outline-info" href='EliminarDocente.aspx?idDocente=<%#Eval("IDDOCENTE") %>'><i title="Eliminar Docente" class="fas fa-trash-alt"></i></a>
+                                        <a class="btn btn-sm btn-outline-secondary" href='ModificarDocente.aspx?idDocente=<%#Eval("IDDOCENTE") %>'><i title="Modificar Docente" class="far fa-edit"></i></a>
                                     </td>
                                 </tr>
                             </ItemTemplate>

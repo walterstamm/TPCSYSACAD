@@ -21,16 +21,17 @@ namespace TPCSYSACAD_Stamm_Gomez
                 if (Request.QueryString["idDocente"] != null)
                 {
                     int idDoc = int.Parse(Request.QueryString["idDocente"].ToString());
-                    Session["iddocente"] = idDoc;
+                    Session["IDDOCENTE"] = idDoc;
                     modifDocente = conex_Docente.un_docente(idDoc);
                     text_Mod_iddocente.Text = modifDocente.Iddocente.ToString();
                     text_Mod_cuil.Text = modifDocente.Cuil;
-                    text_Mod_apellidonombre.Text = modifDocente.ApellidoNombre;
+                    text_Mod_apellido.Text = modifDocente.Apellido;
+                    text_Mod_nombre.Text = modifDocente.Nombre;
                     text_Mod_nacionalidad.Text = modifDocente.Nacionalidad;
-                    text_Mod_fechanac.Text = modifDocente.Fecha_Nac.ToString();
-                    text_Mod_mail.Text = modifDocente.Mail;
+                    text_Mod_fechanac.Text = modifDocente.FechaNacimiento .ToString();
+                    text_Mod_mail.Text = modifDocente.EMail;
                     text_Mod_Domicilio.Text = modifDocente.Domicilio;
-                    text_Mod_Localidadpcia.Text = modifDocente.Localidad_Prov;
+                    //text_Mod_Localidadpcia.Text = modifDocente.Localidad_Prov;
                 }
             }
 
@@ -42,12 +43,13 @@ namespace TPCSYSACAD_Stamm_Gomez
 
             modif.Iddocente = int.Parse(text_Mod_iddocente.Text);
             modif.Cuil = text_Mod_cuil.Text;
-            modif.ApellidoNombre = text_Mod_apellidonombre.Text;
+            modif.Apellido = text_Mod_apellido.Text;
+            modif.Nombre = text_Mod_nombre.Text;
             modif.Nacionalidad = text_Mod_nacionalidad.Text;
-            modif.Fecha_Nac = DateTime.Parse(text_Mod_fechanac.Text);
-            modif.Mail = text_Mod_mail.Text;
+            modif.FechaNacimiento = DateTime.Parse(text_Mod_fechanac.Text);
+            modif.EMail = text_Mod_mail.Text;
             modif.Domicilio = text_Mod_Domicilio.Text;
-            modif.Localidad_Prov = text_Mod_Localidadpcia.Text;
+            //modif.Localidad_Prov = text_Mod_Localidadpcia.Text;
 
             conex_Docente.modificar(modif);
             Response.Redirect("ListadoDocente.aspx");

@@ -19,7 +19,7 @@ namespace Negocio
  
             try
             {
-                alumno.setearConsulta("SELECT ID_ALUMNO, CUIL, APELLIDO_NOMBRE, NACIONALIDAD, FECHA_NAC, MAIL, DOMICILIO, LOCALIDAD_PCIA, USUARIO, ESTADO FROM ALUMNOS WHERE ESTADO !=2");
+                alumno.setearConsulta("SELECT ID, CUIL, APELLIDO, NOMBRE, FECHA_NACIMIENTO, MAIL, DOMICILIO, LOCALIDAD_PCIA, USUARIO, ESTADO FROM ALUMNOS WHERE ESTADO !=2");
                 alumno.ejecutarLectura();
 
                 while (alumno.Lector.Read())
@@ -27,8 +27,9 @@ namespace Negocio
                     Alumno aux1 = new Alumno();
                     aux1.Idalumno = (int)alumno.Lector["ID_ALUMNO"];
                     aux1.Cuil = (string)alumno.Lector["CUIL"];
-                    aux1.ApellidoNombre = (string)alumno.Lector["APELLIDO_NOMBRE"];
-                    aux1.Nacionalidad = (string)alumno.Lector["NACIONALIDAD"];
+                    aux1.Apellido = (string)alumno.Lector["APELLIDO"];
+                    aux1.Nombre = (string)alumno.Lector["NOMBRE"];
+                    //aux1.Nacionalidad = (string)alumno.Lector["NACIONALIDAD"];
                     aux1.Fecha_Nac = (DateTime)alumno.Lector["FECHA_NAC"];
                     aux1.Mail = (string)alumno.Lector["MAIL"];
                     aux1.Domicilio = (string)alumno.Lector["DOMICILIO"];
@@ -56,8 +57,8 @@ namespace Negocio
             AccesoDatos accesoAlumno = new AccesoDatos();
             try
             {
-                string valores = "values( '" + agregoAlumno.Cuil + "', '" + agregoAlumno.ApellidoNombre + "', '" + agregoAlumno.Nacionalidad + "', '" + agregoAlumno.Fecha_Nac + "', '" + agregoAlumno.Mail + "', '" + agregoAlumno.Domicilio + "', '" + agregoAlumno.Localidad_Prov + "')";
-                accesoAlumno.setearConsulta("set dateformat 'DMY' INSERT INTO ALUMNOS(CUIL, APELLIDO_NOMBRE, NACIONALIDAD, FECHA_NAC, MAIL, DOMICILIO, LOCALIDAD_PCIA)" + valores);
+                string valores = "values( '" + agregoAlumno.Cuil + "', '" + agregoAlumno.Apellido + "', '" + agregoAlumno.Nombre + "', '" + agregoAlumno.Nacionalidad + "', '" + agregoAlumno.Fecha_Nac + "', '" + agregoAlumno.Mail + "', '" + agregoAlumno.Domicilio + "', '" + agregoAlumno.Localidad_Prov + "')";
+                accesoAlumno.setearConsulta("set dateformat 'DMY' INSERT INTO ALUMNOS(CUIL, APELLIDO, NOMBRE, NACIONALIDAD, FECHA_NAC, MAIL, DOMICILIO, LOCALIDAD_PCIA)" + valores);
                 accesoAlumno.ejectutarAccion();
                 //accesoAlumno.setearConsulta("UPDATE ALUMNOS SET USUARIOS = 'al.'"+ agregoAlumno.Cuil + " where cuil = " + agregoAlumno.Cuil);
                 //accesoAlumno.ejectutarAccion();
@@ -101,14 +102,15 @@ namespace Negocio
             try
             {
                 //UnAlumno.setearParametro("@idAlumno", id_alumno);
-                UnAlumno.setearConsulta("SELECT  ID_ALUMNO, CUIL, APELLIDO_NOMBRE, NACIONALIDAD, FECHA_NAC, MAIL, DOMICILIO, LOCALIDAD_PCIA FROM ALUMNOS WHERE ID_ALUMNO = " + id_alumno);
+                UnAlumno.setearConsulta("SELECT  ID_ALUMNO, CUIL, APELLIDO, NOMBRE, NACIONALIDAD, FECHA_NAC, MAIL, DOMICILIO, LOCALIDAD_PCIA FROM ALUMNOS WHERE ID_ALUMNO = " + id_alumno);
                 UnAlumno.ejecutarLectura();
                 UnAlumno.Lector.Read();
 
                 Alumno aux = new Alumno();
                 aux.Idalumno = (int)UnAlumno.Lector["ID_ALUMNO"];
                 aux.Cuil = (string)UnAlumno.Lector["CUIL"];
-                aux.ApellidoNombre = (string)UnAlumno.Lector["APELLIDO_NOMBRE"];
+                aux.Apellido = (string)UnAlumno.Lector["APELLIDO"];
+                aux.Nombre = (string)UnAlumno.Lector["NOMBRE"];
                 aux.Nacionalidad = (string)UnAlumno.Lector["NACIONALIDAD"];
                 aux.Fecha_Nac = (DateTime)UnAlumno.Lector["FECHA_NAC"];
                 aux.Mail = (string)UnAlumno.Lector["MAIL"];
@@ -139,7 +141,8 @@ namespace Negocio
                 
                 accesoModificar.setearParametro("@id_alumno", modificarAlumno.Idalumno);
                 accesoModificar.setearParametro("@cuil", modificarAlumno.Cuil);
-                accesoModificar.setearParametro("@apellido_nombre", modificarAlumno.ApellidoNombre);
+                accesoModificar.setearParametro("@apellido", modificarAlumno.Apellido);
+                accesoModificar.setearParametro("@nombre", modificarAlumno.Nombre);
                 accesoModificar.setearParametro("@nacionalidad", modificarAlumno.Nacionalidad);
                 accesoModificar.setearParametro("@fecha_nac", modificarAlumno.Fecha_Nac);
                 accesoModificar.setearParametro("@mail", modificarAlumno.Mail);

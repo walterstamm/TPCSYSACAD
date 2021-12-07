@@ -8,21 +8,22 @@ namespace Dominio
 {
     public enum TipoUsuario
     {
-        Admin    = 1,
-        Profesor = 3,
+        Admin    = 3,
+        Profesor  = 1,
         Alumno   = 2
     }
     public class Usuarios
     {
-        public int id_usuario { get; set; }
-        public string User { get; set; }
-        public string Pass { get; set; }
+        public int id { get; set; }
+        public string usuario { get; set; }
+        public string password { get; set; }
         public TipoUsuario TipoUsuario { get; set; }
+        public int idDocente { get; set; }
         //public Usuarios(string user, string pass, int Usu)
         public Usuarios(string user, string pass, bool admin)
         {
-            User = user;
-            Pass = pass;
+            usuario = user;
+            password = pass;
 
             //if (Usu == 1)
             //{
@@ -37,10 +38,10 @@ namespace Dominio
             //    TipoUsuario = TipoUsuario.Alumno;
             //}
             //pregunta por el tipo de usuario
-            TipoUsuario = admin ? TipoUsuario.Admin : TipoUsuario.Alumno; // (admin = TipoUsuario.Profesor ? TipoUsuario.Profesor : TipoUsuario.Alumno);
+            //--TipoUsuario = admin ? TipoUsuario.Admin : TipoUsuario.Alumno; // (admin = TipoUsuario.Profesor ? TipoUsuario.Profesor : TipoUsuario.Alumno);
             //TipoUsuario = TipoUsuario == 1 ? TipoUsuario.Admin : (TipoUsuario == 2 ? TipoUsuario.Profesor : (tipousuario == 3 ? TipoUsuario.Alumno : TipoUsuario.Administrador));
 
-            Util.id = id_usuario;
+            //--Util.id = id_usuario;
             
         }
     }

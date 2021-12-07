@@ -35,7 +35,8 @@
                         <tr>
                             <th scope="col">ID</th>
                             <th scope="col">CUIL_ALUMNO</th>
-                            <th scope="col">APELLIDO Y NOMBRE</th>
+                            <th scope="col">APELLIDO</th>
+                            <th scope="col">NOMBRE</th>
                             <%--<th scope="col">NACIONALIDAD</th>--%>
                             <th scope="col">FECHA NAC</th>
                             <th scope="col">CORREO ELECTRONICO</th>
@@ -52,7 +53,8 @@
                                 <tr>
                                     <td><%#Eval("Idalumno") %></td>
                                     <td><%#Eval("Cuil") %> </td>
-                                    <td><%#Eval("ApellidoNombre") %> </td>
+                                    <td><%#Eval("Apellido") %> </td>
+                                    <td><%#Eval("Nombre") %> </td>
                                     <%--<td><%#Eval("Nacionalidad") %> </td>--%>
                                     <td><%#Eval("Fecha_Nac","{0: dd/MM/yyyy}") %> </td>
                                     <td><%#Eval("Mail") %> </td>

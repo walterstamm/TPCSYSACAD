@@ -13,8 +13,13 @@
     </div>
 
     <div class="form-group">
-        <asp:Label Text="APELLIDO Y NOMBRE" runat="server" Width="200px" />
-        <asp:TextBox runat="server" ID="text_apellidonombre" Enabled="true"/>
+        <asp:Label Text="APELLIDOS" runat="server" Width="200px" />
+        <asp:TextBox runat="server" ID="text_apellido" Enabled="true"/>
+    </div>
+
+    <div class="form-group">
+        <asp:Label Text="NOMBRES" runat="server" Width="200px" />
+        <asp:TextBox runat="server" ID="text_nombre" Enabled="true"/>
     </div>
 
     <div class="form-group">

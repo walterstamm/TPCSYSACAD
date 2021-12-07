@@ -15,15 +15,15 @@ namespace Negocio
 
             try
             {
-                conex_usuario.setearConsulta("SELECT ID_USUARIO, TIPOUSUARIO FROM USUARIOS WHERE USUARIO = @usuario and PASSWARD = @passward");
-                conex_usuario.setearParametro("@usuario", usuario.User);
-                conex_usuario.setearParametro("@passward", usuario.Pass);
+                conex_usuario.setearConsulta("select ud.id, ud.usuario, ud.password, u.nombre, ud.tipousuario, ud.iddocente from UsuarioDocente ud inner join Usuarios u on ud.TipoUsuario=u.id where ud.Usuario = @usuario and ud.Password = @password");
+                conex_usuario.setearParametro("@usuario", usuario.usuario);
+                conex_usuario.setearParametro("@password", usuario.password);
 
                 conex_usuario.ejecutarLectura();
 
                 while (conex_usuario.Lector.Read())
                 {
-                    usuario.id_usuario = (int)conex_usuario.Lector["ID_USUARIO"];
+                    usuario.id = (int)conex_usuario.Lector["ID"];
                     usuario.TipoUsuario = (int)(conex_usuario.Lector["TIPOUSUARIO"]) == 2 ? TipoUsuario.Alumno : TipoUsuario.Admin;
 
                     return true; //SI TRAE EL USUARIO LE ASIGNA LA PASSWARD Y DEVUELVE TRUE.

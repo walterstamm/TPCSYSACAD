@@ -21,7 +21,9 @@ namespace TPCSYSACAD_Stamm_Gomez
                 Session["Idalumno"] = IdAlumno;
                 Al_Inscripcion = al_inscripcion.Un_alumno(IdAlumno);
                 text_Id_alumno.Text = Al_Inscripcion.Idalumno.ToString();
-                text_Nombre.Text = Al_Inscripcion.ApellidoNombre;
+                text_Apellido.Text = Al_Inscripcion.Apellido;
+                text_Nombre.Text = Al_Inscripcion.Nombre;
+                
             }
 
             try
