@@ -13,7 +13,7 @@ namespace TPCSYSACAD_Stamm_Gomez
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Util.tipoUsuario != 2)
+            if (Util.tipoUsuario == 2)
             {
                 Session.Add("ERROR", "DEBERAS INGRESAR CON USUARIO ADMIN CARGADOCENTE.........");
                 Response.Redirect("../Error.aspx", false);
@@ -34,11 +34,9 @@ namespace TPCSYSACAD_Stamm_Gomez
                 nuevoDocente.FechaNacimiento = DateTime.Parse(text_doc_FechaNac.Text);
                 nuevoDocente.EMail = text_doc_Mail.Text;
                 nuevoDocente.Domicilio = text_doc_Domicilio.Text;
-                //nuevoDocente.Localidad_Prov = text_doc_Localidad.Text;
-                //nuevoDocente.Usuario = (string)("null");
-                //nuevoDocente.Estado = int.Parse("0");
 
                 docenteNegocio.agregar(nuevoDocente);
+                
             }
             catch (Exception)
             {
