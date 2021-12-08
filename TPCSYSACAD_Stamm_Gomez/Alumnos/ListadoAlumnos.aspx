@@ -16,7 +16,7 @@
                             <table>
                                 <tr>
                                     <th> <a href="CargaAlumnos.aspx" class="btn btn-primary btn-block">Cargar Alumno</a> </th>
-                                    <th> <a href="../Default.aspx" class="btn btn-primary btn-block">Otro.....</a> </th>
+                                    <th> <a href="../Default.aspx" class="btn btn-primary btn-block">volver</a> </th>
                                 </tr>
                             
 
