@@ -24,7 +24,7 @@ namespace TPCSYSACAD_Stamm_Gomez
                 text_cuil.Text = eliminarAlumno.Cuil;
                 text_apellido.Text = eliminarAlumno.Apellido;
                 text_nombre.Text = eliminarAlumno.Nombre;
-                text_nacionalidad.Text = eliminarAlumno.Nacionalidad;
+                //text_nacionalidad.Text = eliminarAlumno.Nacionalidad;
                 text_fechanacimiento.Text = eliminarAlumno.Fecha_Nac.ToString();
                 text_mail.Text = eliminarAlumno.Mail;
                 text_domicilio.Text = eliminarAlumno.Domicilio;

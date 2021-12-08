@@ -17,11 +17,7 @@
                                     <th> <a href="CargaCarreras.aspx" class="btn btn-primary btn-block">Cargar.Carreras</a> </th>
                                     <th> <a href="Default.aspx" class="btn btn-primary btn-block">Otro.....</a> </th>
                                 </tr>
-                                <%--<tr> LO USABA PARA NO HACER UNA PAGINA ESPECIFICO PARA ELIMINAR SIN 
-                                    <th> <asp:Label Text="ID A ELIMINAR" runat="server" /> </th>
-                                    <th>    <asp:TextBox Text="NRO ID" ID="text_Eliminar" runat="server" />  </th>
-                                    <th>    <asp:Button Class="btn btn-danger" Text="Elimnar ID" ID="Eliminar" OnClick="Eliminar_Click" runat="server" />  </th>
-                                </tr>--%> 
+                               
 
                             </table>
                         </div>

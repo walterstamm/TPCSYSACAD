@@ -8,9 +8,9 @@ namespace Dominio
 {
     public enum TipoUsuario
     {
-        Admin = 3,
-        Profesor = 1,
-        Alumno = 2
+        Admin    = 3,
+        Profesor  = 1,
+        Alumno   = 2
     }
     public class Usuarios
     {
@@ -24,7 +24,7 @@ namespace Dominio
         {
             usuario = user;
             password = pass;
-
+            
         }
     }
 }

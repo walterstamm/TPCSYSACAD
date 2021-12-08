@@ -15,7 +15,7 @@ namespace Negocio
 
             try
             {
-                conex_usuario.setearConsulta("select ud.id, ud.usuario, ud.password, u.nombre, ud.tipousuario, ud.iddocente from UsuarioDocente ud inner join Usuarios u on ud.TipoUsuario=u.id where ud.Usuario = @usuario and ud.Password = @password");
+                conex_usuario.setearConsulta("select ud.id,ud.tipousuario  from UsuarioDocente ud inner join Usuarios u on ud.TipoUsuario=u.id where ud.Usuario = @usuario and ud.Password = @password");
                 conex_usuario.setearParametro("@usuario", usuario.usuario);
                 conex_usuario.setearParametro("@password", usuario.password);
 
@@ -24,7 +24,7 @@ namespace Negocio
                 while (conex_usuario.Lector.Read())
                 {
                     usuario.id = (int)conex_usuario.Lector["ID"];
-                    usuario.TipoUsuario = (int)(conex_usuario.Lector["TIPOUSUARIO"]) == 2 ? TipoUsuario.Alumno : TipoUsuario.Admin;
+                    usuario.TipoUsuario = (int)(conex_usuario.Lector["TIPOUSUARIO"]) == 1 ? TipoUsuario.Alumno : TipoUsuario.Admin;
 
                     return true; //SI TRAE EL USUARIO LE ASIGNA LA PASSWARD Y DEVUELVE TRUE.
                 }
