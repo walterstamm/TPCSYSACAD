@@ -135,7 +135,7 @@ namespace Negocio
             AccesoDatos accesoModificar = new AccesoDatos();
             try
             {
-                accesoModificar.setearConsulta("UPDATE ALUMNOS SET CUIL= @cuil, APELLIDO_NOMBRE=@apellido_nombre, NACIONALIDAD=@nacionalidad, FECHA_NAC=@fecha_nac, MAIL=@mail, DOMICILIO=@domicilio, LOCALIDAD_PCIA=@localidad_pcia WHERE ID_ALUMNO=@id_alumno");
+                accesoModificar.setearConsulta("UPDATE ALUMNOS SET Cuil= @cuil, Apellido=@apellido,Nombre=@nombre, FechaNacimiento=@fecha_nac, Email=@mail, Domicilio=@domicilio, Localidad=@localidad_pcia WHERE Id=@id_alumno");
                 
                 accesoModificar.setearParametro("@id_alumno", modificarAlumno.Idalumno);
                 accesoModificar.setearParametro("@cuil", modificarAlumno.Cuil);
