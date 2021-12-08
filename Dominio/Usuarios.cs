@@ -8,9 +8,9 @@ namespace Dominio
 {
     public enum TipoUsuario
     {
-        Admin    = 3,
-        Profesor  = 1,
-        Alumno   = 2
+        Admin = 3,
+        Profesor = 1,
+        Alumno = 2
     }
     public class Usuarios
     {
@@ -25,24 +25,6 @@ namespace Dominio
             usuario = user;
             password = pass;
 
-            //if (Usu == 1)
-            //{
-            //    TipoUsuario = TipoUsuario.Admin;
-            //}
-            //else if (Usu == 2)
-            //{
-            //    TipoUsuario = TipoUsuario.Profesor;
-            //}
-            //else if (Usu == 3)
-            //{
-            //    TipoUsuario = TipoUsuario.Alumno;
-            //}
-            //pregunta por el tipo de usuario
-            //--TipoUsuario = admin ? TipoUsuario.Admin : TipoUsuario.Alumno; // (admin = TipoUsuario.Profesor ? TipoUsuario.Profesor : TipoUsuario.Alumno);
-            //TipoUsuario = TipoUsuario == 1 ? TipoUsuario.Admin : (TipoUsuario == 2 ? TipoUsuario.Profesor : (tipousuario == 3 ? TipoUsuario.Alumno : TipoUsuario.Administrador));
-
-            //--Util.id = id_usuario;
-            
         }
     }
 }
