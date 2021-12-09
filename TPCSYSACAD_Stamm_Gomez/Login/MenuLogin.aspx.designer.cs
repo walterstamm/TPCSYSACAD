@@ -15,24 +15,6 @@ namespace TPCSYSACAD_Stamm_Gomez.Login
     {
 
         /// <summary>
-        /// Control text_usuario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox text_usuario;
-
-        /// <summary>
-        /// Control text_Nivel.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox text_Nivel;
-
-        /// <summary>
         /// Control btnPagina1.
         /// </summary>
         /// <remarks>
@@ -58,14 +40,5 @@ namespace TPCSYSACAD_Stamm_Gomez.Login
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_Docente;
-
-        /// <summary>
-        /// Control btn_Acc_Alumno.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Acc_Alumno;
     }
 }
