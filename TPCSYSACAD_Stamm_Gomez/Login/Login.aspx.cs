@@ -13,7 +13,7 @@ namespace TPCSYSACAD_Stamm_Gomez.Login
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            Session.Clear();
         }
 
         protected void btnIngresar_Click(object sender, EventArgs e)

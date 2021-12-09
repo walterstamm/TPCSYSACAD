@@ -4,7 +4,7 @@
 
 <html lang="es">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %> - Mi aplicación ASP.NET</title>
@@ -13,7 +13,7 @@
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
 
-    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" />
 
@@ -49,29 +49,36 @@
                 <a class="navbar-brand" href="#">== SYSACAD STAMM GOMEZ ==</a>
                 <br />
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="Default.aspx">Stock <span class="sr-only">(current)</span></a>
-                    </li>
 
+
+                    <% if (Dominio.Util.validacionAdmin((Dominio.Usuarios)Session["Usuarios"]))
+                        {  %>
                     <li class="nav-item active">
                         <a class="nav-link" href="../Alumnos/ListadoAlumnos.aspx">Alumnos</a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="../Docentes/ListadoDocente.aspx">Docentes</a>
                     </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="../Login/Login.aspx">Login</a>
-                    </li>
+                    <%}%>
+                   
                 </ul>
-                <asp:Label Text="Usuario" runat="server" Width="70px"/>
 
-               
-
+                <% if (Session["Usuarios"] == null)
+                    {  %>
+                <a class="nav-link" href="../Login/Login.aspx">Login</a>
+                <%}
+                    else
+                    { Dominio.Usuarios user = new Dominio.Usuarios();
+                        user = (Dominio.Usuarios)Session["Usuarios"];
+                        %>
+                <span><%=user.usuario%><i class="far fa-user" style="margin: 10px"></i></span>
+                
+                 <a class="nav-link" href="../Login/Login.aspx">Cerrar Sesion</a>
+                <%} %>
             </div>
         </nav>
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
-
             </asp:ContentPlaceHolder>
 
 
@@ -85,5 +92,5 @@
         </div>
 
     </form>
-    </body>
+</body>
 </html>

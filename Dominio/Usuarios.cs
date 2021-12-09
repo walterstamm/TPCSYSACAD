@@ -15,7 +15,7 @@ namespace Dominio
     public class Usuarios
     {
         public int id { get; set; }
-        public string usuario { get; set; }
+        public string usuario { get ; set; }
         public string password { get; set; }
         public TipoUsuario TipoUsuario { get; set; }
         public int idDocente { get; set; }
@@ -25,6 +25,13 @@ namespace Dominio
             usuario = user;
             password = pass;
             
+        }
+
+        public Usuarios() { }
+
+        public void setUsuario(string name)
+        {
+            this.usuario = name;
         }
     }
 }
