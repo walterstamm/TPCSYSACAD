@@ -26,6 +26,7 @@ namespace TPCSYSACAD_Stamm_Gomez.Login
                 usuario = new Usuarios(txtUser.Text, txtPassword.Text, false );
                 if (conex_usuario.Loguear(usuario))
                 {
+                    Session.Clear();
                     Session.Add("Usuarios", usuario);
                     Util.usuarioLogeado = usuario.usuario;
                     Response.Redirect("MenuLogin.aspx", false);

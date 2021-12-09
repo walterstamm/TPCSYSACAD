@@ -10,7 +10,7 @@ namespace Dominio
     {
         Admin    = 3,
         Profesor  = 1,
-        Alumno   = 2
+       // Alumno   = 2
     }
     public class Usuarios
     {
