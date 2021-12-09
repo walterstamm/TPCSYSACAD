@@ -14,7 +14,7 @@
                         <div class='col-xs-3'>
                             <table>
                                 <tr>
-                                    <th> <a href="CargaCarreras.aspx" class="btn btn-primary btn-block">Cargar.Carreras</a> </th>
+                                    <th> <a href="CargaMateria.aspx" class="btn btn-primary btn-block">Cargar Materia</a> </th>
                                     <th> <a href="Default.aspx" class="btn btn-primary btn-block">Otro.....</a> </th>
                                 </tr>
                                
@@ -28,11 +28,11 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">ID_MATERIA</th>
-                            <th scope="col">NOMBRE.MATERIA...........</th>
-                            <th scope="col">CARGA HORARIA MINIMA</th>
-                            <th scope="col">CARRERA</th>
-                            <th scope="col">AÑO</th>
+                            <th scope="col">COD</th>
+                            <th scope="col">MATERIA</th>
+                            <%--<th scope="col">CARGA HORARIA MINIMA</th>--%>
+                            <th scope="col">CARR</th>
+                            <th scope="col">AÑO_CURSO</th>
                             <th scope="col">CUATRIMESTRE</th>
                             <th scope="col">ESTADO</th>
 
@@ -42,17 +42,21 @@
                         <asp:Repeater runat="server" ID="Rep_Materias">
                             <ItemTemplate> 
                                 <tr>
-                                    <td><%#Eval("id_materia") %></td>
-                                    <td><%#Eval("nombre_materia") %> </td>
-                                    <td><%#Eval("carga_horaria_minima") %> </td>
-                                    <td><%#Eval("carrera") %> </td>
-                                    <td><%#Eval("año_curso") %> </td>
-                                    <td><%#Eval("cuatrimestre") %> </td>
-                                    <td><%#Eval("estado") %> </td>                                    
+                                    <td><%#Eval("IDMATERIA") %> </td>
+                                    <td><%#Eval("NOMBREMATERIA") %> </td>
+                                    <%--<td><%#Eval("carga_horaria_minima") %> </td>--%>
+                                    <td><%#Eval("IDCARRERA") %> </td>
+                                    <td><%#Eval("ANIO") %> </td>
+                                    <td><%#Eval("CUATRIMESTRE") %> </td>
+                                    <td><%#Eval("ESTADO") %> </td>
                                     <td>
-                                        <a class="btn btn-sm btn-outline-info" id="elimCarrera"  onclick='EliminarMateria?idMateria=<%#Eval("id_materia") %>'><i title="Eliminar" class="fas fa-trash-alt"></i></a>
+                                        
+                                        <a class="btn btn-sm btn-outline-info" href='EliminaMateria.aspx?idMateria=<%#Eval("IDMATERIA") %>'>
+                                            <i title="Eliminar Materia" class="fas fa-trash-alt"></i></a>
+                                        
                                         <%--href='EliminarAcarrera.aspx?idMateria=<%#Eval("id_materia") %>'--%>
-                                        <a class="btn btn-sm btn-outline-secondary" href='ModificarCarrera.aspx?idMateria=<%#Eval("id_materia") %>'><i title="Modificar Materia" class="far fa-edit"></i></a>
+                                        <a class="btn btn-sm btn-outline-secondary" href='ModificarCarrera.aspx?idMateria=<%#Eval("IDMATERIA") %>'>
+                                            <i title="Modificar Materia" class="far fa-edit"></i></a>
                                     </td>
                                 </tr>
                             </ItemTemplate>

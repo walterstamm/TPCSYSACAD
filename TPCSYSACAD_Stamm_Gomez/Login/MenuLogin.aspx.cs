@@ -54,5 +54,10 @@ namespace TPCSYSACAD_Stamm_Gomez.Login
             //Response.Redirect("../Alumnos/ListadoAlumnos.aspx", false);
             //ACA VA EL ENLACE A LA PANTALLA DE ACCESO A LOS ALUMNOS
         }
+
+        protected void btn_Materias_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../Materias/ListadoMaterias.aspx", false);
+        }
     }
 }
