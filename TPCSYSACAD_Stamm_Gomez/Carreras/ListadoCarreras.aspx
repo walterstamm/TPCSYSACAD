@@ -43,15 +43,15 @@
                         <asp:Repeater runat="server" ID="Rep_Carreras">
                             <ItemTemplate> 
                                 <tr>
-                                    <td><%#Eval("id_carrera") %></td>
-                                    <td><%#Eval("nombre_carrera") %> </td>
-                                    <td><%#Eval("plan_año") %> </td>
-                                    <td><%#Eval("doc_habilitante") %> </td>
-                                    <td><%#Eval("estado") %> </td>
+                                    <td><%#Eval("ID") %></td>
+                                    <td><%#Eval("NOMBRE") %> </td>
+                                    <td><%#Eval("NUMEROPLAN") %> </td>
+                                    <td><%#Eval("NUMEROHABILITANTE") %> </td>
+                                    <td><%#Eval("ESTADO") %> </td>
                                     
                                     <td>
-                                        <a class="btn btn-sm btn-outline-info" href='EliminarAcarrera.aspx?idCarrera=<%#Eval("id_carrera") %>'><i title="Eliminar Carrera" class="fas fa-trash-alt"></i></a>
-                                        <a class="btn btn-sm btn-outline-secondary" href='ModificarCarrera.aspx?idCarrera=<%#Eval("id_carrera") %>'><i title="Modificar Carrera" class="far fa-edit"></i></a>
+                                        <a class="btn btn-sm btn-outline-info" href='EliminarAcarrera.aspx?idCarrera=<%#Eval("ID") %>'><i title="Eliminar Carrera" class="fas fa-trash-alt"></i></a>
+                                        <a class="btn btn-sm btn-outline-secondary" href='ModificarCarrera.aspx?idCarrera=<%#Eval("ID") %>'><i title="Modificar Carrera" class="far fa-edit"></i></a>
                                     </td>
                                 </tr>
                             </ItemTemplate>

@@ -560,3 +560,10 @@ order by si.rows desc, SO.Name , SI.name, SFG.GroupName
 
 select * from Cuatrimestres
 select * from Usuarios
+
+use pruebaSysacad
+select * from materias order by Estado
+alter table materias alter column Estado bit not null default(1)
+alter table materias alter column Anio int not null default(1)
+alter table materias alter column Cuatrimestre int not null default(1)
+

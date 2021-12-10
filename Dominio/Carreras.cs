@@ -8,10 +8,10 @@ namespace Dominio
 {
     public class Carreras
     {
-        public string id_carrera { get; set; } //varchar (10)
-        public string nombre_carrera { get; set; } //varchar(100)
-        public string plan_año { get; set; } //varchar(5)
-        public string doc_habilitante { get; set; } // varchar(50)
+        public int id { get; set; } //varchar (10)
+        public string nombre { get; set; } //varchar(100)
+        public string numeroplan { get; set; } //varchar(5)
+        public string numerohabilitante { get; set; } // varchar(50)
         public bool estado { get; set; }
     }
 }

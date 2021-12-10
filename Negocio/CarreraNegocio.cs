@@ -13,20 +13,23 @@ namespace Negocio
         public List<Carreras> listaCarrera()
         {
             List<Carreras> lis_carrera = new List<Carreras>();
-            AccesoDatos carrera = new AccesoDatos();
+            AccesoDatos conex_carrera = new AccesoDatos();
 
             try
             {
-                carrera.setearConsulta("SELECT ID_CARRERA, NOMBRE_CARRERA, PLAN_AÑO, DOC_HABILITANTE, ESTADO FROM CARRERAS WHERE ESTADO !=0");
+                carrera.setearConsulta("SELECT ID FROM CARRERAS");
                 carrera.ejecutarLectura();
+
+                //carrera.setearConsulta("SELECT ID, NOMBRE, NUMEROPLAN, NUMEROHABILITANTE, ESTADO FROM CARRERAS WHERE ESTADO = 1");
+                //carrera.ejecutarLectura();
                 while (carrera.Lector.Read())
                 {
                     Carreras aux1 = new Carreras();
-                    aux1.id_carrera = (string)carrera.Lector["ID_CARRERA"];
-                    aux1.nombre_carrera = (string)carrera.Lector["NOMBRE_CARRERA"];
-                    aux1.plan_año = (string)carrera.Lector["PLAN_AÑO"];
-                    aux1.doc_habilitante = (string)carrera.Lector["DOC_HABILITANTE"];
-                    aux1.estado = (bool)carrera.Lector["ESTADO"];
+                    aux1.id = (int)conex_carrera.Lector["ID"];
+                    //aux1.nombre = (string)carrera.Lector["NOMBRE"];
+                    //aux1.numeroplan = (string)carrera.Lector["NUMEROPLAN"];
+                    //aux1.numerohabilitante = (string)carrera.Lector["NUMEROHABILITANTE"];
+                    //aux1.estado = (bool)carrera.Lector["ESTADO"];
 
                     lis_carrera.Add(aux1);
                 }
@@ -45,14 +48,14 @@ namespace Negocio
 
         public void agregar(Carreras agregoCarrera)
         {
-            AccesoDatos accesoCarrera = new AccesoDatos();
+            AccesoDatos conex_Carrera = new AccesoDatos();
 
             try
             {
-                string nuevaCarrera = " values( '" + agregoCarrera.id_carrera + "', '" + agregoCarrera.nombre_carrera + "', '" + agregoCarrera.plan_año + "', '" + agregoCarrera.doc_habilitante + "', '" + agregoCarrera.estado + "')";
-                accesoCarrera.setearConsulta("INSERT INTO CARRERAS(ID_CARRERA, NOMBRE_CARRERA, PLAN_AÑO, DOC_HABILITANTE, ESTADO)" + nuevaCarrera);
+                string nuevaCarrera = " values( '" + agregoCarrera.id + "', '" + agregoCarrera.nombre + "', '" + agregoCarrera.numeroplan + "', '" + agregoCarrera.numerohabilitante + "', '" + agregoCarrera.estado + "')";
+                conex_Carrera.setearConsulta("INSERT INTO CARRERAS(ID, NOMBRE, NUMEROPLAN, NUMEROHABILITANTE, ESTADO)" + nuevaCarrera);
 
-                accesoCarrera.ejectutarAccion();
+                conex_Carrera.ejectutarAccion();
             }
             catch (Exception ex)
             {
@@ -61,18 +64,18 @@ namespace Negocio
             }
             finally
             {
-                accesoCarrera.cerrarConexion();
+                conex_Carrera.cerrarConexion();
                 carrera = null;
             }
         }
         
-        public void Eliminar(string id)
+        public void Eliminar(int id)
         {
             carrera = new AccesoDatos();
 
             try
             {
-                carrera.setearConsulta("update carreras set estado = 1 where id_carrera = " + id);
+                carrera.setearConsulta("UPDATE CARRERAS SET ESTADO = 0 WHERE ID = " + id);
                 carrera.ejectutarAccion();
             }
             catch (Exception ex)
@@ -86,22 +89,22 @@ namespace Negocio
             }
         }
 
-        public Carreras UnaCarrera(string id_Carrera)
+        public Carreras UnaCarrera(int id_Carrera)
         {
             AccesoDatos unacarrera = new AccesoDatos();
 
             try
             {
-                //unacarrera.setearParametro("@id_carrera", id_Carrera);
-                unacarrera.setearConsulta("SELECT ID_CARRERA, NOMBRE_CARRERA, PLAN_AÑO, DOC_HABILITANTE, ESTADO FROM CARRERAS WHERE ID_CARRERA = " + id_Carrera);
+
+                unacarrera.setearConsulta("SELECT ID, NOMBRE, NUMEROPLAN, NUMEROHABILITANTE, ESTADO FROM CARRERAS WHERE ID = " + id_Carrera);
                 unacarrera.ejecutarLectura();
                 unacarrera.Lector.Read();
 
                 Carreras aux2 = new Carreras();
-                aux2.id_carrera = (string)unacarrera.Lector["ID_CARRERA"];
-                aux2.nombre_carrera = (string)unacarrera.Lector["NOMBRE_CARRERA"];
-                aux2.plan_año = (string)unacarrera.Lector["PLAN_AÑO"];
-                aux2.doc_habilitante = (string)unacarrera.Lector["DOC_HABILITANTE"];
+                aux2.id = (int)unacarrera.Lector["ID"];
+                aux2.nombre = (string)unacarrera.Lector["NOMBRE"];
+                aux2.numeroplan = (string)unacarrera.Lector["NUMEROPLAN"];
+                aux2.numerohabilitante = (string)unacarrera.Lector["NUMEROHABILITANTE"];
                 aux2.estado = (bool)unacarrera.Lector["ESTADO"];
 
                 return aux2;
@@ -123,14 +126,14 @@ namespace Negocio
 
             try
             {
-                //unacarrera.setearParametro("@id_carrera", id_Carrera);
+
                 CarreraAlumno.setearConsulta("select i.ID_INSCRIPCION_CARRERA, c.ID_CARRERA, c.NOMBRE_CARRERA from insc_alum_carrera i RIGHT join alumnos a on i.ALUMNO = a.ID_ALUMNO inner join carreras c on i.CARRERA = c.ID_CARRERA inner join USUARIOS u on a.ID_ALUMNO = u.ID_USUARIO where u.ID_USUARIO = " + Util.id);
                 CarreraAlumno.ejecutarLectura();
                 CarreraAlumno.Lector.Read();
 
                 Carreras usuario = new Carreras();
-                usuario.id_carrera = (string)CarreraAlumno.Lector["ID_CARRERA"];
-                usuario.nombre_carrera = (string)CarreraAlumno.Lector["NOMBRE_CARRERA"];
+                usuario.id = (int)CarreraAlumno.Lector["ID"];
+                usuario.nombre = (string)CarreraAlumno.Lector["NOMBRE_CARRERA"];
 
                 return usuario;
             }
@@ -151,11 +154,11 @@ namespace Negocio
 
             try
             {
-                conex_Carrera.setearConsulta("UPDATE CARRERAS SET NOMBRE_CARRERA = @nombre_carrera, PLAN_AÑO = @planaño, DOC_HABILITANTE = @dochab, ESTADO = @estado FROM CARRERAS WHERE ID_CARRERA = @idcarrera");
-                conex_Carrera.setearParametro("@idcarrera", modifCarrera );
-                conex_Carrera.setearParametro("@nombre_carrera", modifCarrera.nombre_carrera);
-                conex_Carrera.setearParametro("@planaño", modifCarrera.plan_año);
-                conex_Carrera.setearParametro("@dochab", modifCarrera.doc_habilitante);
+                conex_Carrera.setearConsulta("UPDATE CARRERAS SET NOMBRE = @nombre_carrera, NUMEROPLAN = @planaño, NUMEROHABILITANTE = @dochab, ESTADO = @estado FROM CARRERAS WHERE ID = @idcarrera");
+                conex_Carrera.setearParametro("@idcarrera", modifCarrera.id );
+                conex_Carrera.setearParametro("@nombre_carrera", modifCarrera.nombre);
+                conex_Carrera.setearParametro("@planaño", modifCarrera.numeroplan);
+                conex_Carrera.setearParametro("@dochab", modifCarrera.numerohabilitante);
                 conex_Carrera.setearParametro("@estado", modifCarrera.estado);
 
                 conex_Carrera.ejectutarAccion();
@@ -184,22 +187,11 @@ namespace Negocio
                 while (conex_datos.Lector.Read())
                 {
                     aux = new Carreras();
-                    aux.id_carrera = conex_datos.Lector.GetString(0);
-                    aux.nombre_carrera = conex_datos.Lector.GetString(1);
-                    aux.plan_año = conex_datos.Lector.GetString(2);
-                    aux.doc_habilitante = conex_datos.Lector.GetString(3);
+                    aux.id = int.Parse(conex_datos.Lector.GetString(0));
+                    aux.nombre = conex_datos.Lector.GetString(1);
+                    aux.numeroplan = (conex_datos.Lector.GetString(2));
+                    aux.numerohabilitante = (conex_datos.Lector.GetString(3));
                     aux.estado = conex_datos.Lector.GetBoolean(4);
-
-                    //aux.Tipo = new Tipo();
-                    //aux.Tipo.Id = (int)conex_datos.Lector["idTipo"];
-                    //aux.Tipo.Descripcion = (string)conex_datos.Lector["Descripcion"];
-                    //aux.UrlImagen = (string)conex_datos.Lector["UrlImagen"];
-                    //if (!Convert.IsDBNull(conex_datos.Lector["idEvol"]))
-                    //{
-                    //    aux.Evolucion = new Pokemon();
-                    //    aux.Evolucion.Id = (int)datos.Lector["idEvol"];
-                    //    aux.Evolucion.Nombre = datos.Lector["nomEvol"].ToString();
-                    //}
 
                     lista_carrera.Add(aux);
                 }

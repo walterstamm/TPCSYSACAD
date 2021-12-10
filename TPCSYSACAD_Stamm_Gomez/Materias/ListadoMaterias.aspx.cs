@@ -14,13 +14,13 @@ namespace TPCSYSACAD_Stamm_Gomez
         public List<Materias> list_Materias;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Usuarios"] == null)
-            {
-                Session.Add("ERROR", "DEBERAS INGRESAR CON USUARIOS Y PASSWARD.........");
-                Response.Redirect("../Error.aspx", false);
-            }
-            else if (Session["Usuarios"] != null && ((Dominio.Usuarios)Session["Usuarios"]).TipoUsuario == TipoUsuario.Admin)
-            {
+            //if (Session["Usuarios"] == null)
+            //{
+            //    Session.Add("ERROR", "DEBERAS INGRESAR CON USUARIOS Y PASSWARD.........");
+            //    Response.Redirect("../Error.aspx", false);
+            //}
+            //else if (Session["Usuarios"] != null && ((Dominio.Usuarios)Session["Usuarios"]).TipoUsuario == TipoUsuario.Admin)
+            //{
 
                 MateriaNegocio conex_materia = new MateriaNegocio();
 
@@ -33,9 +33,9 @@ namespace TPCSYSACAD_Stamm_Gomez
                 {
                     Session.Add("Error", ex.ToString());
 
-                    //Response.Redirect("Error.aspx");
+                    Response.Redirect("Error.aspx");
                 }
-            }
+            //}
         }
 
         
