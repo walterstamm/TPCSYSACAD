@@ -15,11 +15,11 @@ namespace Dominio
 		//public int carga_horaria_minima { set; get; } // INT NOT NULL CHECK(CARGA_HORARIA_MINIMA > 0),
 
 		public int idcarrera { set; get; } // VARCHAR(10) NOT NULL FOREIGN KEY REFERENCES CARRERAS(ID_CARRERA),
-		public byte anio { set; get; } // INT NOT NULL CHECK(AÑO_CURSO = 1 OR AÑO_CURSO = 2),
+		public int anio { set; get; } // INT NOT NULL CHECK(AÑO_CURSO = 1 OR AÑO_CURSO = 2),
 
-		public byte cuatrimestre { set; get; } // INT NOT NULL CHECK(CUARTRIMESTRE = 1 OR CUARTRIMESTRE = 2),
+		public int cuatrimestre { set; get; } // INT NOT NULL CHECK(CUARTRIMESTRE = 1 OR CUARTRIMESTRE = 2),
 
-		public string estado { set; get; } //	 BIT NOT NULL DEFAULT(1)
+		public bool estado { set; get; } //	 BIT NOT NULL DEFAULT(1)
 
 	}
 }

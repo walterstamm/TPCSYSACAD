@@ -55,7 +55,7 @@
                                             <i title="Eliminar Materia" class="fas fa-trash-alt"></i></a>
                                         
                                         <%--href='EliminarAcarrera.aspx?idMateria=<%#Eval("id_materia") %>'--%>
-                                        <a class="btn btn-sm btn-outline-secondary" href='ModificarCarrera.aspx?idMateria=<%#Eval("IDMATERIA") %>'>
+                                        <a class="btn btn-sm btn-outline-secondary" href='ModificaMateria.aspx?idMateria=<%#Eval("IDMATERIA") %>'>
                                             <i title="Modificar Materia" class="far fa-edit"></i></a>
                                     </td>
                                 </tr>

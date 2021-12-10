@@ -27,9 +27,9 @@ namespace Negocio
                     aux1.nombremateria = (string)conex_materia.Lector["NOMBREMATERIA"];
                     //aux1.carga_horaria_minima = (int)conex_materia.Lector["CARGA_HORARIA_MINIMA"];
                     aux1.idcarrera = (int)conex_materia.Lector["IDCARRERA"];
-                    aux1.anio = (byte)conex_materia.Lector["ANIO"];
-                    aux1.cuatrimestre = (byte)conex_materia.Lector["CUATRIMESTRE"];
-                    aux1.estado = (string)conex_materia.Lector["ESTADO"];
+                    aux1.anio = (int)conex_materia.Lector["ANIO"];
+                    aux1.cuatrimestre = (int)conex_materia.Lector["CUATRIMESTRE"];
+                    aux1.estado = (bool)conex_materia.Lector["ESTADO"];
 
                     lis_materia.Add(aux1);
 
@@ -96,7 +96,7 @@ namespace Negocio
             try
             {
                 //unacarrera.setearParametro("@id_carrera", id_Carrera);
-                unamateria.setearConsulta("SELECT IDMATERIA, NOMBREMATERIA, IDCARRERA, ANIO, CUATRIMESTRE, ESTADO FROM MATERIAS WHERE IDMATERIA =" + idMateria);
+                unamateria.setearConsulta("SELECT IDMATERIA, NOMBREMATERIA, IDCARRERA, ANIO, CUATRIMESTRE FROM MATERIAS WHERE IDMATERIA =" + idMateria);
                 unamateria.ejecutarLectura();
                 unamateria.Lector.Read();
 
@@ -105,9 +105,9 @@ namespace Negocio
                 aux2.nombremateria = (string)unamateria.Lector["NOMBREMATERIA"];
                 //aux2.carga_horaria_minima = (int)unamateria.Lector["CARGA_HORARIA_MINIMA"];
                 aux2.idcarrera = (int)unamateria.Lector["IDCARRERA"];
-                aux2.anio = (byte)unamateria.Lector["ANIO"];
-                aux2.cuatrimestre = (byte)unamateria.Lector["CUATRIMESTRE"];
-                aux2.estado = (string)unamateria.Lector["ESTADO"];
+                aux2.anio = (int)unamateria.Lector["ANIO"];
+                aux2.cuatrimestre = (int)unamateria.Lector["CUATRIMESTRE"];
+                //aux2.estado = (string)unamateria.Lector["ESTADO"];
 
                 return aux2;
             }
@@ -129,14 +129,13 @@ namespace Negocio
 
             try
             {
-                conex_Materia.setearConsulta("UPDATE CARRERAS SET NOMBREMATERIA = @nombremateria, IDCARRERA = @carrera, ANIO = @añocurso, CUARTRIMESTRE = @cuatrimestre, ESTADO = @estado FROM CARRERAS WHERE IDMATERIA = @idmateria");
+                conex_Materia.setearConsulta("UPDATE MATERIAS SET NOMBREMATERIA = @nombremateria, IDCARRERA = @carrera, ANIO = @añocurso, CUATRIMESTRE = @cuatrimestre FROM MATERIAS WHERE IDMATERIA = @idmateria");
                 conex_Materia.setearParametro("@idmateria", modifMateria.idmateria);
                 conex_Materia.setearParametro("@nombremateria", modifMateria.nombremateria);
-                //conex_Materia.setearParametro("@cargahorariaminima", modifMateria.carga_horaria_minima);
                 conex_Materia.setearParametro("@carrera", modifMateria.idcarrera);
                 conex_Materia.setearParametro("@añocurso", modifMateria.anio);
                 conex_Materia.setearParametro("@cuatrimestre", modifMateria.cuatrimestre);
-                conex_Materia.setearParametro("@estado", modifMateria.estado);
+                //conex_Materia.setearParametro("@estado", modifMateria.estado);
 
                 conex_Materia.ejectutarAccion();
 
