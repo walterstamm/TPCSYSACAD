@@ -16,6 +16,13 @@ namespace TPCSYSACAD_Stamm_Gomez
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["Usuarios"] == null || !(Util.validacionAdmin((Usuarios)Session["Usuarios"])))
+            {
+
+                Response.Redirect("../Login/Login.aspx", false);
+            }
+
+
             if (!IsPostBack)
             {
                 if (Request.QueryString["idAlumno"] != null)
@@ -27,13 +34,12 @@ namespace TPCSYSACAD_Stamm_Gomez
                     text_Mod_cuil.Text = modificarAlumno.Cuil;
                     text_Mod_apellido.Text = modificarAlumno.Apellido;
                     text_Mod_Nombre.Text = modificarAlumno.Nombre;
-                  //  text_Mod_nacionalidad.Text = modificarAlumno.Nacionalidad;
+               
                     text_Mod_fechanac.Text = modificarAlumno.Fecha_Nac.ToString();
                     text_Mod_mail.Text = modificarAlumno.Mail;
                     text_Mod_Domicilio.Text = modificarAlumno.Domicilio;
                     text_Mod_Localidadpcia.Text = modificarAlumno.Localidad_Prov;
-                    //text_usuario.Text = eliminarAlumno.Usuario;
-                    //text_estado.Text = eliminarAlumno.Estado.ToString();
+                    
                 }
             }
 

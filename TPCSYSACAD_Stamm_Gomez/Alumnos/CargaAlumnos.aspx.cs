@@ -13,10 +13,10 @@ namespace TPCSYSACAD_Stamm_Gomez
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Usuarios"] == null || ((Dominio.Usuarios)Session["Usuarios"]).TipoUsuario != Dominio.TipoUsuario.Admin)
+            if (Session["Usuarios"] == null || !(Util.validacionAdmin((Usuarios)Session["Usuarios"])))
             {
-                Session.Add("ERROR", "DEBERAS INGRESAR CON USUARIOS ADMIN CARGARALUMNO.........");
-                Response.Redirect("../Error.aspx", false);
+                
+                Response.Redirect("../Login/Login.aspx", false);
             }
 
         }

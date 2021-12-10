@@ -16,6 +16,14 @@ namespace TPCSYSACAD_Stamm_Gomez
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["Usuarios"] == null || !(Util.validacionAdmin((Usuarios)Session["Usuarios"])))
+            {
+
+                Response.Redirect("../Login/Login.aspx", false);
+            }
+
+
+
             if (!IsPostBack)
             {
                 if (Request.QueryString["idDocente"] != null)

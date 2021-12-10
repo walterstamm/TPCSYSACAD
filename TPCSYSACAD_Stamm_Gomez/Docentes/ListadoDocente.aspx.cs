@@ -14,13 +14,13 @@ namespace TPCSYSACAD_Stamm_Gomez
         public List<Docente> listados;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Usuarios"] == null)
+            if (Session["Usuarios"] == null || !(Util.validacionAdmin((Usuarios)Session["Usuarios"])))
             {
-                Session.Add("ERROR", "DEBERAS INGRESAR CON USUARIOS Y PASSWARD.........");
-                Response.Redirect("../Error.aspx", false);
+
+                Response.Redirect("../Login/Login.aspx", false);
             }
-            else if (Session["Usuarios"] != null && ((Dominio.Usuarios)Session["Usuarios"]).TipoUsuario == TipoUsuario.Admin ) 
-                //|| ((Dominio.Usuarios)Session["Usuarios"]).TipoUsuario == TipoUsuario.Profesor
+            else 
+                
             {
                 DocenteNegocio listadocente = new DocenteNegocio();
 

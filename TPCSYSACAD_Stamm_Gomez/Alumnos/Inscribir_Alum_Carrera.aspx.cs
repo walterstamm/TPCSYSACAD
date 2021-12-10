@@ -15,7 +15,14 @@ namespace TPCSYSACAD_Stamm_Gomez
         AlumnoNegocio al_inscripcion = new AlumnoNegocio(); 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Request.QueryString["idAlumno"] != null)
+            if (Session["Usuarios"] == null || !(Util.validacionAdmin((Usuarios)Session["Usuarios"])))
+            {
+
+                Response.Redirect("../Login/Login.aspx", false);
+            }
+
+
+            if (Request.QueryString["idAlumno"] != null)
             {
                 int IdAlumno = int.Parse(Request.QueryString["idAlumno"].ToString());
                 Session["Idalumno"] = IdAlumno;
