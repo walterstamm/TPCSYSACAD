@@ -15,6 +15,14 @@ namespace TPCSYSACAD_Stamm_Gomez
         DocenteNegocio conex_Docente = new DocenteNegocio();
         protected void Page_Load(object sender, EventArgs e)
         {
+
+
+            if (Session["Usuarios"] == null || !(Util.validacionAdmin((Usuarios)Session["Usuarios"])))
+            {
+
+                Response.Redirect("../Login/Login.aspx", false);
+            }
+
             if (Request.QueryString["idDocente"] != null)
             {
                 int docente = int.Parse(Request.QueryString["idDocente"].ToString());

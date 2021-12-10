@@ -15,13 +15,13 @@ namespace TPCSYSACAD_Stamm_Gomez
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Usuarios"] == null)
+            if (Session["Usuarios"] == null || !(Util.validacionAdmin((Usuarios)Session["Usuarios"])))
             {
-                Session.Add("ERROR", "DEBERAS INGRESAR CON USUARIOS Y PASSWORD.........");
-                Response.Redirect("../Error.aspx", false);
+
+                Response.Redirect("../Login/Login.aspx", false);
             }
             else
-           // if (Session["Usuarios"] != null && ((Dominio.Usuarios)Session["Usuarios"]).TipoUsuario == Dominio.TipoUsuario.Admin)
+           
             {
                 AlumnoNegocio listarAlumno = new AlumnoNegocio();
 
