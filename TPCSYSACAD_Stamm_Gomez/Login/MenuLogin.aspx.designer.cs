@@ -15,11 +15,19 @@ namespace TPCSYSACAD_Stamm_Gomez.Login
     {
 
         /// <summary>
+        // HEAD
+        /// Control btnPagina1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+///=======
         /// btnPagina1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
+///>>>>>>> 5919bf48118e021b791f7e3b0169cfe6bdd3615e
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnPagina1;
 

@@ -110,6 +110,8 @@
     <Content Include="About.aspx" />
     <Content Include="Alumnos\CargaAlumnos.aspx" />
     <Content Include="Alumnos\Inscribir_Alum_Carrera.aspx" />
+    <Content Include="Materias\EliminaMateria.aspx" />
+    <Content Include="Materias\CargaMateria.aspx" />
     <Content Include="Menu_Alumno\Alum_Carr_Materias.aspx" />
     <Content Include="Docentes\CargaDocente.aspx" />
     <Content Include="Contact.aspx" />
@@ -269,6 +271,20 @@
     </Compile>
     <Compile Include="Alumnos\Inscribir_Alum_Carrera.aspx.designer.cs">
       <DependentUpon>Inscribir_Alum_Carrera.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Materias\EliminaMateria.aspx.cs">
+      <DependentUpon>EliminaMateria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Materias\EliminaMateria.aspx.designer.cs">
+      <DependentUpon>EliminaMateria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Materias\CargaMateria.aspx.cs">
+      <DependentUpon>CargaMateria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Materias\CargaMateria.aspx.designer.cs">
+      <DependentUpon>CargaMateria.aspx</DependentUpon>
     </Compile>
     <Compile Include="Menu_Alumno\Alum_Carr_Materias.aspx.cs">
       <DependentUpon>Alum_Carr_Materias.aspx</DependentUpon>
