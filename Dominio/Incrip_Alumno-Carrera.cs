@@ -13,6 +13,6 @@ namespace Dominio
         public Carreras carrera { get; set; }
         public int AÑO { get; set;  }
         public int CUATRIMESTRE { get; set; }
-        public bool ESTADO { get; set; }
+        public int ESTADO { get; set; }
     }
 }

@@ -12,6 +12,6 @@ namespace Dominio
         public string nombre { get; set; } //varchar(100)
         public string numeroplan { get; set; } //varchar(5)
         public string numerohabilitante { get; set; } // varchar(50)
-        public bool estado { get; set; }
+        public int estado { get; set; }
     }
 }

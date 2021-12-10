@@ -13,23 +13,22 @@ namespace Negocio
         public List<Carreras> listaCarrera()
         {
             List<Carreras> lis_carrera = new List<Carreras>();
-            AccesoDatos conex_carrera = new AccesoDatos();
+            AccesoDatos carrera = new AccesoDatos();
 
             try
             {
-                carrera.setearConsulta("SELECT ID FROM CARRERAS");
-                carrera.ejecutarLectura();
+              
 
-                //carrera.setearConsulta("SELECT ID, NOMBRE, NUMEROPLAN, NUMEROHABILITANTE, ESTADO FROM CARRERAS WHERE ESTADO = 1");
-                //carrera.ejecutarLectura();
+                carrera.setearConsulta("SELECT ID, NOMBRE, NUMEROPLAN, NUMEROHABILITANTE, ESTADO FROM CARRERAS WHERE ESTADO = 1");
+                carrera.ejecutarLectura();
                 while (carrera.Lector.Read())
                 {
                     Carreras aux1 = new Carreras();
-                    aux1.id = (int)conex_carrera.Lector["ID"];
-                    //aux1.nombre = (string)carrera.Lector["NOMBRE"];
-                    //aux1.numeroplan = (string)carrera.Lector["NUMEROPLAN"];
-                    //aux1.numerohabilitante = (string)carrera.Lector["NUMEROHABILITANTE"];
-                    //aux1.estado = (bool)carrera.Lector["ESTADO"];
+                    aux1.id = (int)carrera.Lector["ID"];
+                    aux1.nombre = (string)carrera.Lector["NOMBRE"];
+                    aux1.numeroplan = (string)carrera.Lector["NUMEROPLAN"];
+                    aux1.numerohabilitante = (string)carrera.Lector["NUMEROHABILITANTE"];
+                    aux1.estado = (int)carrera.Lector["ESTADO"];
 
                     lis_carrera.Add(aux1);
                 }
@@ -105,7 +104,7 @@ namespace Negocio
                 aux2.nombre = (string)unacarrera.Lector["NOMBRE"];
                 aux2.numeroplan = (string)unacarrera.Lector["NUMEROPLAN"];
                 aux2.numerohabilitante = (string)unacarrera.Lector["NUMEROHABILITANTE"];
-                aux2.estado = (bool)unacarrera.Lector["ESTADO"];
+                aux2.estado = (int)unacarrera.Lector["ESTADO"];
 
                 return aux2;
             }
@@ -191,7 +190,7 @@ namespace Negocio
                     aux.nombre = conex_datos.Lector.GetString(1);
                     aux.numeroplan = (conex_datos.Lector.GetString(2));
                     aux.numerohabilitante = (conex_datos.Lector.GetString(3));
-                    aux.estado = conex_datos.Lector.GetBoolean(4);
+                    aux.estado = conex_datos.Lector.GetInt32(4);
 
                     lista_carrera.Add(aux);
                 }
