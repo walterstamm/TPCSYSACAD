@@ -51,8 +51,8 @@ namespace Negocio
 
             try
             {
-                string nuevaCarrera = " values( '" + agregoCarrera.id + "', '" + agregoCarrera.nombre + "', '" + agregoCarrera.numeroplan + "', '" + agregoCarrera.numerohabilitante + "', '" + agregoCarrera.estado + "')";
-                conex_Carrera.setearConsulta("INSERT INTO CARRERAS(ID, NOMBRE, NUMEROPLAN, NUMEROHABILITANTE, ESTADO)" + nuevaCarrera);
+                string nuevaCarrera = " values( '" + agregoCarrera.nombre + "', '" + agregoCarrera.numeroplan + "', '" + agregoCarrera.numerohabilitante + "', '" + agregoCarrera.estado + "')";
+                conex_Carrera.setearConsulta("INSERT INTO CARRERAS( NOMBRE, NUMEROPLAN, NUMEROHABILITANTE, ESTADO)" + nuevaCarrera);
 
                 conex_Carrera.ejectutarAccion();
             }
@@ -153,11 +153,11 @@ namespace Negocio
 
             try
             {
-                conex_Carrera.setearConsulta("UPDATE CARRERAS SET NOMBRE = @nombre_carrera, NUMEROPLAN = @planaño, NUMEROHABILITANTE = @dochab, ESTADO = @estado FROM CARRERAS WHERE ID = @idcarrera");
+                conex_Carrera.setearConsulta("UPDATE CARRERAS SET NOMBRE = @nombre_carrera, NUMEROPLAN = @numeroplan, NUMEROHABILITANTE = @numerohabilitante, ESTADO = @estado FROM CARRERAS WHERE ID = @idcarrera");
                 conex_Carrera.setearParametro("@idcarrera", modifCarrera.id );
                 conex_Carrera.setearParametro("@nombre_carrera", modifCarrera.nombre);
-                conex_Carrera.setearParametro("@planaño", modifCarrera.numeroplan);
-                conex_Carrera.setearParametro("@dochab", modifCarrera.numerohabilitante);
+                conex_Carrera.setearParametro("@numeroplan", modifCarrera.numeroplan);
+                conex_Carrera.setearParametro("@numerohabilitante", modifCarrera.numerohabilitante);
                 conex_Carrera.setearParametro("@estado", modifCarrera.estado);
 
                 conex_Carrera.ejectutarAccion();
