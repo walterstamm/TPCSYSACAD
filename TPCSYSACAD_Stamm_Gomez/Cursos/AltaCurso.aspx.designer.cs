@@ -33,13 +33,13 @@ namespace TPCSYSACAD_Stamm_Gomez.Cursos
         protected global::System.Web.UI.WebControls.RequiredFieldValidator matVal;
 
         /// <summary>
-        /// Phonevalidator control.
+        /// validator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator Phonevalidator;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator validator;
 
         /// <summary>
         /// ddlCuatrimestre control.
