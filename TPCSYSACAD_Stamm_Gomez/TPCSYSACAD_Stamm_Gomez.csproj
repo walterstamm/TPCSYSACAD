@@ -108,12 +108,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+<<<<<<< HEAD
     <Content Include="AgregarNota.aspx" />
     <Content Include="Carreras\AgregaCarrera.aspx" />
     <Content Include="Alumnos\CargaAlumnos.aspx" />
     <Content Include="Alumnos\Inscribir_Alum_Carrera.aspx" />
     <Content Include="Carreras\EliminaCarrera.aspx" />
     <Content Include="Docentes\Notas\Listado_AlumnoMateria.aspx" />
+=======
+    <Content Include="Alumnos\CargaAlumnos.aspx" />
+    <Content Include="Alumnos\Inscribir_Alum_Carrera.aspx" />
+    <Content Include="Cursos\AltaCurso.aspx" />
+>>>>>>> a1bbc13a6b06e2e4cadbd749550f4d405d5d886c
     <Content Include="Materias\EliminaMateria.aspx" />
     <Content Include="Materias\CargaMateria.aspx" />
     <Content Include="Menu_Alumno\Alum_Carr_Materias.aspx" />
@@ -142,7 +148,6 @@
     <Content Include="Materias\ListadoMaterias.aspx" />
     <Content Include="Alumnos\Prueba.aspx" />
     <Content Include="Materias\ModificaMateria.aspx" />
-    <Content Include="Carreras\ModificaCarrera.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -271,6 +276,7 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="AgregarNota.aspx.cs">
       <DependentUpon>AgregarNota.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -285,6 +291,8 @@
     <Compile Include="Carreras\AgregaCarrera.aspx.designer.cs">
       <DependentUpon>AgregaCarrera.aspx</DependentUpon>
     </Compile>
+=======
+>>>>>>> a1bbc13a6b06e2e4cadbd749550f4d405d5d886c
     <Compile Include="Alumnos\Inscribir_Alum_Carrera.aspx.cs">
       <DependentUpon>Inscribir_Alum_Carrera.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -292,12 +300,12 @@
     <Compile Include="Alumnos\Inscribir_Alum_Carrera.aspx.designer.cs">
       <DependentUpon>Inscribir_Alum_Carrera.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Carreras\EliminaCarrera.aspx.cs">
-      <DependentUpon>EliminaCarrera.aspx</DependentUpon>
+    <Compile Include="Cursos\AltaCurso.aspx.cs">
+      <DependentUpon>AltaCurso.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Carreras\EliminaCarrera.aspx.designer.cs">
-      <DependentUpon>EliminaCarrera.aspx</DependentUpon>
+    <Compile Include="Cursos\AltaCurso.aspx.designer.cs">
+      <DependentUpon>AltaCurso.aspx</DependentUpon>
     </Compile>
     <Compile Include="Docentes\Notas\Listado_AlumnoMateria.aspx.cs">
       <DependentUpon>Listado_AlumnoMateria.aspx</DependentUpon>
@@ -450,13 +458,6 @@
     </Compile>
     <Compile Include="Materias\ModificaMateria.aspx.designer.cs">
       <DependentUpon>ModificaMateria.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Carreras\ModificaCarrera.aspx.cs">
-      <DependentUpon>ModificaCarrera.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Carreras\ModificaCarrera.aspx.designer.cs">
-      <DependentUpon>ModificaCarrera.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Alumnos\Prueba.aspx.cs">

@@ -19,7 +19,7 @@ namespace Dominio
 
 		public int cuatrimestre { set; get; } // INT NOT NULL CHECK(CUARTRIMESTRE = 1 OR CUARTRIMESTRE = 2),
 
-		public bool estado { set; get; } //	 BIT NOT NULL DEFAULT(1)
+		public int estado { set; get; } //	 BIT NOT NULL DEFAULT(1)
 
 	}
 }

@@ -35,6 +35,8 @@ namespace Negocio
                     aux1.Localidad_Prov = (string)alumno.Lector["Localidad"];
                     aux1.Estado = (int)alumno.Lector["Estado"];
 
+                    
+
                     lis_Alumno.Add(aux1);
                 }
                 return lis_Alumno;
