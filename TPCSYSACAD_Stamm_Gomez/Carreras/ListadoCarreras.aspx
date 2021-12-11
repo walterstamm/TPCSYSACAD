@@ -13,7 +13,7 @@
                         <div class='col-xs-3'>
                             <table>
                                 <tr>
-                                    <th> <a href="CargaCarreras.aspx" class="btn btn-primary btn-block">Cargar.Carreras</a> </th>
+                                    <th> <a href="AgregaCarrera.aspx" class="btn btn-primary btn-block">Cargar.Carreras</a> </th>
                                     <th> <a href="Default.aspx" class="btn btn-primary btn-block">Otro.....</a> </th>
                                 </tr>
                                 <%--<tr> LO USABA PARA NO HACER UNA PAGINA ESPECIFICO PARA ELIMINAR SIN 
@@ -50,8 +50,8 @@
                                     <td><%#Eval("ESTADO") %> </td>
                                     
                                     <td>
-                                        <a class="btn btn-sm btn-outline-info" href='EliminarAcarrera.aspx?idCarrera=<%#Eval("ID") %>'><i title="Eliminar Carrera" class="fas fa-trash-alt"></i></a>
-                                        <a class="btn btn-sm btn-outline-secondary" href='ModificarCarrera.aspx?idCarrera=<%#Eval("ID") %>'><i title="Modificar Carrera" class="far fa-edit"></i></a>
+                                        <a class="btn btn-sm btn-outline-info" href='EliminaCarrera.aspx?idCarrera=<%#Eval("ID") %>'><i title="Eliminar Carrera" class="fas fa-trash-alt"></i></a>
+                                        <a class="btn btn-sm btn-outline-secondary" href='ModificaCarrera.aspx?idCarrera=<%#Eval("ID") %>'><i title="Modificar Carrera" class="far fa-edit"></i></a>
                                     </td>
                                 </tr>
                             </ItemTemplate>
