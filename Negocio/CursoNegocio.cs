@@ -44,10 +44,10 @@ namespace Negocio
 
 
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
 
-                throw;
+                throw ex;
             }
             finally
             {

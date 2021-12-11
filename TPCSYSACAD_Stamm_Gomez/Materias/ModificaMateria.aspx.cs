@@ -22,6 +22,7 @@ namespace TPCSYSACAD_Stamm_Gomez
                     int idmat = int.Parse(Request.QueryString["idMateria"].ToString());
                     Session["IDMATERIA"] = idmat;
                     modifMateria = conex_Materia.UnaMateria(idmat);
+
                     text_Mod_idmateria.Text = modifMateria.idmateria.ToString();
                     text_Mod_nombremateria.Text = modifMateria.nombremateria;
                     text_Mod_Carrera.Text = modifMateria.idcarrera.ToString();
