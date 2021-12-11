@@ -47,7 +47,7 @@ namespace Negocio
             catch (Exception e)
             {
 
-                throw;
+                throw e;
             }
             finally
             {
