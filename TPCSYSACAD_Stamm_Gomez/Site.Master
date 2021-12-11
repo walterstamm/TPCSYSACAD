@@ -96,7 +96,7 @@
 
 
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> SYSACAD Administracion de Información del SYSACAD</p>
+                <%--<p>&copy; <%: DateTime.Now.Year %> SYSACAD Administracion de Información del SYSACAD</p>--%>
             </footer>
         </div>
 
