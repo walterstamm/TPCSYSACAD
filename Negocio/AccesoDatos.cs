@@ -64,5 +64,15 @@ namespace Negocio
 			comando.CommandText = sp;
 		}
 
+		public int returnPK()
+		{
+			comando.Connection = conexion;
+			conexion.Open();
+			comando.ExecuteNonQuery();
+
+			int modified = (int)comando.ExecuteScalar();
+			return modified;
+		}
+
 	}
 }
