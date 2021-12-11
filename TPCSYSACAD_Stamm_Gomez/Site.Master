@@ -1,0 +1,102 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="TPCSYSACAD_Stamm_Gomez.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="es">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - Mi aplicación ASP.NET</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" />
+
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+
+        <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <a class="navbar-brand" href="#">== SYSACAD STAMM GOMEZ ==</a>
+                <br />
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+
+
+                    <% if (Dominio.Util.validacionAdmin((Dominio.Usuarios)Session["Usuarios"]))
+                        {  %>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="../Alumnos/ListadoAlumnos.aspx">Alumnos</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="../Docentes/ListadoDocente.aspx">Docentes</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="../Materias/ListadoMaterias.aspx">Materias</a>
+                    </li>
+                     <li class="nav-item active">
+                        <a class="nav-link" href="../Carreras/ListadoCarreras.aspx">Carreras</a>
+                    </li>
+                    <%}%>
+                   
+                </ul>
+
+                <% if (Session["Usuarios"] == null)
+                    {  %>
+                <a class="nav-link" href="../Login/Login.aspx">Login</a>
+                <%}
+                    else
+                    { Dominio.Usuarios user = new Dominio.Usuarios();
+                        user = (Dominio.Usuarios)Session["Usuarios"];
+                        %>
+                <span><%=user.usuario%><i class="far fa-user" style="margin: 10px"></i></span>
+                
+                 <a class="nav-link" href="../Login/Login.aspx">Cerrar Sesion</a>
+                <%} %>
+            </div>
+        </nav>
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+
+
+            <hr />
+
+
+
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> SYSACAD Administracion de Información del SYSACAD</p>
+            </footer>
+        </div>
+
+    </form>
+</body>
+</html>
