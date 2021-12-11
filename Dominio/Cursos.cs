@@ -8,16 +8,16 @@ namespace Dominio
 {
     public class Cursos
     {
-        public int Id;
+        public int Id { set; get; }
 
-        public int IdMateria;
+        public int IdMateria { set; get; }
 
-        public int IdDocente;
+        public int IdDocente { set; get; }
 
-        public int IdCuatrimestre;
+        public int IdCuatrimestre { set; get; }
 
-        public int Anio;
+        public int Anio { set; get; }
 
-        public int Estado;
+        public int Estado { set; get; }
     }
 }

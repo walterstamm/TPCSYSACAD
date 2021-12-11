@@ -13,6 +13,8 @@ namespace TPCSYSACAD_Stamm_Gomez.Cursos
     {
 
         public MateriaNegocio matNeg = new MateriaNegocio();
+        public CuatrimestreNegocio cuaNeg = new CuatrimestreNegocio();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["Usuarios"] == null || !(Util.validacionAdmin((Usuarios)Session["Usuarios"])))
@@ -27,6 +29,17 @@ namespace TPCSYSACAD_Stamm_Gomez.Cursos
             ddlMateria.DataTextField = "nombremateria";
             ddlMateria.DataBind();
             ddlMateria.Items.Insert(0, new ListItem("Seleccione una Materia"));
+
+            ddlCuatrimestre.DataSource = cuaNeg.listaCuatrimestres();
+            ddlCuatrimestre.DataValueField = "IdCuatrimestre";
+            ddlCuatrimestre.DataTextField = "nombreCuatrimestre";
+            ddlCuatrimestre.DataBind();
+            ddlCuatrimestre.Items.Insert(0, new ListItem("Seleccione un Cuatrimestre"));
+
+        }
+
+        protected void btnConfrimar_Click(object sender, EventArgs e)
+        {
 
         }
     }
