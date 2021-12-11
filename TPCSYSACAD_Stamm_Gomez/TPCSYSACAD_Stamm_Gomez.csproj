@@ -108,10 +108,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="AgregarNota.aspx" />
     <Content Include="Carreras\AgregaCarrera.aspx" />
     <Content Include="Alumnos\CargaAlumnos.aspx" />
     <Content Include="Alumnos\Inscribir_Alum_Carrera.aspx" />
     <Content Include="Carreras\EliminaCarrera.aspx" />
+    <Content Include="Docentes\Notas\Listado_AlumnoMateria.aspx" />
     <Content Include="Materias\EliminaMateria.aspx" />
     <Content Include="Materias\CargaMateria.aspx" />
     <Content Include="Menu_Alumno\Alum_Carr_Materias.aspx" />
@@ -269,6 +271,13 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgregarNota.aspx.cs">
+      <DependentUpon>AgregarNota.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AgregarNota.aspx.designer.cs">
+      <DependentUpon>AgregarNota.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Carreras\AgregaCarrera.aspx.cs">
       <DependentUpon>AgregaCarrera.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -289,6 +298,13 @@
     </Compile>
     <Compile Include="Carreras\EliminaCarrera.aspx.designer.cs">
       <DependentUpon>EliminaCarrera.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Docentes\Notas\Listado_AlumnoMateria.aspx.cs">
+      <DependentUpon>Listado_AlumnoMateria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Docentes\Notas\Listado_AlumnoMateria.aspx.designer.cs">
+      <DependentUpon>Listado_AlumnoMateria.aspx</DependentUpon>
     </Compile>
     <Compile Include="Materias\EliminaMateria.aspx.cs">
       <DependentUpon>EliminaMateria.aspx</DependentUpon>

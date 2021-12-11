@@ -65,6 +65,11 @@
                      <li class="nav-item active">
                         <a class="nav-link" href="../Carreras/ListadoCarreras.aspx">Carreras</a>
                     </li>
+                    </li>
+                     <li class="nav-item active">
+                        <a class="nav-link" href="../Docentes/Notas/Listado_AlumnoMateria.aspx">Otros</a>
+                    </li>
+
                     <%}%>
                    
                 </ul>
