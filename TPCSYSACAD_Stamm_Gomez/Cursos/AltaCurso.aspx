@@ -24,7 +24,28 @@
             <div class="input-group mb-3">
                 <asp:Label Text="Cuatrimestre" runat="server" Width="160px" class="input-group-text" />
                 <asp:DropDownList ID="ddlCuatrimestre" runat="server"></asp:DropDownList>
+                <asp:RequiredFieldValidator runat="server"  ForeColor="Red" ControlToValidate="ddlCuatrimestre"  ValidateRequestMode="Enabled" ID="RequiredFieldValidator1" ErrorMessage="Elija una Materia"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" 
+                    runat="server" ForeColor="Red" ControlToValidate="ddlCuatrimestre"
+                        ErrorMessage="Por favor Seleecione una Opcion" 
+                        ValidationExpression="\d+">
+                    </asp:RegularExpressionValidator>
             </div>
+
+
+
+            <div class="input-group mb-3">
+                <asp:Label Text="Docente" runat="server" Width="160px" class="input-group-text" />
+                <asp:DropDownList ID="ddlDocente" runat="server"></asp:DropDownList>
+                <asp:RequiredFieldValidator runat="server"  ForeColor="Red" ControlToValidate="ddlDocente"  ValidateRequestMode="Enabled" ID="RequiredFieldValidator2" ErrorMessage="Elija una Materia"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" 
+                    runat="server" ForeColor="Red" ControlToValidate="ddlDocente"
+                        ErrorMessage="Por favor Seleecione una Opcion" 
+                        ValidationExpression="\d+">
+                    </asp:RegularExpressionValidator>
+            </div>
+
+
 
 
             <asp:Button Text="Confirmar" runat="server" ID="btnConfrimar" OnClick="btnConfrimar_Click" />

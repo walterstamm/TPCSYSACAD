@@ -49,6 +49,43 @@ namespace Negocio
             }
         }
 
+
+
+
+        public List<Docente> listadocenteConcatenado()
+        {
+            List<Docente> lis_Docente = new List<Docente>();
+            docente = new AccesoDatos();
+
+            try
+            {
+                docente.setearConsulta("SELECT IdDocente,Apellido +' '+Nombre+' '+Cuil AS Nombre from Docentes WHERE Estado = 1");
+                docente.ejecutarLectura();
+
+                while (docente.Lector.Read())
+                {
+                    Docente aux1 = new Docente();
+                    aux1.Iddocente = (int)docente.Lector["IdDocente"];
+                   
+                    aux1.Nombre = (string)docente.Lector["Nombre"];
+                    
+                   
+
+                    lis_Docente.Add(aux1);
+                }
+                return lis_Docente;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                docente.cerrarConexion();
+            }
+        }
+
         public void agregar(Docente undocente)
         {
             AccesoDatos accesodoente = new AccesoDatos();

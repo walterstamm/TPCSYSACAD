@@ -17,7 +17,7 @@ namespace Negocio
 
             try
             {
-                conex_materia.setearConsulta("SELECT IDMATERIA, NOMBREMATERIA, IDCARRERA, ANIO, IDCUATRIMESTRE, ESTADO FROM MATERIAS WHERE ESTADO = 1");
+                conex_materia.setearConsulta("SELECT IDMATERIA, NOMBREMATERIA, IDCARRERA, ANIO, CUATRIMESTRE, ESTADO FROM MATERIAS WHERE ESTADO = 1");
                 conex_materia.ejecutarLectura();
 
                 while (conex_materia.Lector.Read())
@@ -28,7 +28,7 @@ namespace Negocio
                     //aux1.carga_horaria_minima = (int)conex_materia.Lector["CARGA_HORARIA_MINIMA"];
                     aux1.idcarrera = (int)conex_materia.Lector["IDCARRERA"];
                     aux1.anio = (int)conex_materia.Lector["ANIO"];
-                    aux1.cuatrimestre = (int)conex_materia.Lector["IDCUATRIMESTRE"];
+                    aux1.cuatrimestre = (int)conex_materia.Lector["CUATRIMESTRE"];
                     aux1.estado = (int)conex_materia.Lector["ESTADO"];
 
                     lis_materia.Add(aux1);
