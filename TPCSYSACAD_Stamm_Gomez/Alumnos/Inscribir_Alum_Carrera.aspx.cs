@@ -35,12 +35,12 @@ namespace TPCSYSACAD_Stamm_Gomez
 
             try
             {
-                CarreraNegocio conex_dllDinamico = new CarreraNegocio();
+                //CarreraNegocio conex_dllDinamico = new CarreraNegocio();
                 if (!IsPostBack)
                 {
-                    ddlCarreras.DataSource = conex_dllDinamico.listaCarrera();
-                    ddlCarreras.DataValueField = "id_carrera";
-                    ddlCarreras.DataTextField = "nombre_carrera";
+                    ddlCarreras.DataSource = al_inscripcion_carr.listaCarrera();
+                    ddlCarreras.DataValueField = "id";
+                    ddlCarreras.DataTextField = "nombre";
                     ddlCarreras.DataBind();
                     ddlCarreras.Items.Insert(0, new ListItem("Seleccione una Carrera"));
 
@@ -55,8 +55,7 @@ namespace TPCSYSACAD_Stamm_Gomez
 
         protected void ddl_carreras_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int ID_CARRERA;
-            ID_CARRERA=int.Parse(ddlCarreras.SelectedItem.Value);
+            int ID_CARRERA = int.Parse(ddlCarreras.SelectedItem.Value);
         }
 
         protected void btn_Incribir_Click(object sender, EventArgs e)

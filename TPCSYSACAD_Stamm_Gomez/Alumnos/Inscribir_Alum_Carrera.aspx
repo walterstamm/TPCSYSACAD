@@ -12,7 +12,7 @@
     </div>
     <div class="form-group">
         <asp:Label Text="Apellidos" runat="server" width="200px"/>
-        <asp:TextBox runat="server" ID="text_Apellido"/>
+        <asp:TextBox runat="server" ID="text_Apellido" Enabled="false"/>
     </div>
 
     <div class="form-group">
@@ -22,7 +22,7 @@
 
 
     <br />
-    <h5>DROPDOWNLIST DINAMICO</h5>
+    <h5>Inscripcion a la Carrera que seleccione</h5>
     
     <asp:DropDownList runat="server" ID="ddlCarreras" OnSelectedIndexChanged="ddl_carreras_SelectedIndexChanged" CssClass="btn btn-outline-dark dropdown-toggle" >
     </asp:DropDownList>
