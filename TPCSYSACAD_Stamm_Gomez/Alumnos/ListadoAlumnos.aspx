@@ -1,12 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ListadoAlumnos.aspx.cs" Inherits="TPCSYSACAD_Stamm_Gomez.ListadoAlumnos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-
-    
         <h1>Listado Alumnos</h1>
             <asp:Label Text="Buscar" runat="server" />
-            <asp:TextBox runat="server" />
-    
+            <asp:TextBox runat="server" />    
         <div class="container">
         <div class="row py-3">
             <div class="col-3 order-2" id="sticky-sidebar">
@@ -18,8 +15,6 @@
                                     <th> <a href="CargaAlumnos.aspx" class="btn btn-primary btn-block">Cargar Alumno</a> </th>
                                     <th> <a href="../Default.aspx" class="btn btn-primary btn-block">volver</a> </th>
                                 </tr>
-                            
-
                             </table>
                         </div>
                     </div>
@@ -30,14 +25,14 @@
                     <thead>
                         <tr>
                             <th scope="col">ID</th>
-                            <th scope="col">CUIL_ALUMNO</th>
-                            <th scope="col">APELLIDO</th>
-                            <th scope="col">NOMBRE</th>
+                            <th scope="col">Cuil_Alumno</th>
+                            <th scope="col">Apellido</th>
+                            <th scope="col">Nombre</th>
                             <%--<th scope="col">NACIONALIDAD</th>--%>
-                            <th scope="col">FECHA NAC</th>
-                            <th scope="col">CORREO ELECTRONICO</th>
-                            <th scope="col">DOMICILIO........</th>
-                            <th scope="col">LOCALIDAD - PCIA</th>
+                            <th scope="col">Fecha Nac</th>
+                            <th scope="col">Correo Electrónico</th>
+                            <th scope="col">Domicilio</th>
+                            <th scope="col">Localidad - Pcia</th>
                             <%--<th scope="col">USUARIO</th>
                             <th scope="col">ESTADO ACADEMICO</th>--%>
 
@@ -67,14 +62,9 @@
                                 </tr>
                             </ItemTemplate>
                         </asp:Repeater>
-
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
-
-
-
-
 </asp:Content>

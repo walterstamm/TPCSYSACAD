@@ -11,16 +11,16 @@ namespace TPCSYSACAD_Stamm_Gomez
 {
     public partial class Inscribir_Alum_Carrera : System.Web.UI.Page
     {
-        public Alumno Al_Inscripcion = new Alumno();
-        AlumnoNegocio al_inscripcion = new AlumnoNegocio(); 
+        public Alumno         Al_Inscripcion      = new Alumno();
+        AlumnoNegocio         al_inscripcion      = new AlumnoNegocio();
+        public CarreraNegocio al_inscripcion_carr = new CarreraNegocio();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["Usuarios"] == null || !(Util.validacionAdmin((Usuarios)Session["Usuarios"])))
             {
-
                 Response.Redirect("../Login/Login.aspx", false);
             }
-
 
             if (Request.QueryString["idAlumno"] != null)
             {

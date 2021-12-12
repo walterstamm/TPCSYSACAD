@@ -7,16 +7,16 @@
     <br />
     <h5>INSCRIBIR A LOS ALUMNOS A LA CARRERA</h5>
     <div class="form-group">
-        <asp:Label Text="ID_ALUMNO" runat="server" Width="200px" />
+        <asp:Label Text="ID_Alumno" runat="server" Width="200px" />
         <asp:TextBox runat="server" ID="text_Id_alumno" Enabled="false"/>
     </div>
     <div class="form-group">
-        <asp:Label Text="APELLIDOS" runat="server" width="200px"/>
+        <asp:Label Text="Apellidos" runat="server" width="200px"/>
         <asp:TextBox runat="server" ID="text_Apellido"/>
     </div>
 
     <div class="form-group">
-        <asp:Label Text="NOMBRE" runat="server" Width="200px" />
+        <asp:Label Text="Nombre" runat="server" Width="200px" />
         <asp:TextBox runat="server" ID="text_Nombre" Enabled="false"/>
     </div>
 

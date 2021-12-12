@@ -9,18 +9,14 @@
             <asp:Label Text="Cuil" runat="server" Width="160px" class="input-group-text" />
             <asp:TextBox ID="text_Cuil" runat="server"  class="form-control"/>
         </div>
-
         <div class="input-group mb-3">
             <asp:Label Text="Apellido" class="input-group-text" runat="server" Width="160px" />
             <asp:TextBox ID="text_Apellido" runat="server"  class="form-control"/>
         </div>
-
         <div class="input-group mb-3">
             <asp:Label Text="Nombre" class="input-group-text" runat="server" Width="160px" />
             <asp:TextBox ID="text_Nombre" runat="server"  class="form-control"/>
         </div>
-
-
         <div class="input-group mb-3">
             <asp:Label Text="Fecha de Nacimiento"  class="input-group-text" runat="server" Width="160px" />
             <asp:TextBox ID="text_FechaNac" TextMode="Date" runat="server" class="form-control" />

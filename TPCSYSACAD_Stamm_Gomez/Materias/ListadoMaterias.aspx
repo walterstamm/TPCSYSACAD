@@ -1,11 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ListadoMaterias.aspx.cs" Inherits="TPCSYSACAD_Stamm_Gomez.ListadoMaterias" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
-
     <h1>Listado Materias</h1>
             <asp:Label Text="Buscar" runat="server" />
             <asp:TextBox runat="server" />
-    
         <div class="container">
         <div class="row py-3">
             <div class="col-3 order-2" id="sticky-sidebar">
@@ -17,8 +14,6 @@
                                     <th> <a href="CargaMateria.aspx" class="btn btn-primary btn-block">Cargar Materia</a> </th>
                                     <th> <a href="Default.aspx" class="btn btn-primary btn-block">Otro.....</a> </th>
                                 </tr>
-                               
-
                             </table>
                         </div>
                     </div>
@@ -35,7 +30,6 @@
                             <th scope="col">AÑO_CURSO</th>
                             <th scope="col">CUATRIMESTRE</th>
                             <th scope="col">ESTADO</th>
-
                         </tr>
                     </thead>
                     <tbody>
@@ -50,18 +44,14 @@
                                     <td><%#Eval("CUATRIMESTRE") %> </td>
                                     <td><%#Eval("ESTADO") %> </td>
                                     <td>
-                                        
                                         <a class="btn btn-sm btn-outline-info" href='EliminaMateria.aspx?idMateria=<%#Eval("IDMATERIA") %>'>
                                             <i title="Eliminar Materia" class="fas fa-trash-alt"></i></a>
-                                        
-                                        <%--href='EliminarAcarrera.aspx?idMateria=<%#Eval("id_materia") %>'--%>
                                         <a class="btn btn-sm btn-outline-secondary" href='ModificaMateria.aspx?idMateria=<%#Eval("IDMATERIA") %>'>
                                             <i title="Modificar Materia" class="far fa-edit"></i></a>
                                     </td>
                                 </tr>
                             </ItemTemplate>
                         </asp:Repeater>
-
                     </tbody>
                 </table>
             </div>

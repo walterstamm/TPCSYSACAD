@@ -16,12 +16,6 @@
                                     <th> <a href="AgregaCarrera.aspx" class="btn btn-primary btn-block">Cargar.Carreras</a> </th>
                                     <th> <a href="Default.aspx" class="btn btn-primary btn-block">Otro.....</a> </th>
                                 </tr>
-                                <%--<tr> LO USABA PARA NO HACER UNA PAGINA ESPECIFICO PARA ELIMINAR SIN 
-                                    <th> <asp:Label Text="ID A ELIMINAR" runat="server" /> </th>
-                                    <th>    <asp:TextBox Text="NRO ID" ID="text_Eliminar" runat="server" />  </th>
-                                    <th>    <asp:Button Class="btn btn-danger" Text="Elimnar ID" ID="Eliminar" OnClick="Eliminar_Click" runat="server" />  </th>
-                                </tr>--%> 
-
                             </table>
                         </div>
                     </div>
@@ -31,12 +25,11 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">ID_CARR</th>
-                            <th scope="col">NOMBRE CARRERA</th>
-                            <th scope="col">PLAN AÑO</th>
-                            <th scope="col">DOC HABILITANTE</th>
-                            <th scope="col">ESTADO CARRERA</th>
-
+                            <th scope="col">ID_Carrera</th>
+                            <th scope="col">Nombre Carrera</th>
+                            <th scope="col">Plan Año</th>
+                            <th scope="col">Doc. Habilitante</th>
+                            <th scope="col">Estado Carrera</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -56,7 +49,6 @@
                                 </tr>
                             </ItemTemplate>
                         </asp:Repeater>
-
                     </tbody>
                 </table>
             </div>

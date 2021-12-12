@@ -1,11 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ListadoDocente.aspx.cs" Inherits="TPCSYSACAD_Stamm_Gomez.ListadoDocente" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
-    
         <h1>Listado Docente</h1>
             <asp:Label Text="Buscar" runat="server" />
             <asp:TextBox runat="server" />
-    
         <div class="container">
         <div class="row py-3">
             <div class="col-3 order-2" id="sticky-sidebar">
@@ -62,7 +59,6 @@
                                 </tr>
                             </ItemTemplate>
                         </asp:Repeater>
-
                     </tbody>
                 </table>
             </div>

@@ -110,6 +110,9 @@
     <Content Include="About.aspx" />
     <Content Include="Alumnos\CargaAlumnos.aspx" />
     <Content Include="Alumnos\Inscribir_Alum_Carrera.aspx" />
+    <Content Include="Carreras\AgregaCarrera.aspx" />
+    <Content Include="Carreras\EliminaCarrera.aspx" />
+    <Content Include="Carreras\ModificaCarrera.aspx" />
     <Content Include="Cursos\AltaCurso.aspx" />
     <Content Include="Materias\EliminaMateria.aspx" />
     <Content Include="Materias\CargaMateria.aspx" />
@@ -137,7 +140,7 @@
     <Content Include="Login\Login.aspx" />
     <Content Include="Login\MenuLogin.aspx" />
     <Content Include="Materias\ListadoMaterias.aspx" />
-    <Content Include="Alumnos\Prueba.aspx" />
+    <Content Include="Prueba.aspx" />
     <Content Include="Materias\ModificaMateria.aspx" />
     <Content Include="Notas\AgregarNota.aspx" />
     <Content Include="Notas\Listado_AlumnoMateria.aspx" />
@@ -275,6 +278,27 @@
     </Compile>
     <Compile Include="Alumnos\Inscribir_Alum_Carrera.aspx.designer.cs">
       <DependentUpon>Inscribir_Alum_Carrera.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Carreras\AgregaCarrera.aspx.cs">
+      <DependentUpon>AgregaCarrera.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Carreras\AgregaCarrera.aspx.designer.cs">
+      <DependentUpon>AgregaCarrera.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Carreras\EliminaCarrera.aspx.cs">
+      <DependentUpon>EliminaCarrera.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Carreras\EliminaCarrera.aspx.designer.cs">
+      <DependentUpon>EliminaCarrera.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Carreras\ModificaCarrera.aspx.cs">
+      <DependentUpon>ModificaCarrera.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Carreras\ModificaCarrera.aspx.designer.cs">
+      <DependentUpon>ModificaCarrera.aspx</DependentUpon>
     </Compile>
     <Compile Include="Cursos\AltaCurso.aspx.cs">
       <DependentUpon>AltaCurso.aspx</DependentUpon>
@@ -443,11 +467,11 @@
       <DependentUpon>Listado_AlumnoMateria.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Alumnos\Prueba.aspx.cs">
+    <Compile Include="Prueba.aspx.cs">
       <DependentUpon>Prueba.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Alumnos\Prueba.aspx.designer.cs">
+    <Compile Include="Prueba.aspx.designer.cs">
       <DependentUpon>Prueba.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
