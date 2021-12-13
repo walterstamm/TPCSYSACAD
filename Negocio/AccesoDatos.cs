@@ -68,9 +68,9 @@ namespace Negocio
 		{
 			comando.Connection = conexion;
 			conexion.Open();
-			comando.ExecuteNonQuery();
+			//comando.ExecuteNonQuery();
 
-			int modified = (int)comando.ExecuteScalar();
+			int modified = Convert.ToInt32 (comando.ExecuteScalar());
 			return modified;
 		}
 

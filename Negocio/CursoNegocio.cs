@@ -11,33 +11,33 @@ namespace Negocio
     public class CursoNegocio
     {
 
-        
+
         private AccesoDatos cursoConexion;
 
-        public void agregarCurso(Cursos curso,List<Alumno>lista)
+        public void agregarCurso(Cursos curso, List<Alumno> lista)
         {
             cursoConexion = new AccesoDatos();
 
             try
             {
                 cursoConexion.setearParametro("@idmateria", curso.IdMateria);
-                cursoConexion.setearParametro("@iddocente",curso.IdDocente);
-                cursoConexion.setearParametro("idcuatrimestre", curso.IdCuatrimestre);
+                cursoConexion.setearParametro("@iddocente", curso.IdDocente);
+                cursoConexion.setearParametro("@idcuatrimestre", curso.IdCuatrimestre);
                 cursoConexion.setearParametro("@anio", curso.Anio);
 
-                cursoConexion.setearConsulta("INSERT INTO MateriasxDocente (IdMateria, IdDocente,IdCuatrimestre,Anio,Estado) VALUES (@idmateria,@iddocente,idcuatrimestre,@anio,1) SELECT SCOPE_IDENTITY() ");
+                cursoConexion.setearConsulta("INSERT INTO MateriasxDocente (IdMateria, IdDocente,IdCuatrimestre,Anio,Estado) VALUES (@idmateria,@iddocente,@idcuatrimestre,@anio,1) SELECT SCOPE_IDENTITY()  ");
 
-              
+                //SELECT SCOPE_IDENTITY()
 
                 int idMateriaDocente = cursoConexion.returnPK();
 
+                cursoConexion.setearParametro("@idmateriadocente", idMateriaDocente);
 
-                cursoConexion.setearParametro("@idmateriadocente",idMateriaDocente );
+
                 foreach (Alumno alu in lista)
                 {
-                    cursoConexion.setearParametro("@idAlum", alu.Idalumno);
-
-                    cursoConexion.setearConsulta("INSERT INTO AlumnosxMateria (IdMateriaDocente,IdAlumno) VALUES (@idmateriadocente,@idAlum)");
+                    cursoConexion.cerrarConexion();
+                    cursoConexion.setearConsulta("INSERT INTO AlumnosxMateria (IdMateriaDocente,IdAlumno) VALUES ("+idMateriaDocente+", "+alu.Idalumno+")");
                     cursoConexion.ejectutarAccion();
                 }
 

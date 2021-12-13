@@ -16,51 +16,80 @@ namespace TPCSYSACAD_Stamm_Gomez.Cursos
         public CuatrimestreNegocio cuaNeg = new CuatrimestreNegocio();
         public DocenteNegocio docNeg = new DocenteNegocio();
         public AlumnoNegocio alumNeg = new AlumnoNegocio();
+        public CursoNegocio curNeg = new CursoNegocio();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (Session["Usuarios"] == null || !(Util.validacionAdmin((Usuarios)Session["Usuarios"])))
-            //{
 
-            //    Response.Redirect("../Login/Login.aspx", false);
-            //}
+            if (!IsPostBack)
+            {
 
 
-            ddlMateria.DataSource = matNeg.listMateria();
-            ddlMateria.DataValueField = "idMateria";
-            ddlMateria.DataTextField = "nombremateria";
-            ddlMateria.DataBind();
-            ddlMateria.Items.Insert(0, new ListItem("Seleccione una Materia"));
+                //if (Session["Usuarios"] == null || !(Util.validacionAdmin((Usuarios)Session["Usuarios"])))
+                //{
 
-            ddlCuatrimestre.DataSource = cuaNeg.listaCuatrimestres();
-            ddlCuatrimestre.DataValueField = "IdCuatrimestre";
-            ddlCuatrimestre.DataTextField = "nombreCuatrimestre";
-            ddlCuatrimestre.DataBind();
-            ddlCuatrimestre.Items.Insert(0, new ListItem("Seleccione un Cuatrimestre"));
+                //    Response.Redirect("../Login/Login.aspx", false);
+                //}
 
 
-            ddlDocente.DataSource = docNeg.listadocenteConcatenado();
-            ddlDocente.DataValueField = "Iddocente";
-            ddlDocente.DataTextField = "Nombre";
-            ddlDocente.DataBind();
-            ddlDocente.Items.Insert(0, new ListItem("Seleccione un Docente"));
+                ddlMateria.DataSource = matNeg.listMateria();
+                ddlMateria.DataValueField = "idMateria";
+                ddlMateria.DataTextField = "nombremateria";
+                ddlMateria.DataBind();
+                ddlMateria.Items.Insert(0, new ListItem("Seleccione una Materia"));
+
+                ddlCuatrimestre.DataSource = cuaNeg.listaCuatrimestres();
+                ddlCuatrimestre.DataValueField = "IdCuatrimestre";
+                ddlCuatrimestre.DataTextField = "nombreCuatrimestre";
+                ddlCuatrimestre.DataBind();
+                ddlCuatrimestre.Items.Insert(0, new ListItem("Seleccione un Cuatrimestre"));
+
+
+                ddlDocente.DataSource = docNeg.listadocenteConcatenado();
+                ddlDocente.DataValueField = "Iddocente";
+                ddlDocente.DataTextField = "Nombre";
+                ddlDocente.DataBind();
+                ddlDocente.Items.Insert(0, new ListItem("Seleccione un Docente"));
 
 
 
 
 
 
-            chkAlumnos.DataSource = alumNeg.listaAlumnoConcatenado();
-            chkAlumnos.DataValueField = "Idalumno";
-            chkAlumnos.DataTextField = "Nombre";
-            chkAlumnos.DataBind();
+                chkAlumnos.DataSource = alumNeg.listaAlumnoConcatenado();
+                chkAlumnos.DataValueField = "Idalumno";
+                chkAlumnos.DataTextField = "Nombre";
+                chkAlumnos.DataBind();
+            }
         }
 
 
 
         protected void btnConfrimar_Click(object sender, EventArgs e)
         {
+            Dominio.Cursos cur= new Dominio.Cursos();
+            List<Alumno> lista = new List<Alumno>();
+            for (int i = 0; i < chkAlumnos.Items.Count; i++)
+            {
+                //chkAlumnos.Items[i].Selected
+                if (chkAlumnos.Items[i].Selected)
+                {
+                    Alumno alu = new Alumno();
+                    alu.Nombre = chkAlumnos.Items[i].Text;
+                    alu.Idalumno = int.Parse(chkAlumnos.Items[i].Value);
+                    lista.Add(alu);
+                }
+            }
 
+            cur.IdCuatrimestre = int.Parse(ddlCuatrimestre.SelectedItem.Value);
+            cur.IdDocente = int.Parse(ddlDocente.SelectedItem.Value);
+            cur.IdMateria = int.Parse(ddlMateria.SelectedItem.Value);
+            cur.Anio = int.Parse(txtAnio.Text);
+
+            curNeg.agregarCurso(cur, lista);
+
+
+            
         }
     }
 }

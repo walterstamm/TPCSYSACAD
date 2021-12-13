@@ -54,7 +54,7 @@
 
         <div class="input-group-text">
             <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
-                <asp:CheckBoxList class="btn-check" runat="server" ID="chkAlumnos"></asp:CheckBoxList>
+                <asp:CheckBoxList class="btn-check" runat="server" ID="chkAlumnos"  ></asp:CheckBoxList>
             </div>
         </div>
 
