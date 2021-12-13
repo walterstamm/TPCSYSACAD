@@ -39,5 +39,38 @@ namespace Negocio
                 conex_usuario.cerrarConexion();
             }
         }
+
+        public bool ValidarDocente(int idDoc)
+        {
+            AccesoDatos conex_usuario = new AccesoDatos();
+
+            try
+            {
+                conex_usuario.setearParametro("@idDoc",idDoc);
+                
+                conex_usuario.setearConsulta("SELECT Estado from Docentes  WHERE IdDocente=@idDoc");
+
+                conex_usuario.ejecutarLectura();
+                bool estado = false;
+
+                while (conex_usuario.Lector.Read())
+                {
+                    estado = (bool)conex_usuario.Lector["Estado"];
+
+                    
+                }
+                return estado; 
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conex_usuario.cerrarConexion();
+            }
+        }
+
+
     }
 }

@@ -28,12 +28,18 @@ namespace TPCSYSACAD_Stamm_Gomez.Login
                 {
                     Session.Clear();
                     Session.Add("Usuarios", usuario);
+
+                    if (Util.validacionDocente(usuario))
+                    {
+                        Response.Redirect("../Error.aspx");
+                    }
                     Util.usuarioLogeado = usuario.usuario;
+
                     Response.Redirect("MenuLogin.aspx", false);
                 }
                 else
                 {
-                    Session.Add("ERROR....", "USUARIO Y/O PASWARD INCORRECTO");
+                   
                     Response.Redirect("../Error.aspx", false);
                 }
 

@@ -25,7 +25,7 @@ namespace TPCSYSACAD_Stamm_Gomez
             {
 
                 Session.Add("Error", ex.ToString());
-                Response.Redirect("../../Error.aspx");
+                Response.Redirect("../Error.aspx");
             }
         }
     }

@@ -11,10 +11,10 @@ namespace Dominio
         public int id { get; set; }
         public int idalumno { get; set; }
         public int idmateriadocente { get; set; }
-        public int evento1 { get; set; }
-        public int evento2 { get; set; }
-        public int rec1 { get; set; }
-        public int rec2 { get; set; }
+        public decimal evento1 { get; set; }
+        public decimal evento2 { get; set; }
+        public decimal rec1 { get; set; }
+        public decimal rec2 { get; set; }
         public Decimal notafinal { get; set; }
         public string resultadofinal { set; get; }
     }
