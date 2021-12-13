@@ -23,7 +23,7 @@ namespace TPCSYSACAD_Stamm_Gomez.Login
 
             try
             {
-                usuario = new Usuarios(txtUser.Text, txtPassword.Text, false );
+                usuario = new Usuarios(txtUser.Text, txtPassword.Text, false);
                 if (conex_usuario.Loguear(usuario))
                 {
                     Session.Clear();
@@ -31,15 +31,24 @@ namespace TPCSYSACAD_Stamm_Gomez.Login
 
                     if (Util.validacionDocente(usuario))
                     {
-                        Response.Redirect("../Error.aspx");
+                        if (conex_usuario.ValidarDocente(usuario.idDocente))
+                        {
+
+                            Session.Add("IdDocente", usuario.idDocente);
+                        }
+                        else
+                        {
+                            Session.Clear();
+                            Response.Redirect("Login.aspx");
+                        }
                     }
-                    Util.usuarioLogeado = usuario.usuario;
+                   
 
                     Response.Redirect("MenuLogin.aspx", false);
                 }
                 else
                 {
-                   
+
                     Response.Redirect("../Error.aspx", false);
                 }
 
