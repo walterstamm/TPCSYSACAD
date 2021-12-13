@@ -27,12 +27,9 @@ namespace Negocio
 
                 cursoConexion.setearConsulta("INSERT INTO MateriasxDocente (IdMateria, IdDocente,IdCuatrimestre,Anio,Estado) VALUES (@idmateria,@iddocente,@idcuatrimestre,@anio,1) SELECT SCOPE_IDENTITY()  ");
 
-                //SELECT SCOPE_IDENTITY()
+                //SELECT SCOPE_IDENTITY() retorna la id 
 
                 int idMateriaDocente = cursoConexion.returnPK();
-
-                cursoConexion.setearParametro("@idmateriadocente", idMateriaDocente);
-
 
                 foreach (Alumno alu in lista)
                 {
