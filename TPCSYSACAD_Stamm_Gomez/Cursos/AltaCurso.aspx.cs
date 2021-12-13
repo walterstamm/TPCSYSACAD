@@ -19,11 +19,11 @@ namespace TPCSYSACAD_Stamm_Gomez.Cursos
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Usuarios"] == null || !(Util.validacionAdmin((Usuarios)Session["Usuarios"])))
-            {
+            //if (Session["Usuarios"] == null || !(Util.validacionAdmin((Usuarios)Session["Usuarios"])))
+            //{
 
-                Response.Redirect("../Login/Login.aspx", false);
-            }
+            //    Response.Redirect("../Login/Login.aspx", false);
+            //}
 
 
             ddlMateria.DataSource = matNeg.listMateria();
@@ -44,6 +44,10 @@ namespace TPCSYSACAD_Stamm_Gomez.Cursos
             ddlDocente.DataTextField = "Nombre";
             ddlDocente.DataBind();
             ddlDocente.Items.Insert(0, new ListItem("Seleccione un Docente"));
+
+
+
+
 
 
             chkAlumnos.DataSource = alumNeg.listaAlumnoConcatenado();

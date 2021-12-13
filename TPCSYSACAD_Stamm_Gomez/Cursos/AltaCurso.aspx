@@ -50,9 +50,22 @@
             <asp:RequiredFieldValidator runat="server" ForeColor="Red" ControlToValidate="txtAnio" ValidateRequestMode="Enabled" ID="RequiredFieldValidator3" ErrorMessage="Elija una Año"></asp:RequiredFieldValidator>
         </div>
 
-        <asp:CheckBoxList runat="server" ID="chkAlumnos"></asp:CheckBoxList>
 
 
-        <asp:Button Text="Confirmar" runat="server" ID="btnConfrimar" OnClick="btnConfrimar_Click" />
+        <div class="input-group-text">
+            <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                <asp:CheckBoxList class="btn-check" runat="server" ID="chkAlumnos"></asp:CheckBoxList>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="mb-3 row ">
+            <div class="col-sm-10 center-tex ">
+                <asp:Button Text="Confirmar" runat="server" ID="btnConfrimar" OnClick="btnConfrimar_Click" />
+            </div>
+
+        </div>
+        <hr>
     </div>
 </asp:Content>
