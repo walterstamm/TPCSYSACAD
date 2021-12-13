@@ -54,7 +54,20 @@
 
         <div class="input-group-text">
             <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
-                <asp:CheckBoxList class="btn-check" runat="server" ID="chkAlumnos"  ></asp:CheckBoxList>
+                <asp:CheckBoxList class="btn-check" runat="server" ID="chkAlumnos" CausesValidation="true"></asp:CheckBoxList>
+
+                <asp:CustomValidator ID="CustomValidator1" runat="server" ErrorMessage="Seleccione al menos uno"
+                    ClientValidationFunction="checkCheckBoxList" ForeColor="Red" BackColor="White"></asp:CustomValidator>
+
+                <script type="text/javascript">
+                    function checkCheckBoxList(oSrc, args) {
+                        var isValid = false;
+                        $("#<%= chkAlumnos.ClientID %> input[type='checkbox']:checked").each(function (i, obj) {
+                            isValid = true;
+                        });
+                        args.IsValid = isValid;
+                    }
+                </script>
             </div>
         </div>
 
