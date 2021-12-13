@@ -47,9 +47,10 @@
                 ValidationExpression="\d+">
             </asp:RegularExpressionValidator>
 
-            <asp:RequiredFieldValidator runat="server" ForeColor="Red" ControlToValidate="txtAnio" ValidateRequestMode="Enabled" ID="RequiredFieldValidator3" ErrorMessage="Elija una Materia"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator runat="server" ForeColor="Red" ControlToValidate="txtAnio" ValidateRequestMode="Enabled" ID="RequiredFieldValidator3" ErrorMessage="Elija una Año"></asp:RequiredFieldValidator>
         </div>
 
+        <asp:CheckBoxList runat="server" ID="chkAlumnos"></asp:CheckBoxList>
 
 
         <asp:Button Text="Confirmar" runat="server" ID="btnConfrimar" OnClick="btnConfrimar_Click" />

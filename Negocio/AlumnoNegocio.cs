@@ -168,21 +168,39 @@ namespace Negocio
 
 
 
-        //public List<Alumno> modificarAlumno(int idalumno)
-        //{
-        //    List<Alumno> modificarAlumno = new List<Alumno>();
-        //    AccesoDatos modifAlumno = new AccesoDatos();
+        public List<Alumno> listaAlumnoConcatenado()
+        {
+            List<Alumno> listAlumno = new List<Alumno>();
+            alumno = new AccesoDatos();
 
-        //    try
-        //    {
-        //        modifAlumno.setearConsulta("" + idalumno)
-        //    }
-        //    catch (Exception ex)
-        //    {
+            try
+            {
+                alumno.setearConsulta("SELECT Id,Apellido +' '+Nombre+' '+Cuil AS Nombre from Alumnos WHERE Estado = 1");
+                alumno.ejecutarLectura();
 
-        //        throw ex;
-        //    }
-        //}
+                while (alumno.Lector.Read())
+                {
+                    Alumno aux1 = new Alumno();
+                    aux1.Idalumno = (int)alumno.Lector["Id"];
+
+                    aux1.Nombre = (string)alumno.Lector["Nombre"];
+
+
+
+                    listAlumno.Add(aux1);
+                }
+                return listAlumno;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                alumno.cerrarConexion();
+            }
+        }
 
     }
 }

@@ -15,6 +15,7 @@ namespace TPCSYSACAD_Stamm_Gomez.Cursos
         public MateriaNegocio matNeg = new MateriaNegocio();
         public CuatrimestreNegocio cuaNeg = new CuatrimestreNegocio();
         public DocenteNegocio docNeg = new DocenteNegocio();
+        public AlumnoNegocio alumNeg = new AlumnoNegocio();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -44,7 +45,14 @@ namespace TPCSYSACAD_Stamm_Gomez.Cursos
             ddlDocente.DataBind();
             ddlDocente.Items.Insert(0, new ListItem("Seleccione un Docente"));
 
+
+            chkAlumnos.DataSource = alumNeg.listaAlumnoConcatenado();
+            chkAlumnos.DataValueField = "Idalumno";
+            chkAlumnos.DataTextField = "Nombre";
+            chkAlumnos.DataBind();
         }
+
+
 
         protected void btnConfrimar_Click(object sender, EventArgs e)
         {
