@@ -18,12 +18,12 @@ namespace TPCSYSACAD_Stamm_Gomez.Login
 
         protected void btnIngresar_Click(object sender, EventArgs e)
         {
-            Usuarios usuario;
+             Dominio.Usuarios usuario;
             UsusarioNegocio conex_usuario = new UsusarioNegocio();
 
             try
             {
-                usuario = new Usuarios(txtUser.Text, txtPassword.Text, false);
+                usuario = new Dominio.Usuarios(txtUser.Text, txtPassword.Text, false);
                 if (conex_usuario.Loguear(usuario))
                 {
                     Session.Clear();

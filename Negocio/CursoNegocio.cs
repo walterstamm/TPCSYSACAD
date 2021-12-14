@@ -34,7 +34,7 @@ namespace Negocio
                 foreach (Alumno alu in lista)
                 {
                     cursoConexion.cerrarConexion();
-                    cursoConexion.setearConsulta("INSERT INTO AlumnosxMateria (IdMateriaDocente,IdAlumno) VALUES ("+idMateriaDocente+", "+alu.Idalumno+")");
+                    cursoConexion.setearConsulta("INSERT INTO AlumnosxMateria (IdMateriaDocente,IdAlumno) VALUES (" + idMateriaDocente + ", " + alu.Idalumno + ")");
                     cursoConexion.ejectutarAccion();
                 }
 
@@ -54,5 +54,44 @@ namespace Negocio
         }
 
 
+        public List<Cursos> listadoCursos()
+        {
+            List<Cursos> listaCurso = new List<Cursos>();
+            cursoConexion = new AccesoDatos();
+
+            try
+            {
+                cursoConexion.setearConsulta("SELECT dc.Apellido Apellido,dc.Nombre Nombre,dc.Cuil Cuil,mat.NombreMateria Materia,cua.Nombre Cuatrimestre,mtd.Anio anio from MateriasxDocente mtd " +
+                                            "INNER JOIN Docentes dc on dc.IdDocente = mtd.IdDocente " +
+                                            "INNER JOIN Cuatrimestres cua on cua.IdCuatrimestre = mtd.IdCuatrimestre " +
+                                            "INNER JOIN Materias mat on mat.IdMateria = mtd.IdMateria " +
+                                            "WHERE mtd.Estado = 1");
+                cursoConexion.ejecutarLectura();
+
+                while (cursoConexion.Lector.Read())
+                {
+                    Cursos aux1 = new Cursos();
+                    aux1.apellidoDocente = (string)cursoConexion.Lector["Apellido"];
+                    aux1.nombreDocente = (string)cursoConexion.Lector["Nombre"];
+                    aux1.cuilDocente = (string)cursoConexion.Lector["Cuil"];
+                    aux1.Materia = (string)cursoConexion.Lector["Materia"];
+                    aux1.cuatrimestre = (string)cursoConexion.Lector["Cuatrimestre"];
+                    aux1.Anio = (int)cursoConexion.Lector["anio"];
+
+
+                    listaCurso.Add(aux1);
+                }
+                return listaCurso;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                cursoConexion.cerrarConexion();
+            }
+        }
     }
 }

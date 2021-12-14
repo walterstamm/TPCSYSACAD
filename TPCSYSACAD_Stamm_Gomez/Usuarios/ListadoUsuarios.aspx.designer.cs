@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TPCSYSACAD_Stamm_Gomez
+namespace TPCSYSACAD_Stamm_Gomez.Usuarios
 {
 
 
-    public partial class ListadoAlumnos
+    public partial class ListadoUsuarios
     {
 
         /// <summary>

@@ -12,9 +12,21 @@ namespace Dominio
 
         public int IdMateria { set; get; }
 
+        public string Materia { set; get; }
+
+
         public int IdDocente { set; get; }
 
+        public string nombreDocente { set; get; }
+
+        public string apellidoDocente { set; get; }
+
+        public string cuilDocente { set; get; }
+
         public int IdCuatrimestre { set; get; }
+
+        public string cuatrimestre { set; get; }
+
 
         public int Anio { set; get; }
 

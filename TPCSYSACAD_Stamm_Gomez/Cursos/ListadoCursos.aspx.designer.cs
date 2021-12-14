@@ -7,20 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TPCSYSACAD_Stamm_Gomez
+namespace TPCSYSACAD_Stamm_Gomez.Cursos
 {
 
 
-    public partial class ListadoAlumnos
+    public partial class ListadoCursos
     {
 
         /// <summary>
-        /// Rep control.
+        /// RepCursos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater Rep;
+        protected global::System.Web.UI.WebControls.Repeater RepCursos;
     }
 }

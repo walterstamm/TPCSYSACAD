@@ -1,7 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ListadoAlumnos.aspx.cs" Inherits="TPCSYSACAD_Stamm_Gomez.ListadoAlumnos" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ListadoUsuarios.aspx.cs" Inherits="TPCSYSACAD_Stamm_Gomez.Usuarios.ListadoUsuarios" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-        <h1>Listado Alumnos</h1>
+
+      <h1>Listado Usuarios</h1>
             <asp:Label Text="Buscar" runat="server" />
             <asp:TextBox runat="server" />    
         <div class="container">
@@ -24,16 +25,10 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Cuil_Alumno</th>
-                            <th scope="col">Apellido</th>
+                            <th scope="col">Usuario</th>
                             <th scope="col">Nombre</th>
-                           
-                            <th scope="col">Fecha Nac</th>
-                            <th scope="col">Correo Electrónico</th>
-                            <th scope="col">Domicilio</th>
-                            <th scope="col">Localidad - Pcia</th>
-                           
+                            <th scope="col">Apellido</th>
+                            <th scope="col">Cuil</th>  
 
                         </tr>
                     </thead>
@@ -66,4 +61,7 @@
             </div>
         </div>
     </div>
+
+
+
 </asp:Content>
