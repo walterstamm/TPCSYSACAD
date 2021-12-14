@@ -25,11 +25,11 @@ namespace TPCSYSACAD_Stamm_Gomez.Cursos
             {
 
 
-                //if (Session["Usuarios"] == null || !(Util.validacionAdmin((Usuarios)Session["Usuarios"])))
-                //{
+                if (Session["Usuarios"] == null || !(Util.validacionAdmin((Usuarios)Session["Usuarios"])))
+                {
 
-                //    Response.Redirect("../Login/Login.aspx", false);
-                //}
+                    Response.Redirect("../Login/Login.aspx", false);
+                }
 
 
                 ddlMateria.DataSource = matNeg.listMateria();

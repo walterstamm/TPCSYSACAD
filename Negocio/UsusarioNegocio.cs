@@ -25,7 +25,7 @@ namespace Negocio
                 {
                     usuario.id = (int)conex_usuario.Lector["ID"];
                     usuario.TipoUsuario = (int)(conex_usuario.Lector["TIPOUSUARIO"]) == 1 ? TipoUsuario.Profesor : TipoUsuario.Admin;
-                    usuario.idDocente= (int)conex_usuario.Lector["IdDocente"];
+                    usuario.idDocente = (int)conex_usuario.Lector["IdDocente"];
                     return true; //SI TRAE EL USUARIO LE ASIGNA LA PASSWARD Y DEVUELVE TRUE.
                 }
                 return false; // SI NO DEVUELVE FALSE
@@ -46,8 +46,8 @@ namespace Negocio
 
             try
             {
-                conex_usuario.setearParametro("@idDoc",idDoc);
-                
+                conex_usuario.setearParametro("@idDoc", idDoc);
+
                 conex_usuario.setearConsulta("SELECT Estado from Docentes  WHERE IdDocente=@idDoc");
 
                 conex_usuario.ejecutarLectura();
@@ -55,11 +55,11 @@ namespace Negocio
 
                 while (conex_usuario.Lector.Read())
                 {
-                    estado = Convert.ToBoolean (conex_usuario.Lector["Estado"]);
+                    estado = Convert.ToBoolean(conex_usuario.Lector["Estado"]);
 
-                    
+
                 }
-                return estado; 
+                return estado;
             }
             catch (Exception ex)
             {
@@ -71,6 +71,42 @@ namespace Negocio
             }
         }
 
+
+
+        public List<Docente> listaDocente()
+        {
+            List<Docente> lis_Docente = new List<Docente>();
+            AccesoDatos usuarioDatos = new AccesoDatos();
+
+            try
+            {
+                usuarioDatos.setearConsulta("SELECT IdDocente,Apellido +' '+Nombre+'-'+Cuil AS Nombre from Docentes WHERE Estado = 1");
+                usuarioDatos.ejecutarLectura();
+
+                while (usuarioDatos.Lector.Read())
+                {
+                    Docente aux1 = new Docente();
+                    aux1.Iddocente = (int)usuarioDatos.Lector["IdDocente"];
+
+                    aux1.Nombre = (string)usuarioDatos.Lector["Nombre"];
+
+
+
+                    lis_Docente.Add(aux1);
+                }
+                return lis_Docente;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                usuarioDatos.cerrarConexion();
+            }
+        }
+    
 
     }
 }
