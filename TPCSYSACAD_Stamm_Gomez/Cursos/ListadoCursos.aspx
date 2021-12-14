@@ -13,7 +13,7 @@
                         <div class='col-xs-3'>
                             <table>
                                 <tr>
-                                    <th><a href="CargaDocente.aspx" class="btn btn-primary btn-block">Cargar.Docente</a> </th>
+                                    <th><a href="AltaCurso.aspx" class="btn btn-primary btn-block">Nuevo Curso</a> </th>
                                     <th><a href="../Default.aspx" class="btn btn-primary btn-block">Volver</a> </th>
                                 </tr>
                             </table>
@@ -47,8 +47,7 @@
 
 
                                     <td>
-                                        <a class="btn btn-sm btn-outline-info" href='EliminarDocente.aspx?idDocente=<%#Eval("IDDOCENTE") %>'><i title="Eliminar Docente" class="fas fa-trash-alt"></i></a>
-                                        <a class="btn btn-sm btn-outline-secondary" href='ModificarDocente.aspx?idDocente=<%#Eval("IDDOCENTE") %>'><i title="Modificar Docente" class="far fa-edit"></i></a>
+                                        <a class="btn btn-sm btn-outline-info" href='EliminarCurso.aspx?idCurso=<%#Eval("Id") %>'><i title="Eliminar Curso" class="fas fa-trash-alt"></i></a>
                                     </td>
                                 </tr>
                             </ItemTemplate>

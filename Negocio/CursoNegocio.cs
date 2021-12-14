@@ -61,7 +61,7 @@ namespace Negocio
 
             try
             {
-                cursoConexion.setearConsulta("SELECT dc.Apellido Apellido,dc.Nombre Nombre,dc.Cuil Cuil,mat.NombreMateria Materia,cua.Nombre Cuatrimestre,mtd.Anio anio from MateriasxDocente mtd " +
+                cursoConexion.setearConsulta("SELECT  mtd.Id Id, dc.Apellido Apellido,dc.Nombre Nombre,dc.Cuil Cuil,mat.NombreMateria Materia,cua.Nombre Cuatrimestre,mtd.Anio anio from MateriasxDocente mtd " +
                                             "INNER JOIN Docentes dc on dc.IdDocente = mtd.IdDocente " +
                                             "INNER JOIN Cuatrimestres cua on cua.IdCuatrimestre = mtd.IdCuatrimestre " +
                                             "INNER JOIN Materias mat on mat.IdMateria = mtd.IdMateria " +
@@ -71,6 +71,7 @@ namespace Negocio
                 while (cursoConexion.Lector.Read())
                 {
                     Cursos aux1 = new Cursos();
+                    aux1.Id = (int)cursoConexion.Lector["Id"];
                     aux1.apellidoDocente = (string)cursoConexion.Lector["Apellido"];
                     aux1.nombreDocente = (string)cursoConexion.Lector["Nombre"];
                     aux1.cuilDocente = (string)cursoConexion.Lector["Cuil"];
@@ -92,6 +93,62 @@ namespace Negocio
             {
                 cursoConexion.cerrarConexion();
             }
+
+        }
+        public Cursos unCurso(int idCur)
+        {
+            cursoConexion = new AccesoDatos();
+
+            try
+            {
+                cursoConexion.setearParametro("@idCur", idCur);
+                cursoConexion.setearConsulta("SELECT  mtd.Id Id, dc.Apellido Apellido, dc.Nombre Nombre, dc.Cuil Cuil, mat.NombreMateria Materia, cua.Nombre Cuatrimestre, mtd.Anio anio from MateriasxDocente mtd " +
+                                        "INNER JOIN Docentes dc on dc.IdDocente = mtd.IdDocente " +
+                                        "INNER JOIN Cuatrimestres cua on cua.IdCuatrimestre = mtd.IdCuatrimestre " +
+                                        "INNER JOIN Materias mat on mat.IdMateria = mtd.IdMateria " +
+                                        "WHERE mtd.Id= @idCur");
+                cursoConexion.ejecutarLectura();
+                cursoConexion.Lector.Read();
+
+                Cursos aux1 = new Cursos();
+                aux1.Id = (int)cursoConexion.Lector["Id"];
+                aux1.apellidoDocente = (string)cursoConexion.Lector["Apellido"];
+                aux1.nombreDocente = (string)cursoConexion.Lector["Nombre"];
+                aux1.cuilDocente = (string)cursoConexion.Lector["Cuil"];
+                aux1.Materia = (string)cursoConexion.Lector["Materia"];
+                aux1.cuatrimestre = (string)cursoConexion.Lector["Cuatrimestre"];
+                aux1.Anio = (int)cursoConexion.Lector["anio"];
+
+                return aux1;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                cursoConexion.cerrarConexion();
+            }
+        }
+
+        public void eliminar(int id)
+        {
+            cursoConexion = new AccesoDatos();
+            try
+            {
+                cursoConexion.setearConsulta("UPDATE MateriasxDocente SET Estado=0 	WHERE Id="+id);
+                cursoConexion.ejectutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                cursoConexion.cerrarConexion();
+                
+            }
         }
     }
 }
+
