@@ -19,11 +19,11 @@ namespace TPCSYSACAD_Stamm_Gomez.UsuariosNuevos
 
 
 
-                //if (Session["Usuarios"] == null || !(Util.validacionAdmin((Usuarios)Session["Usuarios"])))
-                //{
+                if (Session["Usuarios"] == null || !(Util.validacionAdmin((Usuarios)Session["Usuarios"])))
+                {
 
-                //    Response.Redirect("../Login/Login.aspx", false);
-                //}
+                    Response.Redirect("../Login/Login.aspx", false);
+                }
 
 
 
@@ -50,6 +50,8 @@ namespace TPCSYSACAD_Stamm_Gomez.UsuariosNuevos
             usu.idDocente = id;
 
             usuNeg.agregar(usu);
+
+            Response.Redirect("../Login/MenuLogin.aspx", false);
         }
     }
 }

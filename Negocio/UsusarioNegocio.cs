@@ -80,7 +80,7 @@ namespace Negocio
 
             try
             {
-                usuarioDatos.setearConsulta("SELECT IdDocente,Apellido +' '+Nombre+'-'+Cuil AS Nombre from Docentes WHERE Estado = 1");
+                usuarioDatos.setearConsulta("SELECT IdDocente,Apellido +' '+Nombre+'-'+Cuil AS Nombre from Docentes WHERE Estado = 1 AND UsuarioEstado=0");
                 usuarioDatos.ejecutarLectura();
 
                 while (usuarioDatos.Lector.Read())

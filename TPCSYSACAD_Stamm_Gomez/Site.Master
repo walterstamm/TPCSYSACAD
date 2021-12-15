@@ -68,6 +68,9 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="../Cursos/ListadoCursos.aspx">Cursos</a>
                     </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="../UsuariosNuevos/AltaUsuario.aspx">Usuarios</a>
+                    </li>
                     <%}%>
                    
                 </ul>

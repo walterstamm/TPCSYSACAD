@@ -89,7 +89,7 @@ namespace TPCSYSACAD_Stamm_Gomez.Cursos
             curNeg.agregarCurso(cur, lista);
 
 
-            
+            Response.Redirect("ListadoCursos.aspx",false);
         }
 
         protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
