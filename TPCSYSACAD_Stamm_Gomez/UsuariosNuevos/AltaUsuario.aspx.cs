@@ -14,26 +14,42 @@ namespace TPCSYSACAD_Stamm_Gomez.UsuariosNuevos
         UsusarioNegocio usuNeg = new UsusarioNegocio();
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            //if (Session["Usuarios"] == null || !(Util.validacionAdmin((Usuarios)Session["Usuarios"])))
-            //{
-
-            //    Response.Redirect("../Login/Login.aspx", false);
-            //}
+            if (!IsPostBack)
+            {
 
 
 
-            ddlDocentes.DataSource = usuNeg.listaDocente();
-            ddlDocentes.DataValueField = "Iddocente";
-            ddlDocentes.DataTextField = "Nombre";
-            ddlDocentes.DataBind();
-            ddlDocentes.Items.Insert(0, new ListItem("Seleccione una Docente"));
+                //if (Session["Usuarios"] == null || !(Util.validacionAdmin((Usuarios)Session["Usuarios"])))
+                //{
 
+                //    Response.Redirect("../Login/Login.aspx", false);
+                //}
+
+
+
+                ddlDocentes.DataSource = usuNeg.listaDocente();
+                ddlDocentes.DataValueField = "Iddocente";
+                ddlDocentes.DataTextField = "Nombre";
+                ddlDocentes.DataBind();
+                ddlDocentes.Items.Insert(0, new ListItem("Seleccione una Docente"));
+
+            }
         }
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
 
+            int id = int.Parse(ddlDocentes.SelectedItem.Value);
+
+            usuNeg.actualizarEstadoDocente(id);
+
+            Usuarios usu = new Usuarios();
+
+            usu.usuario = txtUsuario.Text;
+            usu.password = txtPasword.Text;
+            usu.idDocente = id;
+
+            usuNeg.agregar(usu);
         }
     }
 }

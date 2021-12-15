@@ -106,7 +106,53 @@ namespace Negocio
                 usuarioDatos.cerrarConexion();
             }
         }
-    
+
+        public void actualizarEstadoDocente(int id)
+        {
+            AccesoDatos usuarioDatos = new AccesoDatos();
+
+            try
+            {
+                usuarioDatos.setearConsulta("UPDATE  Docentes SET UsuarioEstado=1 WHERE IdDocente=" + id);
+                usuarioDatos.ejectutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                usuarioDatos.cerrarConexion();
+               
+            }
+        }
+
+        public void agregar(Usuarios usuario)
+        {
+            AccesoDatos usuarioDatos = new AccesoDatos();
+
+            try
+            {
+                usuarioDatos.setearParametro("@usuario",usuario.usuario);
+                usuarioDatos.setearParametro("@pass",usuario.password);
+                usuarioDatos.setearParametro("@idDocente", usuario.idDocente);
+                usuarioDatos.setearConsulta("INSERT INTO UsuarioDocente (Usuario,Password,TipoUsuario,IdDocente) VALUES (@usuario,@pass,1,@idDocente)");
+
+                usuarioDatos.ejectutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                usuarioDatos.cerrarConexion();
+              
+            }
+        }
+
 
     }
 }
