@@ -8,6 +8,7 @@ namespace Dominio
 {
     public class Nota
     {
+        public Alumno alu { get; set; }
         public int id { get; set; }
         
         public int idAlumno { get; set; }

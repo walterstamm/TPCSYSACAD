@@ -115,6 +115,7 @@
     <Content Include="Carreras\ModificaCarrera.aspx" />
     <Content Include="Cursos\AltaCurso.aspx" />
     <Content Include="Cursos\Calificaciones.aspx" />
+    <Content Include="Cursos\CargarNota.aspx" />
     <Content Include="Cursos\CursosxDocente.aspx" />
     <Content Include="Cursos\EliminarCurso.aspx" />
     <Content Include="Cursos\ListadoCursos.aspx" />
@@ -318,6 +319,13 @@
     </Compile>
     <Compile Include="Cursos\Calificaciones.aspx.designer.cs">
       <DependentUpon>Calificaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cursos\CargarNota.aspx.cs">
+      <DependentUpon>CargarNota.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cursos\CargarNota.aspx.designer.cs">
+      <DependentUpon>CargarNota.aspx</DependentUpon>
     </Compile>
     <Compile Include="Cursos\CursosxDocente.aspx.cs">
       <DependentUpon>CursosxDocente.aspx</DependentUpon>

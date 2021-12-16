@@ -37,19 +37,14 @@
                     </thead>
                     <tbody>
                         <asp:Repeater runat="server" ID="repAlum">
-                            <ItemTemplate>
+                             <ItemTemplate>
                                 <tr>
-                                    <td><%#Eval("Nombre") %> </td>
-                                   <td><%#Eval("Apellido") %> </td>
-                                    <td><%#Eval("Cuil") %> </td>
-
-                                    <asp:Repeater runat="server" ID="repNotas">
-                                        <ItemTemplate>
+                                    <td><%# DataBinder.Eval(Container.DataItem,"alu.Nombre") %> </td>
+                                   <td><%# DataBinder.Eval(Container.DataItem,"alu.Apellido") %> </td>
+                                    <td><%# DataBinder.Eval(Container.DataItem,"alu.Cuil") %> </td>
                                     <td><%#Eval("Nota1") %> </td>
                                     <td><%#Eval("Nota2") %> </td>
                                     <td><%#Eval("EstadoAcademico") %> </td>
-                                            </ItemTemplate>
-                                    </asp:Repeater>
                                     <td>
                                         <a class="btn btn-sm btn-outline-info" href='EliminarCurso.aspx?idCurso=<%#Eval("Id") %>'><i title="Calificar" <i title="Calificar" class="fas fa-graduation-cap"></i></a>
                                     </td>
