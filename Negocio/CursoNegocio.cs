@@ -38,6 +38,12 @@ namespace Negocio
                     cursoConexion.ejectutarAccion();
                 }
 
+                foreach (Alumno alu in lista)
+                {
+                    cursoConexion.cerrarConexion();
+                    cursoConexion.setearConsulta("INSERT INTO Notas (IdAlumno,IdMateriaDocente,Nota1,Nota2,NotaFinal,IdEstadoAcademico) VALUES ("+alu.Idalumno+","+idMateriaDocente+",0,0,0,1)");
+                    cursoConexion.ejectutarAccion();
+                }
 
 
             }

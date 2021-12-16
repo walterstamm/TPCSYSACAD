@@ -47,6 +47,7 @@
     <Compile Include="CarreraNegocio.cs" />
     <Compile Include="CuatrimestreNegocio.cs" />
     <Compile Include="CursoNegocio.cs" />
+    <Compile Include="NotaNegocio.cs" />
     <Compile Include="UsusarioNegocio.cs" />
     <Compile Include="DocenteNegocio.cs" />
     <Compile Include="MateriaNegocio.cs" />

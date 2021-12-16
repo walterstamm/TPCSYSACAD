@@ -11,7 +11,9 @@ namespace TPCSYSACAD_Stamm_Gomez.Cursos
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            int id = int.Parse(Request.QueryString["idNota"].ToString()) ;
 
+            //repAlum.DataSource=
         }
     }
 }

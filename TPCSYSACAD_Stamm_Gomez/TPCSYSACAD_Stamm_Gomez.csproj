@@ -114,6 +114,7 @@
     <Content Include="Carreras\EliminaCarrera.aspx" />
     <Content Include="Carreras\ModificaCarrera.aspx" />
     <Content Include="Cursos\AltaCurso.aspx" />
+    <Content Include="Cursos\Calificaciones.aspx" />
     <Content Include="Cursos\CursosxDocente.aspx" />
     <Content Include="Cursos\EliminarCurso.aspx" />
     <Content Include="Cursos\ListadoCursos.aspx" />
@@ -145,8 +146,8 @@
     <Content Include="Materias\ListadoMaterias.aspx" />
     <Content Include="Prueba.aspx" />
     <Content Include="Materias\ModificaMateria.aspx" />
-    <Content Include="Notas\AgregarNota.aspx" />
-    <Content Include="Notas\Listado_AlumnoMateria.aspx" />
+    <Content Include="Notasss\AgregarNota.aspx" />
+    <Content Include="Notasss\Listado_AlumnoMateria.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -310,6 +311,13 @@
     </Compile>
     <Compile Include="Cursos\AltaCurso.aspx.designer.cs">
       <DependentUpon>AltaCurso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cursos\Calificaciones.aspx.cs">
+      <DependentUpon>Calificaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cursos\Calificaciones.aspx.designer.cs">
+      <DependentUpon>Calificaciones.aspx</DependentUpon>
     </Compile>
     <Compile Include="Cursos\CursosxDocente.aspx.cs">
       <DependentUpon>CursosxDocente.aspx</DependentUpon>
@@ -477,18 +485,18 @@
     <Compile Include="Materias\ModificaMateria.aspx.designer.cs">
       <DependentUpon>ModificaMateria.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Notas\AgregarNota.aspx.cs">
+    <Compile Include="Notasss\AgregarNota.aspx.cs">
       <DependentUpon>AgregarNota.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Notas\AgregarNota.aspx.designer.cs">
+    <Compile Include="Notasss\AgregarNota.aspx.designer.cs">
       <DependentUpon>AgregarNota.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Notas\Listado_AlumnoMateria.aspx.cs">
+    <Compile Include="Notasss\Listado_AlumnoMateria.aspx.cs">
       <DependentUpon>Listado_AlumnoMateria.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Notas\Listado_AlumnoMateria.aspx.designer.cs">
+    <Compile Include="Notasss\Listado_AlumnoMateria.aspx.designer.cs">
       <DependentUpon>Listado_AlumnoMateria.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
