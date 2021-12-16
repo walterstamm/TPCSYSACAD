@@ -114,6 +114,7 @@
     <Content Include="Carreras\EliminaCarrera.aspx" />
     <Content Include="Carreras\ModificaCarrera.aspx" />
     <Content Include="Cursos\AltaCurso.aspx" />
+    <Content Include="Cursos\CursosxDocente.aspx" />
     <Content Include="Cursos\EliminarCurso.aspx" />
     <Content Include="Cursos\ListadoCursos.aspx" />
     <Content Include="Materias\EliminaMateria.aspx" />
@@ -309,6 +310,13 @@
     </Compile>
     <Compile Include="Cursos\AltaCurso.aspx.designer.cs">
       <DependentUpon>AltaCurso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cursos\CursosxDocente.aspx.cs">
+      <DependentUpon>CursosxDocente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cursos\CursosxDocente.aspx.designer.cs">
+      <DependentUpon>CursosxDocente.aspx</DependentUpon>
     </Compile>
     <Compile Include="Cursos\EliminarCurso.aspx.cs">
       <DependentUpon>EliminarCurso.aspx</DependentUpon>

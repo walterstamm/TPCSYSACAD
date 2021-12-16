@@ -149,6 +149,50 @@ namespace Negocio
                 
             }
         }
+
+
+        public List<Cursos> listadoCursosxDocente(int idDoc)
+        {
+            List<Cursos> listaCurso = new List<Cursos>();
+            cursoConexion = new AccesoDatos();
+
+            try
+            {
+                cursoConexion.setearParametro("@idDoc",idDoc);
+                cursoConexion.setearConsulta("SELECT  mtd.Id Id, dc.Apellido Apellido,dc.Nombre Nombre,dc.Cuil Cuil,mat.NombreMateria Materia,cua.Nombre Cuatrimestre,mtd.Anio anio from MateriasxDocente mtd " +
+                                            "INNER JOIN Docentes dc on dc.IdDocente = mtd.IdDocente " +
+                                            "INNER JOIN Cuatrimestres cua on cua.IdCuatrimestre = mtd.IdCuatrimestre " +
+                                            "INNER JOIN Materias mat on mat.IdMateria = mtd.IdMateria " +
+                                            "WHERE mtd.Estado = 1 AND mtd.IdDocente=@idDoc");
+                cursoConexion.ejecutarLectura();
+
+                while (cursoConexion.Lector.Read())
+                {
+                    Cursos aux1 = new Cursos();
+                    aux1.Id = (int)cursoConexion.Lector["Id"];
+                    aux1.apellidoDocente = (string)cursoConexion.Lector["Apellido"];
+                    aux1.nombreDocente = (string)cursoConexion.Lector["Nombre"];
+                    aux1.cuilDocente = (string)cursoConexion.Lector["Cuil"];
+                    aux1.Materia = (string)cursoConexion.Lector["Materia"];
+                    aux1.cuatrimestre = (string)cursoConexion.Lector["Cuatrimestre"];
+                    aux1.Anio = (int)cursoConexion.Lector["anio"];
+
+
+                    listaCurso.Add(aux1);
+                }
+                return listaCurso;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                cursoConexion.cerrarConexion();
+            }
+
+        }
     }
 }
 

@@ -72,6 +72,15 @@
                         <a class="nav-link" href="../UsuariosNuevos/AltaUsuario.aspx">Usuarios</a>
                     </li>
                     <%}%>
+
+                    
+                    <% if (Dominio.Util.validacionDocente((Dominio.Usuarios)Session["Usuarios"]))
+                        {  %>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="../Cursos/CursosxDocente.aspx">Cursos</a>
+                    </li>
+
+                    <%} %>
                    
                 </ul>
 
@@ -84,6 +93,7 @@
                         user = (Dominio.Usuarios)Session["Usuarios"];
                         %>
                 <span><%=user.usuario%><i class="far fa-user" style="margin: 10px"></i></span>
+
                 
                  <a class="nav-link" href="../Login/Login.aspx">Cerrar Sesion</a>
                 <%} %>
