@@ -47,6 +47,7 @@
     <Compile Include="Cuatrimestres.cs" />
     <Compile Include="Cursos.cs" />
     <Compile Include="Docente.cs" />
+    <Compile Include="EstadoAcademico.cs" />
     <Compile Include="Incrip_Alumno-Carrera.cs" />
     <Compile Include="Materias.cs" />
     <Compile Include="Nota.cs" />

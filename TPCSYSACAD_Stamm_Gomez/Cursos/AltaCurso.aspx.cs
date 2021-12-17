@@ -41,6 +41,7 @@ namespace TPCSYSACAD_Stamm_Gomez.Cursos
                 ddlCuatrimestre.DataSource = cuaNeg.listaCuatrimestres();
                 ddlCuatrimestre.DataValueField = "IdCuatrimestre";
                 ddlCuatrimestre.DataTextField = "nombreCuatrimestre";
+               
                 ddlCuatrimestre.DataBind();
                 ddlCuatrimestre.Items.Insert(0, new ListItem("Seleccione un Cuatrimestre"));
 

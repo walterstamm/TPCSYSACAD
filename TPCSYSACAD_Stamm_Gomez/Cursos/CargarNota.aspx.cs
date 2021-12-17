@@ -25,6 +25,7 @@ namespace TPCSYSACAD_Stamm_Gomez.Cursos
                     Nota nota = new Nota();
 
                     nota = notaNeg.traerUnaNota(idNota);
+                    int idEstado = nota.EstadoAcademico;
 
                     string nombre = nota.alu.Nombre.ToString() + " " + nota.alu.Apellido.ToString();
 
@@ -33,6 +34,11 @@ namespace TPCSYSACAD_Stamm_Gomez.Cursos
                     txtNota2.Text = nota.Nota2.ToString();
                     txtNotFinal.Text = nota.NotaFinal.ToString();
 
+                    ddlEstado.DataSource = notaNeg.listaEstado();
+                    ddlEstado.DataValueField = "id";
+                    ddlEstado.DataTextField = "Nombre";
+                    ddlEstado.SelectedValue = idEstado.ToString();
+                    ddlEstado.DataBind();
                     
                 }
             }

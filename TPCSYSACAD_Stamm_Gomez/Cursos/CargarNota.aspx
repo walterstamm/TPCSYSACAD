@@ -28,16 +28,16 @@
                             <asp:TextBox runat="server" ID="txtNotFinal" MaxLength="2" Width="200px" />
                         </div>
 
-                      <%--  <div class="input-group mb-3">
-                            <asp:Label Text="Docente" runat="server" Width="160px" class="input-group-text" />
+                        <div class="input-group mb-3">
+                            <asp:Label Text="Estado Academico" runat="server" Width="160px" class="input-group-text" />
                             <asp:DropDownList ID="ddlEstado" runat="server"></asp:DropDownList>
-                            <asp:RequiredFieldValidator runat="server" ForeColor="Red" ControlToValidate="ddlDocente" ValidateRequestMode="Enabled" ID="RequiredFieldValidator2" ErrorMessage="Elija una Materia"></asp:RequiredFieldValidator>
+                            <asp:RequiredFieldValidator runat="server" ForeColor="Red" ControlToValidate="ddlEstado" ValidateRequestMode="Enabled" ID="RequiredFieldValidator2" ErrorMessage="Elija una Materia"></asp:RequiredFieldValidator>
                             <asp:RegularExpressionValidator ID="RegularExpressionValidator2"
-                                runat="server" ForeColor="Red" ControlToValidate="ddlDocente"
+                                runat="server" ForeColor="Red" ControlToValidate="ddlEstado"
                                 ErrorMessage="Por favor Seleecione una Opcion"
                                 ValidationExpression="\d+">
                             </asp:RegularExpressionValidator>
-                        </div>--%>
+                        </div>
                         <br />
                         <%--<asp:Button class="btn btn-warning" Text="Cargar Nota" ID="btnCargarNota" OnClick="btnCargarNota_Click" runat="server" " />--%>
                     </ContentTemplate>

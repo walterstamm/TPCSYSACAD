@@ -102,5 +102,39 @@ namespace Negocio
             }
         }
 
+
+        public List<EstadoAcademico> listaEstado()
+        {
+            notaDatos = new AccesoDatos();
+
+
+            try
+            {
+                notaDatos.setearConsulta("SELECT Id,Nombre FROM EstadoAcademico");
+                notaDatos.ejecutarLectura();
+                List<EstadoAcademico> lista = new List<EstadoAcademico>();
+
+                while (notaDatos.Lector.Read())
+                {
+                    EstadoAcademico Est = new EstadoAcademico();
+                    Est.id = (int)notaDatos.Lector["Id"];
+                    Est.Nombre = (string)notaDatos.Lector["Nombre"];
+                    lista.Add(Est);
+                }
+
+                return lista;
+
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+
+            finally
+            {
+                notaDatos.cerrarConexion();
+            }
+        }
     }
 }
