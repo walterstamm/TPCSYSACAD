@@ -16,7 +16,7 @@
                        
                         <div class="col-md-6 col-sm-12">
                             <asp:Label Text="Primer Nota" runat="server" Width="200px" />
-                            <asp:TextBox runat="server" ID="txtNota1" MaxLength="2" Width="200px" />
+                            <asp:TextBox runat="server" ID="txtNota1" MaxLength="4" Width="200px" />
                         </div>
                         <div class="col-md-6 col-sm-12">
                             <asp:Label Text="Segunda Nota" runat="server" Width="200px" />
@@ -39,7 +39,7 @@
                             </asp:RegularExpressionValidator>
                         </div>
                         <br />
-                        <%--<asp:Button class="btn btn-warning" Text="Cargar Nota" ID="btnCargarNota" OnClick="btnCargarNota_Click" runat="server" " />--%>
+                        <asp:Button class="btn btn-warning" Text="Cargar Nota" ID="btnCargarNota" OnClick="btnCargarNota_Click" runat="server"  />
                     </ContentTemplate>
                 </asp:UpdatePanel>
             </div>

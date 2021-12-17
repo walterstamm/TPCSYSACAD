@@ -25,6 +25,7 @@ namespace TPCSYSACAD_Stamm_Gomez.Cursos
                     Nota nota = new Nota();
 
                     nota = notaNeg.traerUnaNota(idNota);
+                    Session["idNota"] = nota.id;
                     int idEstado = nota.EstadoAcademico;
 
                     string nombre = nota.alu.Nombre.ToString() + " " + nota.alu.Apellido.ToString();
@@ -47,6 +48,17 @@ namespace TPCSYSACAD_Stamm_Gomez.Cursos
 
         protected void btnCargarNota_Click(object sender, EventArgs e)
         {
+            int id = int.Parse(Session["idNota"].ToString());
+
+            Nota nota = new Nota();
+            nota.id = id;
+            nota.Nota1=decimal.Parse(txtNota1.Text);
+            nota.Nota2 = decimal.Parse(txtNota2.Text);
+            nota.NotaFinal = decimal.Parse(txtNotFinal.Text);
+            nota.EstadoAcademico = int.Parse(ddlEstado.SelectedItem.Value);
+
+            notaNeg.agregarNota(nota);
+
 
         }
     }

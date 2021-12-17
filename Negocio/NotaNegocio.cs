@@ -136,5 +136,33 @@ namespace Negocio
                 notaDatos.cerrarConexion();
             }
         }
+
+
+
+        public void agregarNota(Nota nota)
+        {
+            notaDatos = new AccesoDatos();
+            try
+            {
+
+                notaDatos.setearParametro("@not1", nota.Nota1);
+                notaDatos.setearParametro("@not2", nota.Nota2);
+                notaDatos.setearParametro("@notF", nota.NotaFinal);
+                notaDatos.setearParametro("@estado",nota.EstadoAcademico);
+                notaDatos.setearParametro("@id", nota.id);
+                notaDatos.setearConsulta("UPDATE Notas SET Nota1=@not1 ,Nota2=@not2,NotaFinal=@notF,IdEstadoAcademico=@estado where Id=@id");
+                notaDatos.ejectutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                notaDatos.cerrarConexion();
+                
+            }
+        }
     }
 }
