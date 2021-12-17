@@ -21,7 +21,7 @@ namespace Negocio
             {
 
                 notaDatos.setearParametro("@idMat",idMateriaDocente);
-                notaDatos.setearConsulta("SELECT alu.Nombre,alu.Apellido,alu.Cuil,na.Nota1,na.Nota2,na.NotaFinal,na.IdEstadoAcademico  FROM Notas na "+
+                notaDatos.setearConsulta("SELECT alu.Nombre,alu.Apellido,alu.Cuil,na.Nota1,na.Nota2,na.NotaFinal,na.IdEstadoAcademico,na.Id  FROM Notas na "+
                                             "INNER JOIN Alumnos alu on alu.Id = na.IdAlumno "+
                                             "WHERE na.IdMateriaDocente = @idMat");
                 notaDatos.ejecutarLectura();
@@ -30,6 +30,7 @@ namespace Negocio
                 {
                     Nota aux = new Nota();
                     aux.alu = new Alumno();
+                    aux.id = (int)notaDatos.Lector["Id"];
                     aux.alu.Nombre = (string)notaDatos.Lector["Nombre"];
                     aux.alu.Apellido = (string)notaDatos.Lector["Apellido"];
                     aux.alu.Cuil = (string)notaDatos.Lector["Cuil"];
@@ -44,6 +45,51 @@ namespace Negocio
                 }
 
                 return lista;
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+            finally
+            {
+                notaDatos.cerrarConexion();
+            }
+        }
+
+
+
+        public Nota traerUnaNota(int idNota)
+        {
+
+            notaDatos = new AccesoDatos();
+
+            try
+            {
+
+                notaDatos.setearParametro("@idNota", idNota);
+                notaDatos.setearConsulta("SELECT alu.Nombre,alu.Apellido,alu.Cuil,na.Nota1,na.Nota2,na.NotaFinal,na.IdEstadoAcademico,na.Id  FROM Notas na " +
+                                            "INNER JOIN Alumnos alu on alu.Id = na.IdAlumno " +
+                                            "WHERE na.Id = @idNota");
+                notaDatos.ejecutarLectura();
+
+                notaDatos.Lector.Read();
+                
+                    Nota aux = new Nota();
+                    aux.alu = new Alumno();
+                    aux.id = (int)notaDatos.Lector["Id"];
+                    aux.alu.Nombre = (string)notaDatos.Lector["Nombre"];
+                    aux.alu.Apellido = (string)notaDatos.Lector["Apellido"];
+                    aux.alu.Cuil = (string)notaDatos.Lector["Cuil"];
+                    aux.Nota1 = (decimal)notaDatos.Lector["Nota1"];
+                    aux.Nota2 = (decimal)notaDatos.Lector["Nota2"];
+                    aux.NotaFinal = (decimal)notaDatos.Lector["NotaFinal"];
+                    aux.EstadoAcademico = (int)notaDatos.Lector["IdEstadoAcademico"];
+
+
+
+
+                return aux; ;
             }
             catch (Exception e)
             {

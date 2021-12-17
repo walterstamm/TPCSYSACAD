@@ -46,7 +46,7 @@
                                     <td><%#Eval("Nota2") %> </td>
                                     <td><%#Eval("EstadoAcademico") %> </td>
                                     <td>
-                                        <a class="btn btn-sm btn-outline-info" href='EliminarCurso.aspx?idCurso=<%#Eval("Id") %>'><i title="Calificar" <i title="Calificar" class="fas fa-graduation-cap"></i></a>
+                                        <a class="btn btn-sm btn-outline-info" href='CargarNota.aspx?idNota=<%#Eval("Id") %>'><i title="Calificar" <i title="Calificar" class="fas fa-graduation-cap"></i></a>
                                     </td>
                                 </tr>
                             </ItemTemplate>
