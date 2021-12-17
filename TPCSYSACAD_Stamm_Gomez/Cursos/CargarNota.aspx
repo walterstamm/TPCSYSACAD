@@ -13,19 +13,25 @@
             <div class="col" id="main">
                 <asp:UpdatePanel runat="server">
                     <ContentTemplate>
-                       
+
                         <div class="col-md-6 col-sm-12">
                             <asp:Label Text="Primer Nota" runat="server" Width="200px" />
                             <asp:TextBox runat="server" ID="txtNota1" MaxLength="4" Width="200px" />
+                            <asp:RequiredFieldValidator runat="server" ForeColor="Red" ControlToValidate="txtNota1" ValidateRequestMode="Enabled" ID="RequiredFieldValidator1" ErrorMessage="Elija una Materia"></asp:RequiredFieldValidator>
+
                         </div>
                         <div class="col-md-6 col-sm-12">
                             <asp:Label Text="Segunda Nota" runat="server" Width="200px" />
                             <asp:TextBox runat="server" ID="txtNota2" MaxLength="4" Width="200px" />
+                            <asp:RequiredFieldValidator runat="server" ForeColor="Red" ControlToValidate="txtNota2" ValidateRequestMode="Enabled" ID="RequiredFieldValidator3" ErrorMessage="Elija una Materia"></asp:RequiredFieldValidator>
+
                         </div>
 
                         <div class="col-md-6 col-sm-12">
                             <asp:Label Text="Nota Final" runat="server" Width="200px" />
                             <asp:TextBox runat="server" ID="txtNotFinal" MaxLength="4" Width="200px" />
+                            <asp:RequiredFieldValidator runat="server" ForeColor="Red" ControlToValidate="txtNotFinal" ValidateRequestMode="Enabled" ID="RequiredFieldValidator4" ErrorMessage="Elija una Materia"></asp:RequiredFieldValidator>
+
                         </div>
 
                         <div class="input-group mb-3">
@@ -39,7 +45,7 @@
                             </asp:RegularExpressionValidator>
                         </div>
                         <br />
-                        <asp:Button class="btn btn-warning" Text="Cargar Nota" ID="btnCargarNota" OnClick="btnCargarNota_Click" runat="server"  />
+                        <asp:Button class="btn btn-warning" Text="Cargar Nota" ID="btnCargarNota" OnClick="btnCargarNota_Click" runat="server" />
                     </ContentTemplate>
                 </asp:UpdatePanel>
             </div>
