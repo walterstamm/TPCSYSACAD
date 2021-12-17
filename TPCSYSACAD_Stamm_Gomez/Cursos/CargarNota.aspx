@@ -20,12 +20,12 @@
                         </div>
                         <div class="col-md-6 col-sm-12">
                             <asp:Label Text="Segunda Nota" runat="server" Width="200px" />
-                            <asp:TextBox runat="server" ID="txtNota2" MaxLength="2" Width="200px" />
+                            <asp:TextBox runat="server" ID="txtNota2" MaxLength="4" Width="200px" />
                         </div>
 
                         <div class="col-md-6 col-sm-12">
                             <asp:Label Text="Nota Final" runat="server" Width="200px" />
-                            <asp:TextBox runat="server" ID="txtNotFinal" MaxLength="2" Width="200px" />
+                            <asp:TextBox runat="server" ID="txtNotFinal" MaxLength="4" Width="200px" />
                         </div>
 
                         <div class="input-group mb-3">
