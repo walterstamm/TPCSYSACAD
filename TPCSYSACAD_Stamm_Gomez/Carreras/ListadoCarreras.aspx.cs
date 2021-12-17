@@ -18,6 +18,12 @@ namespace TPCSYSACAD_Stamm_Gomez
 
             try
             {
+                if (Session["Usuarios"] == null || !(Util.validacionAdmin((Usuarios)Session["Usuarios"])))
+                {
+
+                    Response.Redirect("../Login/Login.aspx", false);
+                }
+
                 Rep_Carreras.DataSource = conex_Carrera.listaCarrera();
                 Rep_Carreras.DataBind();
             }

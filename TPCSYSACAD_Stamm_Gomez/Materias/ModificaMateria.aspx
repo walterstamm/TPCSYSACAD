@@ -12,23 +12,20 @@
                 <asp:UpdatePanel runat="server">
                     <ContentTemplate>
                         <div class="col-md-6 col-sm-12">
-                            <asp:Label Text="IDMATERIA" runat="server" width="200px"/>
+                            <asp:Label Text="ID" runat="server" width="200px"/>
                             <asp:TextBox runat="server" ID="text_Mod_idmateria" TextMode="Number" Width="200px" Style="text-align: center" Enabled="false" />
                         </div>
                         <div>
-                            <asp:Label Text="NOMBRE MATERIA" runat="server" Width="200px" />
+                            <asp:Label Text="Materia" runat="server" Width="200px" />
                             <asp:TextBox runat="server" ID="text_Mod_nombremateria" width="200px" Style="text-align: center"/>
                         </div>
+                       
                         <div>
-                            <asp:Label Text="CARRERA" runat="server" width="200px"/>
-                            <asp:TextBox runat="server" ID="text_Mod_Carrera" Width="200px"  Style="text-align: center"/>
-                        </div>
-                        <div>
-                            <asp:Label Text="AÑO CURSO" runat="server" Width="200px" />
+                            <asp:Label Text="Año de Cursada" runat="server" Width="200px" />
                             <asp:TextBox runat="server" ID="text_Mod_anio" Width="200px" Style="text-align: center" />
                         </div>
                         <div>
-                            <asp:Label Text="CUATRIMESTRE" runat="server" Width="200px" />
+                            <asp:Label Text="Cuatrimestre" runat="server" Width="200px" />
                             <asp:TextBox runat="server" ID="text_Mod_cuatrimestre" Width="200px" Style="text-align: center" />
                         </div>
                         <br />

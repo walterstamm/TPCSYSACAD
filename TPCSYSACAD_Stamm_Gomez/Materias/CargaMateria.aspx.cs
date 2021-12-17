@@ -11,13 +11,20 @@ namespace TPCSYSACAD_Stamm_Gomez
 {
     public partial class CargaMateria : System.Web.UI.Page
     {
+        CuatrimestreNegocio cuaNeg = new CuatrimestreNegocio();
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (Util.tipoUsuario != 3)
-            //{
-            //    Session.Add("ERROR", "DEBERAS INGRESAR CON USUARIO ADMIN CARGADOCENTE.........");
-            //    Response.Redirect("../Error.aspx", false);
-            //}
+            if (Session["Usuarios"] == null || !(Util.validacionAdmin((Usuarios)Session["Usuarios"])))
+            {
+
+                Response.Redirect("../Login/Login.aspx", false);
+            }
+            ddlCuatrimestre.DataSource = cuaNeg.listaCuatrimestres();
+            ddlCuatrimestre.DataValueField = "IdCuatrimestre";
+            ddlCuatrimestre.DataTextField = "nombreCuatrimestre";
+            ddlCuatrimestre.Items.Insert(0, new ListItem("Seleccione una Cuatrimestre"));
+            ddlCuatrimestre.DataBind();
+
         }
 
         protected void btn_mat_Agregar_Click(object sender, EventArgs e)
@@ -28,9 +35,8 @@ namespace TPCSYSACAD_Stamm_Gomez
             try
             {
                 nuevaMateria.nombremateria = text_Nombre_Materia.Text;
-                nuevaMateria.idcarrera = int.Parse(text_carrera.Text);
                 nuevaMateria.anio = int.Parse(text_anio_curso.Text);
-                nuevaMateria.cuatrimestre = int.Parse(text_cuatrimestre.Text);
+                nuevaMateria.cuatrimestre = int.Parse(ddlCuatrimestre.SelectedItem.Value);
 
                 materiaNegocio.agregar(nuevaMateria);
             }

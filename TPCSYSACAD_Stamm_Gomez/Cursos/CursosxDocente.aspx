@@ -13,7 +13,7 @@
                         <div class='col-xs-3'>
                             <table>
                                 <tr>
-                                    <th><a href="AltaCurso.aspx" class="btn btn-primary btn-block">Nuevo Curso</a> </th>
+                                    <%--<th><a href="AltaCurso.aspx" class="btn btn-primary btn-block">Nuevo Curso</a> </th>--%>
                                     <th><a href="../Default.aspx" class="btn btn-primary btn-block">Volver</a> </th>
                                 </tr>
                             </table>

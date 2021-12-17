@@ -25,7 +25,7 @@ namespace TPCSYSACAD_Stamm_Gomez
 
                     text_Mod_idmateria.Text = modifMateria.idmateria.ToString();
                     text_Mod_nombremateria.Text = modifMateria.nombremateria;
-                    text_Mod_Carrera.Text = modifMateria.idcarrera.ToString();
+                   
                     text_Mod_anio.Text = modifMateria.anio.ToString();
                     text_Mod_cuatrimestre.Text = modifMateria.cuatrimestre.ToString();
                 }
@@ -38,7 +38,7 @@ namespace TPCSYSACAD_Stamm_Gomez
 
             modif.idmateria = int.Parse(text_Mod_idmateria.Text);
             modif.nombremateria = text_Mod_nombremateria.Text;
-            modif.idcarrera = int.Parse(text_Mod_Carrera.Text);
+           
             modif.anio = int.Parse(text_Mod_anio.Text);
             modif.cuatrimestre = int.Parse(text_Mod_cuatrimestre.Text);
 

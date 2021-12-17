@@ -14,15 +14,13 @@ namespace TPCSYSACAD_Stamm_Gomez
         public List<Materias> list_Materias;
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (Session["Usuarios"] == null)
-            //{
-            //    Session.Add("ERROR", "DEBERAS INGRESAR CON USUARIOS Y PASSWARD.........");
-            //    Response.Redirect("../Error.aspx", false);
-            //}
-            //else if (Session["Usuarios"] != null && ((Dominio.Usuarios)Session["Usuarios"]).TipoUsuario == TipoUsuario.Admin)
-            //{
+            if (Session["Usuarios"] == null || !(Util.validacionAdmin((Usuarios)Session["Usuarios"])))
+            {
 
-                MateriaNegocio conex_materia = new MateriaNegocio();
+                Response.Redirect("../Login/Login.aspx", false);
+            }
+
+            MateriaNegocio conex_materia = new MateriaNegocio();
 
                 try
                 {

@@ -28,7 +28,9 @@
         <div class="input-group mb-3">
             <asp:Label Text="Docente" runat="server" Width="160px" class="input-group-text" />
             <asp:DropDownList ID="ddlDocente" runat="server"></asp:DropDownList>
+
             <asp:RequiredFieldValidator runat="server" ForeColor="Red" ControlToValidate="ddlDocente" ValidateRequestMode="Enabled" ID="RequiredFieldValidator2" ErrorMessage="Elija una Materia"></asp:RequiredFieldValidator>
+            
             <asp:RegularExpressionValidator ID="RegularExpressionValidator2"
                 runat="server" ForeColor="Red" ControlToValidate="ddlDocente"
                 ErrorMessage="Por favor Seleecione una Opcion"

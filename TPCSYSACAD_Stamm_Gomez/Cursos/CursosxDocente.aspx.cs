@@ -20,10 +20,15 @@ namespace TPCSYSACAD_Stamm_Gomez.Cursos
                   Response.Redirect("../Login/Login.aspx", false);
                }
 
-            int id = int.Parse(Session["IdDocente"].ToString());
-            RepCursos.DataSource = curNeg.listadoCursosxDocente(id);
-            RepCursos.DataBind();
+           
+            
+                int id = int.Parse(Session["IdDocente"].ToString());
+                RepCursos.DataSource = curNeg.listadoCursosxDocente(id);
+                RepCursos.DataBind();
+               
 
+            
+           
         }
     }
 }

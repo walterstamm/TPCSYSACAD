@@ -14,11 +14,23 @@ namespace TPCSYSACAD_Stamm_Gomez.Cursos
         NotaNegocio notNeg = new NotaNegocio();
         protected void Page_Load(object sender, EventArgs e)
         {
-            int id = int.Parse(Request.QueryString["idNota"].ToString()) ;
+
+            if (Request.QueryString["idNota"] != null)
+            {
+                int id = int.Parse(Request.QueryString["idNota"].ToString());
 
 
-            repAlum.DataSource = notNeg.listaNotas(id);
-            repAlum.DataBind();
+                repAlum.DataSource = notNeg.listaNotas(id);
+                repAlum.DataBind();
+                Session["idCalificacion"] = id;
+            }
+            else
+            {
+                int id = int.Parse(Session["idCalificacion"].ToString());
+                repAlum.DataSource = notNeg.listaNotas(id);
+                repAlum.DataBind();
+
+            }
         }
     }
 }

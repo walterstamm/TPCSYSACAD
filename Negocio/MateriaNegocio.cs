@@ -50,7 +50,7 @@ namespace Negocio
 
             try
             {
-                string nuevaMateria = " values( '" + agregoMateria.nombremateria + "', '" + agregoMateria.idcarrera + "', '" + agregoMateria.anio + "', '" + agregoMateria.cuatrimestre + "', 1)";     
+                string nuevaMateria = " values( '" + agregoMateria.nombremateria + "', '" + 1 + "', '" + agregoMateria.anio + "', '" + agregoMateria.cuatrimestre + "', 1)";     
                 conex_Materia.setearConsulta("INSERT INTO MATERIAS(NOMBREMATERIA, IDCARRERA, ANIO, CUATRIMESTRE, ESTADO)" + nuevaMateria);
 
                 conex_Materia.ejectutarAccion();
@@ -96,18 +96,15 @@ namespace Negocio
             try
             {
                 //unacarrera.setearParametro("@id_carrera", id_Carrera);
-                unamateria.setearConsulta("SELECT IDMATERIA, NOMBREMATERIA, IDCARRERA, ANIO, CUATRIMESTRE FROM MATERIAS WHERE IDMATERIA =" + idMateria);
+                unamateria.setearConsulta("SELECT IDMATERIA, NOMBREMATERIA, ANIO, CUATRIMESTRE FROM MATERIAS WHERE IDMATERIA =" + idMateria);
                 unamateria.ejecutarLectura();
                 unamateria.Lector.Read();
-
                 Materias aux2 = new Materias();
                 aux2.idmateria = (int)unamateria.Lector["IDMATERIA"];
                 aux2.nombremateria = (string)unamateria.Lector["NOMBREMATERIA"];
-                //aux2.carga_horaria_minima = (int)unamateria.Lector["CARGA_HORARIA_MINIMA"];
-                aux2.idcarrera = (int)unamateria.Lector["IDCARRERA"];
                 aux2.anio = (int)unamateria.Lector["ANIO"];
                 aux2.cuatrimestre = (int)unamateria.Lector["CUATRIMESTRE"];
-                //aux2.estado = (string)unamateria.Lector["ESTADO"];
+             
 
                 return aux2;
             }
@@ -129,10 +126,9 @@ namespace Negocio
 
             try
             {
-                conex_Materia.setearConsulta("UPDATE MATERIAS SET NOMBREMATERIA = @nombremateria, IDCARRERA = @carrera, ANIO = @añocurso, CUATRIMESTRE = @cuatrimestre FROM MATERIAS WHERE IDMATERIA = @idmateria");
+                conex_Materia.setearConsulta("UPDATE MATERIAS SET NOMBREMATERIA = @nombremateria, ANIO = @añocurso, CUATRIMESTRE = @cuatrimestre FROM MATERIAS WHERE IDMATERIA = @idmateria");
                 conex_Materia.setearParametro("@idmateria", modifMateria.idmateria);
                 conex_Materia.setearParametro("@nombremateria", modifMateria.nombremateria);
-                conex_Materia.setearParametro("@carrera", modifMateria.idcarrera);
                 conex_Materia.setearParametro("@añocurso", modifMateria.anio);
                 conex_Materia.setearParametro("@cuatrimestre", modifMateria.cuatrimestre);
                 //conex_Materia.setearParametro("@estado", modifMateria.estado);

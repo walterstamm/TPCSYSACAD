@@ -17,15 +17,13 @@ namespace TPCSYSACAD_Stamm_Gomez
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (Util.tipoUsuario != 3)
-            //{
-            //    Session.Add("ERROR", "DEBERAS INGRESAR CON USUARIO ADMIN CARGADOCENTE.........");
-            //    Response.Redirect("../Error.aspx", false);
-            //}
-            //else
-            //{
+            if (Session["Usuarios"] == null || !(Util.validacionAdmin((Usuarios)Session["Usuarios"])))
+            {
 
-                if (Request.QueryString["idMateria"] != null)
+                Response.Redirect("../Login/Login.aspx", false);
+            }
+
+            if (Request.QueryString["idMateria"] != null)
                 {
                     int materia = int.Parse(Request.QueryString["idMateria"].ToString());
                     Session["IDMATERIA"] = materia;

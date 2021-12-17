@@ -14,7 +14,7 @@ namespace TPCSYSACAD_Stamm_Gomez.Cursos
         NotaNegocio notaNeg = new NotaNegocio();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Usuarios"] == null || !(Util.validacionDocente((Usuarios)Session["Usuarios"])) || !(Util.validacionAdmin((Usuarios)Session["Usuarios"])))
+            if (Session["Usuarios"] == null || !(Util.validacionDocente((Usuarios)Session["Usuarios"])))
             {
 
                 Response.Redirect("../Login/Login.aspx", false);
@@ -64,7 +64,7 @@ namespace TPCSYSACAD_Stamm_Gomez.Cursos
 
             notaNeg.agregarNota(nota);
 
-            //Response.Redirect("Calificaciones.aspx",false);
+            Response.Redirect("Calificaciones.aspx",false);
 
 
         }

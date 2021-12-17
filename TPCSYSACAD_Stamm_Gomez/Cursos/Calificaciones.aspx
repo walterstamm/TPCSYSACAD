@@ -14,7 +14,6 @@
                         <div class='col-xs-3'>
                             <table>
                                 <tr>
-                                    <th><a href="AltaCurso.aspx" class="btn btn-primary btn-block">Nuevo Curso</a> </th>
                                     <th><a href="../Default.aspx" class="btn btn-primary btn-block">Volver</a> </th>
                                 </tr>
                             </table>
@@ -31,6 +30,7 @@
                             <th scope="col">Cuil</th>
                             <th scope="col">Nota1</th>
                             <th scope="col">Nota2</th>
+                            <th scope="col">Nota Final</th>
                             <th scope="col">Estado Academico</th>
 
                         </tr>
@@ -44,6 +44,7 @@
                                     <td><%# DataBinder.Eval(Container.DataItem,"alu.Cuil") %> </td>
                                     <td><%#Eval("Nota1") %> </td>
                                     <td><%#Eval("Nota2") %> </td>
+                                    <td><%#Eval("NotaFinal") %> </td>
                                     <td><%#Eval("EstadoAcademico") %> </td>
                                     <td>
                                         <a class="btn btn-sm btn-outline-info" href='CargarNota.aspx?idNota=<%#Eval("Id") %>'><i title="Calificar" <i title="Calificar" class="fas fa-graduation-cap"></i></a>

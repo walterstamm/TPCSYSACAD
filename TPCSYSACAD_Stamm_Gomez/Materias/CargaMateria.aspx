@@ -11,20 +11,17 @@
             <div class="col-md-12 ">
                 <div class=" row">
                     <div class="col-md-4 col-sm-12 ">
-                        <asp:Label Text="MATERIA: " runat="server" width="160px"/>
+                        <asp:Label Text="Materia: " runat="server" width="160px"/>
                         <asp:TextBox ID="text_Nombre_Materia" runat="server" />
                     </div>
+                 
                     <div>
-                        <asp:Label Text="CARRERA: " runat="server" Width="160px" />
-                        <asp:TextBox ID="text_carrera" runat="server" />
-                    </div>
-                    <div>
-                        <asp:Label Text="AÑO_CURSO: " runat="server" Width="160px" />
+                        <asp:Label Text="Año de Cursada: " runat="server" Width="160px" />
                         <asp:TextBox ID="text_anio_curso" runat="server" />
                     </div>
                     <div>
-                        <asp:Label Text="CUATRIMESTRE: " runat="server" Width="160px" />
-                        <asp:TextBox ID="text_cuatrimestre" runat="server" />
+                        <asp:Label Text="Cuatrimestre: " runat="server" Width="160px" />
+                        <asp:DropDownList runat="server" ID="ddlCuatrimestre"></asp:DropDownList>
                     </div>
                 </div>
             </div>

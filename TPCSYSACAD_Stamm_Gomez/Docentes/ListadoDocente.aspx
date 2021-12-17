@@ -11,7 +11,7 @@
                         <div class='col-xs-3'>
                             <table>
                                 <tr>
-                                    <th> <a href="CargaDocente.aspx" class="btn btn-primary btn-block">Cargar.Docente</a> </th>
+                                    <th> <a href="CargaDocente.aspx" class="btn btn-primary btn-block">Cargar Docente</a> </th>
                                     <th> <a href="../Default.aspx" class="btn btn-primary btn-block">Volver</a> </th>
                                 </tr>
                             </table>
@@ -23,17 +23,17 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">ID_DOC</th>
-                            <th scope="col">CUIL_DOCENTE    </th>
-                            <th scope="col">APELLIDO</th>
-                            <th scope="col">NOMBRE</th>
+                            <th scope="col">ID</th>
+                            <th scope="col">Cuil</th>
+                            <th scope="col">Apellido</th>
+                            <th scope="col">Nombre</th>
                             <%--<th scope="col">NACIONALIDAD</th>--%>
-                            <th scope="col">FECHA NACIMIENTO</th>
-                            <th scope="col">CORREO ELECTRONICO</th>
-                            <th scope="col">DOMICILIO........</th>
+                            <th scope="col">Fecha de Nacimiento</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Domicilio</th>
                             <%--<th scope="col">LOCALIDAD - PCIA</th>--%>
-                            <th scope="col">USUARIOESTADO</th>
-                            <th scope="col">ESTADO</th>
+                            <th scope="col">Usuario</th>
+                           <%-- <th scope="col">ESTADO</th>--%>
 
                         </tr>
                     </thead>
@@ -51,7 +51,7 @@
                                     <td><%#Eval("DOMICILIO") %> </td>
                                     <%--<td><%#Eval("Localidad_Prov") %> </td>--%>
                                     <td><%#Eval("USUARIOESTADO") %> </td>
-                                    <td><%#Eval("ESTADO") %> </td>
+                                   <%-- <td><%#Eval("ESTADO") %> </td>--%>
                                     <td>
                                         <a class="btn btn-sm btn-outline-info" href='EliminarDocente.aspx?idDocente=<%#Eval("IDDOCENTE") %>'><i title="Eliminar Docente" class="fas fa-trash-alt"></i></a>
                                         <a class="btn btn-sm btn-outline-secondary" href='ModificarDocente.aspx?idDocente=<%#Eval("IDDOCENTE") %>'><i title="Modificar Docente" class="far fa-edit"></i></a>

@@ -10,23 +10,19 @@
         <div class="row py-3">
             <div class="col" id="main">
                 <div class="col-md-6 col-sm-12">
-                    <asp:Label Text="IDMATERIA:  " runat="server" width="200px"/>
+                    <asp:Label Text="ID:  " runat="server" width="200px"/>
                     <asp:TextBox ID="text_idmateria" runat="server" Enabled="false"/>
                 </div>
                 <div class="col-md-6 col-sm-12">
-                    <asp:Label Text="MATERIA:  " runat="server" width="200px"/>
+                    <asp:Label Text="Materia:  " runat="server" width="200px"/>
                     <asp:TextBox ID="text_nombre_materia" runat="server" Enabled="false"/>
                 </div>
                 <div class="col-md-6 col-sm-12">
-                    <asp:Label Text="IDCARRERA:  " runat="server" width="200px"/>
-                    <asp:TextBox ID="text_idcarrera" runat="server" Enabled="false"/>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                    <asp:Label Text="CURSO AÑO:  " runat="server" width="200px"/>
+                    <asp:Label Text="Año de Cursada:  " runat="server" width="200px"/>
                     <asp:TextBox ID="text_curso_año" runat="server" Enabled="false"/>
                 </div>
                 <div class="col-md-6 col-sm-12">
-                    <asp:Label Text="CUATRIMESTRE:  " runat="server" width="200px"/>
+                    <asp:Label Text="Cuatrimestre:  " runat="server" width="200px"/>
                     <asp:TextBox ID="text_cuatrimestre" runat="server" Enabled="false"/>
                 </div>
             </div>

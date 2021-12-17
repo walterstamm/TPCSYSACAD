@@ -13,8 +13,8 @@
                         <div class='col-xs-3'>
                             <table>
                                 <tr>
-                                    <th> <a href="AgregaCarrera.aspx" class="btn btn-primary btn-block">Cargar.Carreras</a> </th>
-                                    <th> <a href="Default.aspx" class="btn btn-primary btn-block">Otro.....</a> </th>
+                                   <%-- <th> <a href="AgregaCarrera.aspx" class="btn btn-primary btn-block">Cargar.Carreras</a> </th>--%>
+                                    <th> <a href="Default.aspx" class="btn btn-primary btn-block">Volver</a> </th>
                                 </tr>
                             </table>
                         </div>

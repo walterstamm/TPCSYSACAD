@@ -12,7 +12,7 @@
                             <table>
                                 <tr>
                                     <th> <a href="CargaMateria.aspx" class="btn btn-primary btn-block">Cargar Materia</a> </th>
-                                    <th> <a href="Default.aspx" class="btn btn-primary btn-block">Otro.....</a> </th>
+                                    <th> <a href="Default.aspx" class="btn btn-primary btn-block">Volver</a> </th>
                                 </tr>
                             </table>
                         </div>
@@ -25,8 +25,7 @@
                         <tr>
                             <th scope="col">COD</th>
                             <th scope="col">MATERIA</th>
-                            <%--<th scope="col">CARGA HORARIA MINIMA</th>--%>
-                            <th scope="col">CARR</th>
+                          
                             <th scope="col">AÑO_CURSO</th>
                             <th scope="col">CUATRIMESTRE</th>
                             <th scope="col">ESTADO</th>
@@ -38,8 +37,7 @@
                                 <tr>
                                     <td><%#Eval("IDMATERIA") %> </td>
                                     <td><%#Eval("NOMBREMATERIA") %> </td>
-                                    <%--<td><%#Eval("carga_horaria_minima") %> </td>--%>
-                                    <td><%#Eval("IDCARRERA") %> </td>
+                                 
                                     <td><%#Eval("ANIO") %> </td>
                                     <td><%#Eval("CUATRIMESTRE") %> </td>
                                     <td><%#Eval("ESTADO") %> </td>
